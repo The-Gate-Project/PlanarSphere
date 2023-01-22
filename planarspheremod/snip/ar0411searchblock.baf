@@ -1,0 +1,22 @@
+IF
+	Global("SpawnTeosAssasin","GLOBAL",1)
+	!Dead("MGTEOS01") // Teos
+THEN
+	RESPONSE #100
+		SetGlobal("SpawnTeosAssasin","GLOBAL",2)
+		FadeToColor([30.0],0)
+		CloseDoor("DoorPool2")
+		CloseDoor("DoorTreasure2")
+		Wait(1)
+		CreateCreatureDoor("MGTEOS01",[2900.2580],0) // Teos
+		MoveViewPoint([2995.2649],INSTANT)
+		ActionOverride(Player1,JumpToPoint([2995.2649]))
+		ActionOverride(Player2,JumpToPoint([2939.2667]))
+		ActionOverride(Player3,JumpToPoint([2869.2692]))
+		ActionOverride(Player4,JumpToPoint([3019.2720]))
+		ActionOverride(Player5,JumpToPoint([2961.2736]))
+		ActionOverride(Player6,JumpToPoint([2904.2751]))
+		FadeFromColor([30.0],0)
+		Wait(7)
+		ActionOverride("MGTEOS01",StartDialogueNoSet(Player1))
+END

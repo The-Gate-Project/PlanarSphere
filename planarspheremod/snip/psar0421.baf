@@ -1,0 +1,45 @@
+IF
+	Global("psNightmareOfTheSoulToggle","GLOBAL",1)
+THEN
+	RESPONSE #100
+		EndCutSceneMode()
+		SetGlobal("psNightmareOfTheSoulToggle","GLOBAL",0)
+		CreateCreature("psNight",[623.1002],0) // Nightmare
+		CreateCreature("psNight",[702.1047],0) // Nightmare
+		CreateCreature("psNight",[803.1106],0) // Nightmare
+		CreateCreature("psNight",[1167.560],0) // Nightmare
+		CreateCreature("psNight",[1251.683],0) // Nightmare
+		CreateCreature("psNight",[1306.810],0) // Nightmare
+		CreateCreature("psNight",[2635.2165],0) // Nightmare
+		CreateCreature("psNight",[2739.2102],0) // Nightmare
+		CreateCreature("psGNight",[2634.1339],0) // Greater Nightmare
+		CreateCreature("psGNight",[1590.1897],0) // Greater Nightmare
+		CreateCreature("psGNight",[784.1664],0) // Greater Nightmare
+		CreateCreature("psGNight",[761.2385],0) // Greater Nightmare
+		CreateCreature("psGNight",[2166.2169],0) // Greater Nightmare
+		CreateCreature("psDream",[777.713],0) // Dream
+		CreateCreature("psPort01",[2008.1570],0) // Planar Portal
+		FadeFromColor([30.0],0)
+		Wait(2)
+		ActionOverride("psDream", StartDialogNoSet(Player1))
+		EndCutSceneMode()
+		CreateVisualEffectObject("HELLOLY",Player1)
+		CreateVisualEffectObject("HELLOLY",Player2)
+		CreateVisualEffectObject("HELLOLY",Player3)
+		CreateVisualEffectObject("HELLOLY",Player4)
+		CreateVisualEffectObject("HELLOLY",Player5)
+		CreateVisualEffectObject("HELLOLY",Player6)
+END
+
+IF
+	Global("MelPStShake","GLOBAL",0)
+THEN
+	RESPONSE #100
+		Wait(20)
+		ScreenShake([20.20],10)
+		CreateCreature("psNight",[-1.-1],0) // Nightmare
+		Wait(20)
+END
+
+
+

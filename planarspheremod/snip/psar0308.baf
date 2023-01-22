@@ -1,0 +1,19 @@
+IF
+	Global("psElminsterFoughtMelCounter","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("psElminsterFoughtMelCounter","GLOBAL",2)
+		ActionOverride("BERINVAR",DestroySelf())
+		ActionOverride("PACE",DestroySelf())
+		ActionOverride("MERONIA",DestroySelf())
+		CreateCreature("CSCOWL1",[410.710],14) // Cowled Wizard
+		CreateCreature("CSCOWL2",[607.567],14) // Cowled Wizard
+		CreateCreature("psElmin",[927.956],14) // Elminster
+		CreateCreature("psMel",[494.651],14) // Melanthium
+		ActionOverride("psMel",ForceSpell(Myself,4645))
+		StartCutSceneMode()
+		StartCutScene("psCut03")
+END
+
+
+

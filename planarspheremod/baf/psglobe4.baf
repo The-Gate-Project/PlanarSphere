@@ -1,0 +1,76 @@
+IF
+	Global("psGlobeSpellCounter", "LOCALS", 8)
+THEN
+	RESPONSE #100
+		ReallyForceSpell(Myself, WIZARD_SUN_FIRE)
+		DestroySelf()
+END
+
+IF
+	RandomNum(5, 1)
+THEN
+	RESPONSE #100
+		IncrementGlobal("psGlobeSpellCounter", "LOCALS", 1)
+		ReallyForceSpell(Player1,CLERIC_MAGIC_STONE)
+		ReallyForceSpell(Player2,CLERIC_MAGIC_STONE)
+		ReallyForceSpell(Player3,CLERIC_MAGIC_STONE)
+		ReallyForceSpell(Player4,CLERIC_MAGIC_STONE)
+		ReallyForceSpell(Player5,CLERIC_MAGIC_STONE)
+		ReallyForceSpell(Player6,CLERIC_MAGIC_STONE)
+END
+
+IF
+	RandomNum(5, 1)
+THEN
+	RESPONSE #100
+		IncrementGlobal("psGlobeSpellCounter", "LOCALS", 1)
+		Wait(3)
+		ReallyForceSpell(Player1,CLERIC_CALL_LIGHTNING)
+		ReallyForceSpell(Player2,CLERIC_CALL_LIGHTNING)
+		ReallyForceSpell(Player3,CLERIC_CALL_LIGHTNING)
+		ReallyForceSpell(Player4,CLERIC_CALL_LIGHTNING)
+		ReallyForceSpell(Player5,CLERIC_CALL_LIGHTNING)
+		ReallyForceSpell(Player6,CLERIC_CALL_LIGHTNING)
+END
+
+IF
+	RandomNum(5, 1)
+THEN
+	RESPONSE #100
+		IncrementGlobal("psGlobeSpellCounter", "LOCALS", 1)
+		Wait(3)
+		ReallyForceSpell(Player1,CLERIC_GLYPH_OF_WARDING)
+		ReallyForceSpell(Player2,CLERIC_GLYPH_OF_WARDING)
+		ReallyForceSpell(Player3,CLERIC_GLYPH_OF_WARDING)
+		ReallyForceSpell(Player4,CLERIC_GLYPH_OF_WARDING)
+		ReallyForceSpell(Player5,CLERIC_GLYPH_OF_WARDING)
+		ReallyForceSpell(Player6,CLERIC_GLYPH_OF_WARDING)
+END
+
+IF
+	RandomNum(5, 1)
+THEN
+	RESPONSE #100
+		IncrementGlobal("psGlobeSpellCounter", "LOCALS", 1)
+		Wait(2)
+		ReallyForceSpell(Player1,CLERIC_FLAME_STRIKE)
+		ReallyForceSpell(Player2,CLERIC_FLAME_STRIKE)
+		ReallyForceSpell(Player3,CLERIC_FLAME_STRIKE)
+		ReallyForceSpell(Player4,CLERIC_FLAME_STRIKE)
+		ReallyForceSpell(Player5,CLERIC_FLAME_STRIKE)
+		ReallyForceSpell(Player6,CLERIC_FLAME_STRIKE)
+END
+
+IF
+	RandomNum(5, 1)
+THEN
+	RESPONSE #100
+		IncrementGlobal("psGlobeSpellCounter", "LOCALS", 1)
+		Wait(4)
+		ReallyForceSpell(Player1,CLERIC_SUNRAY)
+		ReallyForceSpell(Player2,CLERIC_SUNRAY)
+		ReallyForceSpell(Player3,CLERIC_SUNRAY)
+		ReallyForceSpell(Player4,CLERIC_SUNRAY)
+		ReallyForceSpell(Player5,CLERIC_SUNRAY)
+		ReallyForceSpell(Player6,CLERIC_SUNRAY)
+END

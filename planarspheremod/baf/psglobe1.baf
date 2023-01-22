@@ -1,0 +1,105 @@
+IF
+	Global("psGlobeSpellCounter", "LOCALS", 8)
+THEN
+	RESPONSE #100
+		ReallyForceSpell(Myself, WIZARD_SUN_FIRE)
+		DestroySelf()
+END
+
+IF
+	RandomNum(5, 1)
+THEN
+	RESPONSE #100
+		IncrementGlobal("psGlobeSpellCounter", "LOCALS", 1)
+		Wait(4)
+		ReallyForceSpell(Player1,WIZARD_SKULL_TRAP)
+		ReallyForceSpell(Player2,WIZARD_SKULL_TRAP)
+		ReallyForceSpell(Player3,WIZARD_SKULL_TRAP)
+		ReallyForceSpell(Player4,WIZARD_SKULL_TRAP)
+		ReallyForceSpell(Player5,WIZARD_SKULL_TRAP)
+		ReallyForceSpell(Player6,WIZARD_SKULL_TRAP)
+END
+
+IF
+	RandomNum(5, 1)
+THEN
+	RESPONSE #100
+		IncrementGlobal("psGlobeSpellCounter", "LOCALS", 1)
+		Wait(1)
+		ReallyForceSpell(Player1,WIZARD_AGANNAZAR_SCORCHER)
+		ReallyForceSpell(Player2,WIZARD_AGANNAZAR_SCORCHER)
+		ReallyForceSpell(Player3,WIZARD_AGANNAZAR_SCORCHER)
+		ReallyForceSpell(Player4,WIZARD_AGANNAZAR_SCORCHER)
+		ReallyForceSpell(Player5,WIZARD_AGANNAZAR_SCORCHER)
+		ReallyForceSpell(Player6,WIZARD_AGANNAZAR_SCORCHER)
+END
+
+IF
+	RandomNum(5, 1)
+THEN
+	RESPONSE #100
+		IncrementGlobal("psGlobeSpellCounter", "LOCALS", 1)
+		Wait(1)
+		ReallyForceSpell(Player1,WIZARD_MELF_ACID_ARROW)
+		ReallyForceSpell(Player2,WIZARD_MELF_ACID_ARROW)
+		ReallyForceSpell(Player3,WIZARD_MELF_ACID_ARROW)
+		ReallyForceSpell(Player4,WIZARD_MELF_ACID_ARROW)
+		ReallyForceSpell(Player5,WIZARD_MELF_ACID_ARROW)
+		ReallyForceSpell(Player6,WIZARD_MELF_ACID_ARROW)
+END
+
+IF
+	RandomNum(5, 1)
+THEN
+	RESPONSE #100
+		IncrementGlobal("psGlobeSpellCounter", "LOCALS", 1)
+		Wait(3)
+		ReallyForceSpell(Player1,WIZARD_LIGHTNING_BOLT)
+		ReallyForceSpell(Player2,WIZARD_LIGHTNING_BOLT)
+		ReallyForceSpell(Player3,WIZARD_LIGHTNING_BOLT)
+		ReallyForceSpell(Player4,WIZARD_LIGHTNING_BOLT)
+		ReallyForceSpell(Player5,WIZARD_LIGHTNING_BOLT)
+		ReallyForceSpell(Player6,WIZARD_LIGHTNING_BOLT)
+END
+
+IF
+	RandomNum(3, 1)
+THEN
+	RESPONSE #100
+		IncrementGlobal("psGlobeSpellCounter", "LOCALS", 1)
+		Wait(2)
+		ReallyForceSpell(Player1,WIZARD_FLAME_ARROW)
+		ReallyForceSpell(Player2,WIZARD_FLAME_ARROW)
+		ReallyForceSpell(Player3,WIZARD_FLAME_ARROW)
+		ReallyForceSpell(Player4,WIZARD_FLAME_ARROW)
+		ReallyForceSpell(Player5,WIZARD_FLAME_ARROW)
+		ReallyForceSpell(Player6,WIZARD_FLAME_ARROW)
+END
+
+
+IF
+	RandomNum(10, 1)
+THEN
+	RESPONSE #100
+		IncrementGlobal("psGlobeSpellCounter", "LOCALS", 1)
+		Wait(5)
+		ReallyForceSpell(Player1,WIZARD_FIREBALL)
+		ReallyForceSpell(Player2,WIZARD_FIREBALL)
+		ReallyForceSpell(Player3,WIZARD_FIREBALL)
+		ReallyForceSpell(Player4,WIZARD_FIREBALL)
+		ReallyForceSpell(Player5,WIZARD_FIREBALL)
+		ReallyForceSpell(Player6,WIZARD_FIREBALL)
+END
+
+IF
+	RandomNum(5, 1)
+THEN
+	RESPONSE #100
+		IncrementGlobal("psGlobeSpellCounter", "LOCALS", 1)
+		ReallyForceSpell(Player1,WIZARD_MAGIC_MISSILE)
+		ReallyForceSpell(Player2,WIZARD_MAGIC_MISSILE)
+		ReallyForceSpell(Player3,WIZARD_MAGIC_MISSILE)
+		ReallyForceSpell(Player4,WIZARD_MAGIC_MISSILE)
+		ReallyForceSpell(Player5,WIZARD_MAGIC_MISSILE)
+		ReallyForceSpell(Player6,WIZARD_MAGIC_MISSILE)
+END

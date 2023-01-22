@@ -1,0 +1,10 @@
+IF
+	Global("psRetrievedSpellKeyToggle", "GLOBAL", 1)
+	Global("psSplitterSpawnToggle", "GLOBAL", 0)
+THEN
+	RESPONSE #100
+		Wait(2)
+		SetGlobal("psSplitterSpawnToggle", "GLOBAL", 1)
+		StartCutSceneMode()
+		StartCutScene("psCut37")
+END

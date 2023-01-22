@@ -1,0 +1,20 @@
+IF
+	Global("psForcedEncounterToggle","GLOBAL",0)
+	Global("psRetrievedKeyTalkedToMysToggle","GLOBAL",1)
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		CutSceneID(Player1)
+		DisplayStringHead(Player1, @533)
+		Wait(10)
+		FadeToColor([20.0], 0)
+		Wait(1)
+		ActionOverride(Player1,LeaveAreaLUA("ARPSQ1","",[257.730],10))
+		ActionOverride(Player2,LeaveAreaLUA("ARPSQ1","",[216.693],10))
+		ActionOverride(Player3,LeaveAreaLUA("ARPSQ1","",[291.758],10))
+		ActionOverride(Player4,LeaveAreaLUA("ARPSQ1","",[249.783],10))
+		ActionOverride(Player5,LeaveAreaLUA("ARPSQ1","",[215.746],10))
+		ActionOverride(Player6,LeaveAreaLUA("ARPSQ1","",[185.716],10))
+		EndCutSceneMode()
+        Continue()     // existing area scripts contain OnCreation
+END

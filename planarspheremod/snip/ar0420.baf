@@ -1,0 +1,10 @@
+IF
+	Global("psFinalQuestToKillMelCounter", "GLOBAL", 7)
+	Global("psTeosComesBackCounter", "GLOBAL", 0)
+THEN
+	RESPONSE #100
+		SetGlobal("psTeosComesBackCounter", "GLOBAL", 1)
+		CreateCreatureDoor("psTeos", [314.422], 0)
+		ActionOverride("psTeos", SetDialog("psTeosEn"))
+		ActionOverride("psTeos", StartDialogNoSet(Player1))
+End

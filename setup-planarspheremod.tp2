@@ -1,0 +1,2465 @@
+/* Planar Sphere Mod v2.6c; 2.6a with Ieldra's, Ikki's, and ScuD's fixes incorporated, plus erebusant's and Duality's continued work */
+
+BACKUP ~planarspheremod/backup~
+
+AUTHOR ~See_The_Readme (Org: Inferno & M, Updates: Hlid, Duality, Malbolgia)~
+
+/* enable all error messages; nothing suppressed. comment this out for release version - cmorgan */
+//MODDER
+
+/* WeiDU v204 allows tp2 level version listing in the .log, so no more tra changes  */
+VERSION ~v2.6c~
+
+/* launch the readme file immediately. If you want to disable the ReadMe, place two slashes before it, like //README  */
+README ~PlanarSphereMod/readme-planarsphere.html~
+
+AUTO_TRA ~PlanarSphereMod/%s~
+
+LANGUAGE ~English~
+~english~
+//~PlanarSphereMod/english~
+~PlanarSphereMod/english/setup.tra~
+
+BEGIN ~PlanarSphereMod v2.6c~
+
+COPY + ~Setup-PlanarSphereMod.exe~ ~WeiDU.exe~
+
+COPY + ~chitin.key~ ~PlanarSphereMod/chitin.psm~
+COPY_LARGE + ~dialog.tlk~ ~PlanarSphereMod/dialog.psm~
+MKDIR ~PlanarSphereMod/over.bak~
+COPY_LARGE + ~override~ ~PlanarSphereMod/over.bak~
+
+
+// TOB Check prior to compiling.
+REQUIRE_FILE ~Data/25Dialog.bif~ @1 // ToB  check// Base Copy Overs
+
+
+COPY ~PlanarSphereMod/are~   ~override~ // Area Files (new area files not previously installed in game)
+     ~PlanarSphereMod/Pics~   ~override~ // Mos and Bmp files including additional search regions in AR0412SR.bmp
+     ~PlanarSphereMod/eff~   ~override~ // Eff Files
+     ~PlanarSphereMod/misc/SPPSQ22.2da~   ~override/SPPSQ22.2da~ // Non-.pro file copy
+     ~PlanarSphereMod/bam~   ~override~ // Bam files
+
+ACTION_IF NOT FILE_EXISTS_IN_GAME	~MSPLG1.BAM~	THEN BEGIN
+  COPY	~PlanarSphereMod/bam/check/MSPLG1.BAM~   ~override~
+END
+
+
+// Cre Files
+COPY_EXISTING	~HELMKNI1.CRE~	~override~
+  PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN 	// protects against invalid files
+    WRITE_ASCII	0x248		~PSTEMPLE~ #8	// Override 
+    WRITE_ASCII	0x250		~SHT0901~ #8	// Class 
+  END
+BUT_ONLY_IF_IT_CHANGES
+
+COPY_EXISTING	~LATKNI01.CRE~	~override~
+  PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN 	// protects against invalid files
+    WRITE_ASCII	0x248		~PSTEMPLE~ #8	// Override 
+    WRITE_ASCII	0x250		~TALWAR~ #8		// Class 
+    WRITE_ASCII	0x258		~SHT0902~ #8	// Race 
+  END
+BUT_ONLY_IF_IT_CHANGES
+
+COPY_EXISTING	~TALKNI01.CRE~	~override~
+  PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN 	// protects against invalid files
+    WRITE_ASCII	0x248		~PSTEMPLE~ #8	// Override 
+    WRITE_ASCII	0x250		~SHT0904~ #8	// Class 
+  END
+BUT_ONLY_IF_IT_CHANGES
+
+COPY_EXISTING ~LAVOK01.cre~ ~override~       	//LAVOK needs Robe of Evil Archmagi added and equiped in Armor slot
+  PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN 	// protects against invalid files
+    ADD_CRE_ITEM			~CLCK17~	#0 #0 #0	~NONE~	~ARMOR~	EQUIP
+  END
+BUT_ONLY_IF_IT_CHANGES
+
+
+COPY ~PlanarSphereMod/cre/psDwarf1.cre~ ~override/psDwarf1.cre~
+  SAY NAME1 @618
+  SAY NAME2 @618
+
+COPY ~PlanarSphereMod/cre/psDwarf2.cre~ ~override/psDwarf2.cre~
+  SAY NAME1 @618
+  SAY NAME2 @618
+
+COPY ~PlanarSphereMod/cre/psTeosCh.cre~ ~override/psTeosCh.cre~
+  SAY NAME1 @4
+  SAY NAME2 @4
+
+COPY ~PlanarSphereMod/cre/psLothan.cre~ ~override/psLothan.cre~
+  SAY NAME1 @599
+  SAY NAME2 @599
+
+COPY ~PlanarSphereMod/cre/psTalAc1.cre~ ~override/psTalAc1.cre~
+  SAY NAME1 @606
+  SAY NAME2 @606
+
+COPY ~PlanarSphereMod/cre/psTalAc2.cre~ ~override/psTalAc2.cre~
+  SAY NAME1 @606
+  SAY NAME2 @606
+
+COPY ~PlanarSphereMod/cre/psTalAc3.cre~ ~override/psTalAc3.cre~
+  SAY NAME1 @606
+  SAY NAME2 @606
+
+COPY ~PlanarSphereMod/cre/psTalAc4.cre~ ~override/psTalAc4.cre~
+  SAY NAME1 @606
+  SAY NAME2 @606
+
+COPY ~PlanarSphereMod/cre/psTalAc5.cre~ ~override/psTalAc5.cre~
+  SAY NAME1 @606
+  SAY NAME2 @606
+
+COPY ~PlanarSphereMod/cre/psTalAc6.cre~ ~override/psTalAc6.cre~
+  SAY NAME1 @606
+  SAY NAME2 @606
+
+COPY ~PlanarSphereMod/cre/psLotAc1.cre~ ~override/psLotAc1.cre~
+  SAY NAME1 @607
+  SAY NAME2 @607
+
+COPY ~PlanarSphereMod/cre/psLotAc2.cre~ ~override/psLotAc2.cre~
+  SAY NAME1 @607
+  SAY NAME2 @607
+
+COPY ~PlanarSphereMod/cre/psLotAc3.cre~ ~override/psLotAc3.cre~
+  SAY NAME1 @607
+  SAY NAME2 @607
+
+COPY ~PlanarSphereMod/cre/psLotAc4.cre~ ~override/psLotAc4.cre~
+  SAY NAME1 @607
+  SAY NAME2 @607
+
+COPY ~PlanarSphereMod/cre/psLotAc5.cre~ ~override/psLotAc5.cre~
+  SAY NAME1 @607
+  SAY NAME2 @607
+
+COPY ~PlanarSphereMod/cre/psLotAc6.cre~ ~override/psLotAc6.cre~
+  SAY NAME1 @607
+  SAY NAME2 @607
+
+COPY ~PlanarSphereMod/cre/psKob01.cre~ ~override/psKob01.cre~
+  SAY NAME1 @603
+  SAY NAME2 @603
+
+COPY ~PlanarSphereMod/cre/psKob02.cre~ ~override/psKob02.cre~
+  SAY NAME1 @603
+  SAY NAME2 @603
+
+COPY ~PlanarSphereMod/cre/psAver.cre~ ~override/psAver.cre~
+  SAY NAME1 @570
+  SAY NAME2 @570
+
+COPY ~PlanarSphereMod/cre/psTalos.cre~ ~override/psTalos.cre~
+  SAY NAME1 @601
+  SAY NAME2 @601
+
+COPY ~PlanarSphereMod/cre/psHelm.cre~ ~override/psHelm.cre~
+  SAY NAME1 @600
+  SAY NAME2 @600
+
+COPY ~PlanarSphereMod/cre/psDMAd01.cre~ ~override/psDMAd01.cre~
+  SAY NAME1 @590
+  SAY NAME2 @590
+
+COPY ~PlanarSphereMod/cre/psDMAd02.cre~ ~override/psDMAd02.cre~
+  SAY NAME1 @591
+  SAY NAME2 @591
+
+COPY ~PlanarSphereMod/cre/psDMAd03.cre~ ~override/psDMAd03.cre~
+  SAY NAME1 @591
+  SAY NAME2 @591
+
+COPY ~PlanarSphereMod/cre/psApp06a.cre~ ~override/psApp06a.cre~
+  SAY NAME1 @5
+  SAY NAME2 @5
+
+COPY ~PlanarSphereMod/cre/psApp06b.cre~ ~override/psApp06b.cre~
+  SAY NAME1 @5
+  SAY NAME2 @5
+
+COPY ~PlanarSphereMod/cre/psApp06c.cre~ ~override/psApp06c.cre~
+  SAY NAME1 @5
+  SAY NAME2 @5
+
+COPY ~PlanarSphereMod/cre/psApp06d.cre~ ~override/psApp06d.cre~
+  SAY NAME1 @5
+  SAY NAME2 @5
+
+COPY ~PlanarSphereMod/cre/psApp07a.cre~ ~override/psApp07a.cre~
+  SAY NAME1 @5
+  SAY NAME2 @5
+
+COPY ~PlanarSphereMod/cre/psApp07b.cre~ ~override/psApp07b.cre~
+  SAY NAME1 @5
+  SAY NAME2 @5
+
+COPY ~PlanarSphereMod/cre/psApp07c.cre~ ~override/psApp07c.cre~
+  SAY NAME1 @5
+  SAY NAME2 @5
+
+COPY ~PlanarSphereMod/cre/psApp08.cre~ ~override/psApp08.cre~
+  SAY NAME1 @572
+  SAY NAME2 @572
+
+COPY ~PlanarSphereMod/cre/psCowl01.cre~ ~override/psCowl01.cre~
+  SAY NAME1 @571
+  SAY NAME2 @571
+
+COPY ~PlanarSphereMod/cre/psBaat01.cre~ ~override/psBaat01.cre~
+  SAY NAME1 @585
+  SAY NAME2 @585
+
+COPY ~PlanarSphereMod/cre/psBaat03.cre~ ~override/psBaat03.cre~
+  SAY NAME1 @589
+  SAY NAME2 @589
+
+COPY ~PlanarSphereMod/cre/psBaat04.cre~ ~override/psBaat04.cre~
+  SAY NAME1 @587
+  SAY NAME2 @587
+
+COPY ~PlanarSphereMod/cre/psBaatL.cre~ ~override/psBaatL.cre~
+  SAY NAME1 @596
+  SAY NAME2 @596
+
+COPY ~PlanarSphereMod/cre/psBaatUD.cre~ ~override/psBaatUD.cre~
+  SAY NAME1 @597
+  SAY NAME2 @597
+
+COPY ~PlanarSphereMod/cre/psPal01.cre~ ~override/psPal01.cre~
+  SAY NAME1 @588
+  SAY NAME2 @588
+
+COPY ~PlanarSphereMod/cre/psPal02.cre~ ~override/psPal02.cre~
+  SAY NAME1 @588
+  SAY NAME2 @588
+
+COPY ~PlanarSphereMod/cre/psPal03.cre~ ~override/psPal03.cre~
+  SAY NAME1 @588
+  SAY NAME2 @588
+
+COPY ~PlanarSphereMod/cre/psPal04.cre~ ~override/psPal04.cre~
+  SAY NAME1 @588
+  SAY NAME2 @588
+
+COPY ~PlanarSphereMod/cre/psBaat02.cre~ ~override/psBaat02.cre~
+  SAY NAME1 @585
+  SAY NAME2 @585
+
+COPY ~PlanarSphereMod/cre/psBaat2a.cre~ ~override/psBaat2a.cre~
+  SAY NAME1 @585
+  SAY NAME2 @585
+
+COPY ~PlanarSphereMod/cre/ps900Spa.cre~ ~override/ps900Spa.cre~
+  SAY NAME1 @584
+  SAY NAME2 @584
+
+COPY ~PlanarSphereMod/cre/psHelm01.cre~ ~override/psHelm01.cre~
+  SAY NAME1 @577
+  SAY NAME2 @577
+
+COPY ~PlanarSphereMod/cre/psHelm02.cre~ ~override/psHelm02.cre~
+  SAY NAME1 @578
+  SAY NAME2 @578
+
+COPY ~PlanarSphereMod/cre/psHelm03.cre~ ~override/psHelm03.cre~
+  SAY NAME1 @578
+  SAY NAME2 @578
+
+COPY ~PlanarSphereMod/cre/psTana01.cre~ ~override/psTana01.cre~
+  SAY NAME1 @579
+  SAY NAME2 @579
+
+COPY ~PlanarSphereMod/cre/psTana02.cre~ ~override/psTana02.cre~
+  SAY NAME1 @586
+  SAY NAME2 @586
+
+COPY ~PlanarSphereMod/cre/psTana2a.cre~ ~override/psTana2a.cre~
+  SAY NAME1 @586
+  SAY NAME2 @586
+
+COPY ~PlanarSphereMod/cre/psTana03.cre~ ~override/psTana03.cre~
+  SAY NAME1 @583
+  SAY NAME2 @583
+
+COPY ~PlanarSphereMod/cre/psTana04.cre~ ~override/psTana04.cre~
+  SAY NAME1 @580
+  SAY NAME2 @580
+
+COPY ~PlanarSphereMod/cre/psTanaL.cre~ ~override/psTanaL.cre~
+  SAY NAME1 @595
+  SAY NAME2 @595
+
+COPY ~PlanarSphereMod/cre/psTanaUD.cre~ ~override/psTanaUD.cre~
+  SAY NAME1 @598
+  SAY NAME2 @598
+
+COPY ~PlanarSphereMod/cre/psTalos1.cre~ ~override/psTalos1.cre~
+  SAY NAME1 @581
+  SAY NAME2 @581
+
+COPY ~PlanarSphereMod/cre/psTalos2.cre~ ~override/psTalos2.cre~
+  SAY NAME1 @582
+  SAY NAME2 @582
+
+COPY ~PlanarSphereMod/cre/psTalos3.cre~ ~override/psTalos3.cre~
+  SAY NAME1 @582
+  SAY NAME2 @582
+
+COPY ~PlanarSphereMod/cre/psTalos4.cre~ ~override/psTalos4.cre~
+  SAY NAME1 @582
+  SAY NAME2 @582
+
+COPY ~PlanarSphereMod/cre/psTalos5.cre~ ~override/psTalos5.cre~
+  SAY NAME1 @582
+  SAY NAME2 @582
+
+COPY ~PlanarSphereMod/cre/psTeos.cre~ ~override/psTeos.cre~
+  SAY NAME1 @4
+  SAY NAME2 @4
+
+COPY ~PlanarSphereMod/cre/psAdv06.cre~ ~override/psAdv06.cre~
+  SAY NAME1 @592
+  SAY NAME2 @592
+
+COPY ~PlanarSphereMod/cre/psAdv07.cre~ ~override/psAdv07.cre~
+  SAY NAME1 @592
+  SAY NAME2 @592
+
+COPY ~PlanarSphereMod/cre/psAdv08.cre~ ~override/psAdv08.cre~
+  SAY NAME1 @592
+  SAY NAME2 @592
+
+COPY ~PlanarSphereMod/cre/psDem02.cre~ ~override/psDem02.cre~
+  SAY NAME1 @34
+  SAY NAME2 @34
+
+COPY ~PlanarSphereMod/cre/psDem03.cre~ ~override/psDem03.cre~
+  SAY NAME1 @34
+  SAY NAME2 @34
+
+COPY ~PlanarSphereMod/cre/psNiSum.cre~ ~override/psNiSum.cre~
+  SAY NAME1 @16
+  SAY NAME2 @16
+
+COPY ~PlanarSphereMod/cre/psKhel.cre~ ~override/psKhel.cre~
+  SAY NAME1 @538
+  SAY NAME2 @538
+
+COPY ~PlanarSphereMod/cre/psSPrst.cre~ ~override/psSPrst.cre~
+  SAY NAME1 @545
+  SAY NAME2 @545
+
+COPY ~PlanarSphereMod/cre/psSplit1.cre~ ~override/psSplit1.cre~
+  SAY NAME1 @3
+  SAY NAME2 @3
+
+COPY ~PlanarSphereMod/cre/psSplit2.cre~ ~override/psSplit2.cre~
+  SAY NAME1 @4
+  SAY NAME2 @4
+
+COPY ~PlanarSphereMod/cre/psSplit3.cre~ ~override/psSplit3.cre~
+  SAY NAME1 @5
+  SAY NAME2 @5
+
+COPY ~PlanarSphereMod/cre/psSplit4.cre~ ~override/psSplit4.cre~
+  SAY NAME1 @6
+  SAY NAME2 @6
+
+COPY ~PlanarSphereMod/cre/psApp01.cre~ ~override/psApp01.cre~
+  SAY NAME1 @5
+  SAY NAME2 @5
+
+COPY ~PlanarSphereMod/cre/psDummy1.cre~ ~override/psDummy1.cre~
+  SAY NAME1 @3
+  SAY NAME2 @3
+
+COPY ~PlanarSphereMod/cre/psDummy2.cre~ ~override/psDummy2.cre~
+  SAY NAME1 @3
+  SAY NAME2 @3
+
+COPY ~PlanarSphereMod/cre/psTutor1.cre~ ~override/psTutor1.cre~
+  SAY NAME1 @6
+  SAY NAME2 @6
+
+COPY ~PlanarSphereMod/cre/psqhosu.cre~ ~override/psqhosu.cre~
+  SAY NAME1 @70
+  SAY NAME2 @70
+
+COPY ~PlanarSphereMod/cre/psqmfh.cre~ ~override/psqmfh.cre~
+  SAY NAME1 @71
+  SAY NAME2 @71
+
+COPY ~PlanarSphereMod/cre/psqsksu.cre~ ~override/psqsksu.cre~
+  SAY NAME1 @72
+  SAY NAME2 @72
+
+COPY ~PlanarSphereMod/cre/psqssum.cre~ ~override/psqssum.cre~
+  SAY NAME1 @73
+  SAY NAME2 @73
+
+COPY ~PlanarSphereMod/cre/psqtpa1.cre~ ~override/psqtpa1.cre~
+  SAY NAME1 @74
+  SAY NAME2 @74
+
+COPY ~PlanarSphereMod/cre/psqtpa2.cre~ ~override/psqtpa2.cre~
+  SAY NAME1 @74
+  SAY NAME2 @74
+
+COPY ~PlanarSphereMod/cre/psqtpa3.cre~ ~override/psqtpa3.cre~
+  SAY NAME1 @74
+  SAY NAME2 @74
+
+COPY ~PlanarSphereMod/cre/psApp02.cre~ ~override/psApp02.cre~
+  SAY NAME1 @5
+  SAY NAME2 @5
+
+COPY ~PlanarSphereMod/cre/psApp05.cre~ ~override/psApp05.cre~
+  SAY NAME1 @5
+  SAY NAME2 @5
+
+
+COPY ~PlanarSphereMod/cre/psSPTar2.cre~ ~override/psSPTar2.cre~
+  SAY NAME1 @7
+  SAY NAME2 @7
+
+COPY ~PlanarSphereMod/cre/psSPTar3.cre~ ~override/psSPTar3.cre~
+  SAY NAME1 @7
+  SAY NAME2 @7
+
+COPY ~PlanarSphereMod/cre/psSPTar4.cre~ ~override/psSPTar4.cre~
+  SAY NAME1 @7
+  SAY NAME2 @7
+
+COPY ~PlanarSphereMod/cre/psSPTar5.cre~ ~override/psSPTar5.cre~
+  SAY NAME1 @7
+  SAY NAME2 @7
+
+COPY ~PlanarSphereMod/cre/psPrst1.cre~ ~override/psPrst1.cre~
+  SAY NAME1 @8
+  SAY NAME2 @8
+
+COPY ~PlanarSphereMod/cre/psPrst2.cre~ ~override/psPrst2.cre~
+  SAY NAME1 @9
+  SAY NAME2 @9
+
+COPY ~PlanarSphereMod/cre/psPrst3.cre~ ~override/psPrst3.cre~
+  SAY NAME1 @8
+  SAY NAME2 @8
+
+COPY ~PlanarSphereMod/cre/psMaEle.cre~ ~override/psMaEle.cre~
+  SAY NAME1 @10
+  SAY NAME2 @10
+
+COPY ~PlanarSphereMod/cre/psLordAo.cre~ ~override/psLordAo.cre~
+  SAY NAME1 @11
+  SAY NAME2 @11
+
+COPY ~PlanarSphereMod/cre/psApp03.cre~ ~override/psApp03.cre~
+  SAY NAME1 @5
+  SAY NAME2 @5
+
+COPY ~PlanarSphereMod/cre/psMel.cre~ ~override/psMel.cre~
+  SAY NAME1 @12
+  SAY NAME2 @12
+
+COPY ~PlanarSphereMod/cre/psPort03.cre~ ~override/psPort03.cre~
+  SAY NAME1 @13
+  SAY NAME2 @13
+
+COPY ~PlanarSphereMod/cre/psBelle.cre~ ~override/psBelle.cre~
+  SAY NAME1 @573
+  SAY NAME2 @573
+
+COPY ~PlanarSphereMod/cre/psKnife.cre~ ~override/psKnife.cre~
+  SAY NAME1 @17
+  SAY NAME2 @17
+
+COPY ~PlanarSphereMod/cre/psSorc.cre~ ~override/psSorc.cre~
+  SAY NAME1 @18
+  SAY NAME2 @18
+
+COPY ~PlanarSphereMod/cre/psApAtt1.cre~ ~override/psApAtt1.cre~
+  SAY NAME1 @5
+  SAY NAME2 @5
+
+COPY ~PlanarSphereMod/cre/psApAtt3.cre~ ~override/psApAtt3.cre~
+  SAY NAME1 @5
+  SAY NAME2 @5
+
+COPY ~PlanarSphereMod/cre/psAdv01.cre~ ~override/psAdv01.cre~
+  SAY NAME1 @19
+  SAY NAME2 @19
+
+COPY ~PlanarSphereMod/cre/psAdv02.cre~ ~override/psAdv02.cre~
+  SAY NAME1 @19
+  SAY NAME2 @19
+
+COPY ~PlanarSphereMod/cre/psTutor2.cre~ ~override/psTutor2.cre~
+  SAY NAME1 @6
+  SAY NAME2 @6
+
+COPY ~PlanarSphereMod/cre/psAdv03.cre~ ~override/psAdv03.cre~
+  SAY NAME1 @19
+  SAY NAME2 @19
+
+COPY ~PlanarSphereMod/cre/psAdv04.cre~ ~override/psAdv04.cre~
+  SAY NAME1 @19
+  SAY NAME2 @19
+
+COPY ~PlanarSphereMod/cre/psAdv05.cre~ ~override/psAdv05.cre~
+  SAY NAME1 @19
+  SAY NAME2 @19
+
+COPY ~PlanarSphereMod/cre/psAdApp1.cre~ ~override/psAdApp1.cre~
+  SAY NAME1 @5
+  SAY NAME2 @5
+
+COPY ~PlanarSphereMod/cre/psAdApp2.cre~ ~override/psAdApp2.cre~
+  SAY NAME1 @5
+  SAY NAME2 @5
+
+COPY ~PlanarSphereMod/cre/psAdApp3.cre~ ~override/psAdApp3.cre~
+  SAY NAME1 @5
+  SAY NAME2 @5
+
+COPY ~PlanarSphereMod/cre/psAdApp4.cre~ ~override/psAdApp4.cre~
+  SAY NAME1 @5
+  SAY NAME2 @5
+
+COPY ~PlanarSphereMod/cre/psAdApp5.cre~ ~override/psAdApp5.cre~
+  SAY NAME1 @5
+  SAY NAME2 @5
+
+COPY ~PlanarSphereMod/cre/psAdApp6.cre~ ~override/psAdApp6.cre~
+  SAY NAME1 @5
+  SAY NAME2 @5
+
+COPY ~PlanarSphereMod/cre/psTutor3.cre~ ~override/psTutor3.cre~
+  SAY NAME1 @6
+  SAY NAME2 @6
+
+COPY ~PlanarSphereMod/cre/psVecna.cre~ ~override/psVecna.cre~
+  SAY NAME1 @21
+  SAY NAME2 @21
+
+COPY ~PlanarSphereMod/cre/psModron.cre~ ~override/psModron.cre~
+  SAY NAME1 @23
+  SAY NAME2 @23
+
+COPY ~PlanarSphereMod/cre/psSolar.cre~ ~override/psSolar.cre~
+  SAY NAME1 @24
+  SAY NAME2 @24
+
+COPY ~PlanarSphereMod/cre/psMarile.cre~ ~override/psMarile.cre~
+  SAY NAME1 @25
+  SAY NAME2 @25
+
+COPY ~PlanarSphereMod/cre/psMari1.cre~ ~override/psMari1.cre~
+  SAY NAME1 @25
+  SAY NAME2 @25
+
+COPY ~PlanarSphereMod/cre/psMari2.cre~ ~override/psMari2.cre~
+  SAY NAME1 @25
+  SAY NAME2 @25
+
+COPY ~PlanarSphereMod/cre/psChaos.cre~ ~override/psChaos.cre~
+  SAY NAME1 @26
+  SAY NAME2 @26
+
+COPY ~PlanarSphereMod/cre/psBaat.cre~ ~override/psBaat.cre~
+  SAY NAME1 @27
+  SAY NAME2 @27
+
+COPY ~PlanarSphereMod/cre/psGlab.cre~ ~override/psGlab.cre~
+  SAY NAME1 @28
+  SAY NAME2 @28
+
+COPY ~PlanarSphereMod/cre/psKord01.cre~ ~override/psKord01.cre~
+  SAY NAME1 @29
+  SAY NAME2 @29
+
+COPY ~PlanarSphereMod/cre/psKord02.cre~ ~override/psKord02.cre~
+  SAY NAME1 @29
+  SAY NAME2 @29
+
+COPY ~PlanarSphereMod/cre/psKord03.cre~ ~override/psKord03.cre~
+  SAY NAME1 @29
+  SAY NAME2 @29
+
+COPY ~PlanarSphereMod/cre/psKord04.cre~ ~override/psKord04.cre~
+  SAY NAME1 @29
+  SAY NAME2 @29
+
+COPY ~PlanarSphereMod/cre/psKord05.cre~ ~override/psKord05.cre~
+  SAY NAME1 @29
+  SAY NAME2 @29
+
+COPY ~PlanarSphereMod/cre/psFanat1.cre~ ~override/psFanat1.cre~
+  SAY NAME1 @30
+  SAY NAME2 @30
+
+COPY ~PlanarSphereMod/cre/psFanat2.cre~ ~override/psFanat2.cre~
+  SAY NAME1 @30
+  SAY NAME2 @30
+
+COPY ~PlanarSphereMod/cre/psFanat3.cre~ ~override/psFanat3.cre~
+  SAY NAME1 @30
+  SAY NAME2 @30
+
+COPY ~PlanarSphereMod/cre/psFanat4.cre~ ~override/psFanat4.cre~
+  SAY NAME1 @30
+  SAY NAME2 @30
+
+COPY ~PlanarSphereMod/cre/psFanat5.cre~ ~override/psFanat5.cre~
+  SAY NAME1 @30
+  SAY NAME2 @30
+
+COPY ~PlanarSphereMod/cre/psApAtt2.cre~ ~override/psApAtt2.cre~
+  SAY NAME1 @5
+  SAY NAME2 @5
+
+COPY ~PlanarSphereMod/cre/psHelm1.cre~ ~override/psHelm1.cre~
+  SAY NAME1 @31
+  SAY NAME2 @31
+
+COPY ~PlanarSphereMod/cre/psDego.cre~ ~override/psDego.cre~
+  SAY NAME1 @32
+  SAY NAME2 @32
+
+COPY ~PlanarSphereMod/cre/psHelm2.cre~ ~override/psHelm2.cre~
+  SAY NAME1 @31
+  SAY NAME2 @31
+
+COPY ~PlanarSphereMod/cre/psBroom1.cre~ ~override/psBroom1.cre~
+  SAY NAME1 @33
+  SAY NAME2 @33
+
+COPY ~PlanarSphereMod/cre/psBroom2.cre~ ~override/psBroom2.cre~
+  SAY NAME1 @33
+  SAY NAME2 @33
+
+COPY ~PlanarSphereMod/cre/psTutor4.cre~ ~override/psTutor4.cre~
+  SAY NAME1 @6
+  SAY NAME2 @6
+
+COPY ~PlanarSphereMod/cre/psDem01.cre~ ~override/psDem01.cre~
+  SAY NAME1 @34
+  SAY NAME2 @34
+
+COPY ~PlanarSphereMod/cre/psWeil.cre~ ~override/psWeil.cre~
+  SAY NAME1 @35
+  SAY NAME2 @35
+
+COPY ~PlanarSphereMod/cre/psApp04.cre~ ~override/psApp04.cre~
+  SAY NAME1 @5
+  SAY NAME2 @5
+
+COPY ~PlanarSphereMod/cre/psExam.cre~ ~override/psExam.cre~
+  SAY NAME1 @36
+  SAY NAME2 @36
+
+COPY ~PlanarSphereMod/cre/psTest01.cre~ ~override/psTest01.cre~
+  SAY NAME1 @5
+  SAY NAME2 @5
+
+COPY ~PlanarSphereMod/cre/psTest02.cre~ ~override/psTest02.cre~
+  SAY NAME1 @5
+  SAY NAME2 @5
+
+COPY ~PlanarSphereMod/cre/psTest03.cre~ ~override/f03.cre~
+  SAY NAME1 @5
+  SAY NAME2 @5
+
+  COPY ~PlanarSphereMod/cre/psTest03.cre~ ~override/psTest03.cre~
+  SAY NAME1 @5
+  SAY NAME2 @5
+
+COPY ~PlanarSphereMod/cre/psTest04.cre~ ~override/psTest04.cre~
+  SAY NAME1 @5
+  SAY NAME2 @5
+
+COPY ~PlanarSphereMod/cre/psTutor6.cre~ ~override/psTutor6.cre~
+  SAY NAME1 @6
+  SAY NAME2 @6
+
+COPY ~PlanarSphereMod/cre/psMagIte.cre~ ~override/psMagIte.cre~
+  SAY NAME1 @5
+  SAY NAME2 @5
+
+COPY ~PlanarSphereMod/cre/psMeli.cre~ ~override/psMeli.cre~
+  SAY NAME1 @37
+  SAY NAME2 @37
+
+COPY ~PlanarSphereMod/cre/psTutor7.cre~ ~override/psTutor7.cre~
+  SAY NAME1 @6
+  SAY NAME2 @6
+
+COPY ~PlanarSphereMod/cre/psThal.cre~ ~override/psThal.cre~
+  SAY NAME1 @38
+  SAY NAME2 @38
+
+COPY ~PlanarSphereMod/cre/psTrait.cre~ ~override/psTrait.cre~
+  SAY NAME1 @15
+  SAY NAME2 @15
+
+COPY ~PlanarSphereMod/cre/psRedWiz.cre~ ~override/psRedWiz.cre~
+  SAY NAME1 @20
+  SAY NAME2 @20
+
+COPY ~PlanarSphereMod/cre/psRedW2.cre~ ~override/psRedW2.cre~
+  SAY NAME1 @20
+  SAY NAME2 @20
+
+COPY ~PlanarSphereMod/cre/psGNight.cre~ ~override/psGNight.cre~
+  SAY NAME1 @39
+  SAY NAME2 @39
+
+COPY ~PlanarSphereMod/cre/psNight.cre~ ~override/psNight.cre~
+  SAY NAME1 @16
+  SAY NAME2 @16
+
+COPY ~PlanarSphereMod/cre/psDream.cre~ ~override/psDream.cre~
+  SAY NAME1 @40
+  SAY NAME2 @40
+
+COPY ~PlanarSphereMod/cre/psPort01.cre~ ~override/psPort01.cre~
+  SAY NAME1 @41
+  SAY NAME2 @41
+
+COPY ~PlanarSphereMod/cre/psFear.cre~ ~override/psFear.cre~
+  SAY NAME1 @42
+  SAY NAME2 @42
+
+COPY ~PlanarSphereMod/cre/psElmin.cre~ ~override/psElmin.cre~
+  SAY NAME1 @43
+  SAY NAME2 @43
+
+COPY ~PlanarSphereMod/cre/psMystra.cre~ ~override/psMystra.cre~
+  SAY NAME1 @14
+  SAY NAME2 @14
+
+COPY ~PlanarSphereMod/cre/psMysEnd.cre~ ~override/psMysEnd.cre~
+  SAY NAME1 @14
+  SAY NAME2 @14
+
+COPY ~PlanarSphereMod/cre/psPain.cre~ ~override/psPain.cre~
+  SAY NAME1 @44
+  SAY NAME2 @44
+
+COPY ~PlanarSphereMod/cre/psHag.cre~ ~override/psHag.cre~
+  SAY NAME1 @45
+  SAY NAME2 @45
+
+COPY ~PlanarSphereMod/cre/psPNight.cre~ ~override/psPNight.cre~
+  SAY NAME1 @46
+  SAY NAME2 @46
+
+COPY ~PlanarSphereMod/cre/psGlobe1.cre~ ~override/psGlobe1.cre~
+  SAY NAME1 @47
+  SAY NAME2 @47
+COPY ~PlanarSphereMod/cre/psGlobe2.cre~ ~override/psGlobe2.cre~
+  SAY NAME1 @47
+  SAY NAME2 @47
+COPY ~PlanarSphereMod/cre/psGlobe3.cre~ ~override/psGlobe3.cre~
+  SAY NAME1 @47
+  SAY NAME2 @47
+COPY ~PlanarSphereMod/cre/psGlobe4.cre~ ~override/psGlobe4.cre~
+  SAY NAME1 @47
+  SAY NAME2 @47
+COPY ~PlanarSphereMod/cre/psGlobe5.cre~ ~override/psGlobe5.cre~
+  SAY NAME1 @47
+  SAY NAME2 @47
+COPY ~PlanarSphereMod/cre/psGlobe6.cre~ ~override/psGlobe6.cre~
+  SAY NAME1 @47
+  SAY NAME2 @47
+
+COPY ~PlanarSphereMod/cre/psMagic.cre~ ~override/psMagic.cre~
+  SAY NAME1 @48
+  SAY NAME2 @48
+
+COPY ~PlanarSphereMod/cre/psMDivi.cre~ ~override/psMDivi.cre~
+  SAY NAME1 @49
+  SAY NAME2 @49
+
+COPY ~PlanarSphereMod/cre/psMIllu.cre~ ~override/psMIllu.cre~
+  SAY NAME1 @50
+  SAY NAME2 @50
+
+COPY ~PlanarSphereMod/cre/psMAbju.cre~ ~override/psMAbju.cre~
+  SAY NAME1 @51
+  SAY NAME2 @51
+
+COPY ~PlanarSphereMod/cre/psMAlte.cre~ ~override/psMAlte.cre~
+  SAY NAME1 @52
+  SAY NAME2 @52
+
+COPY ~PlanarSphereMod/cre/psMNecr.cre~ ~override/psMNecr.cre~
+  SAY NAME1 @53
+  SAY NAME2 @53
+
+COPY ~PlanarSphereMod/cre/psMConj.cre~ ~override/psMConj.cre~
+  SAY NAME1 @54
+  SAY NAME2 @54
+
+COPY ~PlanarSphereMod/cre/psMEnch.cre~ ~override/psMEnch.cre~
+  SAY NAME1 @55
+  SAY NAME2 @55
+
+COPY ~PlanarSphereMod/cre/psMInvo.cre~ ~override/psMInvo.cre~
+  SAY NAME1 @56
+  SAY NAME2 @56
+
+COPY ~PlanarSphereMod/cre/psPort02.cre~ ~override/psPort02.cre~
+  SAY NAME1 @57
+  SAY NAME2 @57
+
+COPY ~PlanarSphereMod/cre/psLady.cre~ ~override/psLady.cre~
+  SAY NAME1 @58
+  SAY NAME2 @58
+
+COPY ~PlanarSphereMod/cre/psNarr.cre~ ~override/psNarr.cre~
+  SAY NAME1 @7
+  SAY NAME2 @7
+
+COPY ~PlanarSphereMod/cre/psPPort.cre~ ~override/psPPort.cre~
+  SAY NAME1 @59
+  SAY NAME2 @59
+
+COPY ~PlanarSphereMod/cre/psDemi.cre~ ~override/psDemi.cre~
+  SAY NAME1 @60
+  SAY NAME2 @60
+
+COPY ~PlanarSphereMod/cre/psPeas1.cre~ ~override/psPeas1.cre~
+  SAY NAME1 @61
+  SAY NAME2 @61
+
+COPY ~PlanarSphereMod/cre/psPeas2.cre~ ~override/psPeas2.cre~
+  SAY NAME1 @61
+  SAY NAME2 @61
+
+COPY ~PlanarSphereMod/cre/psPeas3.cre~ ~override/psPeas3.cre~
+  SAY NAME1 @61
+  SAY NAME2 @61
+
+COPY ~PlanarSphereMod/cre/psFurn.cre~ ~override/psFurn.cre~
+  SAY NAME1 @63
+  SAY NAME2 @63
+
+COPY ~PlanarSphereMod/cre/psInch.cre~ ~override/psInch.cre~
+  SAY NAME1 @64
+  SAY NAME2 @64
+
+COPY ~PlanarSphereMod/cre/psEnfor.cre~ ~override/psEnfor.cre~
+  SAY NAME1 @65
+  SAY NAME2 @65
+
+COPY ~PlanarSphereMod/cre/psSlime.cre~ ~override/psSlime.cre~
+  SAY NAME1 @66
+  SAY NAME2 @66
+
+COPY ~PlanarSphereMod/cre/psStorm.cre~ ~override/psStorm.cre~
+  SAY NAME1 @67
+  SAY NAME2 @67
+
+COPY ~PlanarSphereMod/cre/psInfer.cre~ ~override/psInfer.cre~
+  SAY NAME1 @68
+  SAY NAME2 @68
+
+COPY ~PlanarSphereMod/cre/psVortel.cre~ ~override/psVortel.cre~
+  SAY NAME1 @69
+  SAY NAME2 @69
+
+COPY ~PlanarSphereMod/cre/psSPTar1.cre~ ~override/psSPTar1.cre~
+  SAY NAME1 @7
+  SAY NAME2 @7
+
+COPY ~PlanarSphereMod/cre/psGithCa.cre~ ~override/psGithCa.cre~
+  SAY NAME1 @567
+  SAY NAME2 @567
+
+COPY ~PlanarSphereMod/cre/psGith1.cre~ ~override/psGith1.cre~
+  SAY NAME1 @568
+  SAY NAME2 @568
+
+COPY ~PlanarSphereMod/cre/psGith2.cre~ ~override/psGith2.cre~
+  SAY NAME1 @568
+  SAY NAME2 @568
+
+COPY ~PlanarSphereMod/cre/psFlay1.cre~ ~override/psFlay1.cre~
+  SAY NAME1 @569
+  SAY NAME2 @569
+
+COPY ~PlanarSphereMod/cre/psFlay2.cre~ ~override/psFlay2.cre~
+  SAY NAME1 @569
+  SAY NAME2 @569
+
+
+
+  // Item Files
+  COPY ~PlanarSphereMod/itm/psMelHrd.itm~ ~override/psMelHrd.itm~
+  COPY ~PlanarSphereMod/itm/psMelIns.itm~ ~override/psMelIns.itm~
+
+  COPY ~PlanarSphereMod/itm/psTChick.itm~ ~override/psTChick.itm~
+    SAY NAME1 @614
+    SAY NAME2 @614
+    SAY UNIDENTIFIED_DESC @615
+    SAY DESC @615
+
+
+  COPY ~PlanarSphereMod/itm/psBelt01.itm~ ~override/psBelt01.itm~
+    SAY NAME1 @563
+    SAY NAME2 @564
+    SAY UNIDENTIFIED_DESC @565
+    SAY DESC @566
+
+  COPY ~PlanarSphereMod/itm/psRing01.itm~ ~override/psRing01.itm~
+    SAY NAME1 @82
+    SAY NAME2 @83
+    SAY UNIDENTIFIED_DESC @84
+    SAY DESC @85
+
+  COPY ~PlanarSphereMod/itm/psArti.itm~ ~override/psArti.itm~
+    SAY NAME1 @86
+    SAY NAME2 @86
+    SAY UNIDENTIFIED_DESC @87
+    SAY DESC @87
+
+  COPY ~PlanarSphereMod/itm/psCre01.itm~ ~override/psCre01.itm~
+    SAY NAME1 @88
+
+  COPY ~PlanarSphereMod/itm/psCre02.itm~ ~override/psCre02.itm~
+    SAY NAME1 @89
+    SAY NAME2 @89
+
+  COPY ~PlanarSphereMod/itm/psSW1H01.itm~ ~override/psSW1H01.itm~
+    SAY NAME1 @0
+    SAY NAME2 @557
+    SAY UNIDENTIFIED_DESC @0
+    SAY DESC @558
+
+  COPY ~PlanarSphereMod/itm/psSW1H02.itm~ ~override/psSW1H02.itm~
+    SAY NAME1 ~Short Sword~
+    SAY NAME2 @574
+    SAY UNIDENTIFIED_DESC @576
+    SAY DESC @575
+
+  COPY ~PlanarSphereMod/itm/psSW2h01.itm~ ~override/psSW2h01.itm~
+    SAY NAME1 @90
+    SAY NAME2 @91
+    SAY UNIDENTIFIED_DESC @92
+    SAY DESC @93
+
+//  COPY ~PlanarSphereMod/itm/helloip.itm~ ~override/helloip.itm~
+//    SAY NAME1 @82
+//    SAY UNIDENTIFIED_DESC @84
+//    SAY DESC @94
+
+  COPY ~PlanarSphereMod/itm/psStaf01.itm~ ~override/psStaf01.itm~
+    SAY NAME1 @95
+    SAY NAME2 @96
+    SAY UNIDENTIFIED_DESC @97
+    SAY DESC @98
+    SAY 0x8de @99
+
+  COPY ~PlanarSphereMod/itm/psHelm01.itm~ ~override/psHelm01.itm~
+    SAY NAME1 @82
+    SAY NAME2 @100
+    SAY UNIDENTIFIED_DESC @84
+    SAY DESC @101
+
+  COPY ~PlanarSphereMod/itm/psHelm02.itm~ ~override/psHelm02.itm~
+    SAY NAME1 @142
+    SAY NAME2 @143
+    SAY UNIDENTIFIED_DESC @144
+    SAY DESC @145
+
+  COPY ~PlanarSphereMod/itm/psHelm03.itm~ ~override/psHelm03.itm~
+    SAY NAME1 @146
+    SAY NAME2 @147
+    SAY UNIDENTIFIED_DESC @148
+    SAY DESC @149
+
+  COPY ~PlanarSphereMod/itm/psHelm04.itm~ ~override/psHelm04.itm~
+    SAY NAME1 @0
+    SAY NAME2 @553
+    SAY UNIDENTIFIED_DESC @0
+    SAY DESC @554
+
+  COPY ~PlanarSphereMod/itm/psHelm05.itm~ ~override/psHelm05.itm~
+    SAY NAME1 @0
+    SAY NAME2 @555
+    SAY UNIDENTIFIED_DESC @0
+    SAY DESC @556
+
+  COPY ~PlanarSphereMod/itm/psWand01.itm~ ~override/psWand01.itm~
+    SAY NAME1 @102
+    SAY NAME2 @103
+    SAY UNIDENTIFIED_DESC @104
+    SAY DESC @105
+
+ COPY ~PlanarSphereMod/itm/psStaf02.itm~ ~override/psStaf02.itm~
+    SAY NAME1 @95
+    SAY NAME2 @106
+    SAY UNIDENTIFIED_DESC @97
+    SAY DESC @107
+
+COPY ~PlanarSphereMod/itm/psWand02.itm~ ~override/psWand02.itm~
+    SAY NAME1 @102
+    SAY NAME2 @111
+    SAY UNIDENTIFIED_DESC @112
+    SAY DESC @113
+
+COPY ~PlanarSphereMod/itm/psBolt01.itm~ ~override/psBolt01.itm~
+    SAY NAME1 @114
+    SAY NAME2 @115
+    SAY UNIDENTIFIED_DESC @116
+    SAY DESC @117
+    SAY 0x1ce @118
+
+COPY ~PlanarSphereMod/itm/psBolt02.itm~ ~override/psBolt02.itm~
+    SAY NAME1 @0
+    SAY NAME2 @559
+    SAY UNIDENTIFIED_DESC @0
+    SAY DESC @560
+
+COPY ~PlanarSphereMod/itm/psBrac01.itm~ ~override/psBrac01.itm~
+    SAY NAME1 @119
+    SAY NAME2 @120
+    SAY UNIDENTIFIED_DESC @121
+    SAY DESC @122
+
+COPY ~PlanarSphereMod/itm/psSands.itm~ ~override/psSands.itm~
+    SAY NAME1 @123
+    SAY NAME2 @124
+    SAY UNIDENTIFIED_DESC @125
+    SAY DESC @126
+COPY ~PlanarSphereMod/itm/psSCRL01.itm~ ~override/psSCRL01.itm~
+    SAY NAME1 @127
+    SAY NAME2 @128
+    SAY UNIDENTIFIED_DESC @129
+    SAY DESC @130
+
+COPY ~PlanarSphereMod/itm/psShld01.itm~ ~override/psShld01.itm~
+    SAY NAME1 @131
+    SAY NAME2 @132
+    SAY UNIDENTIFIED_DESC @133
+    SAY DESC @134
+
+COPY ~PlanarSphereMod/itm/psSW2H02.itm~ ~override/psSW2H02.itm~
+    SAY NAME1 @90
+    SAY NAME2 @135
+    SAY UNIDENTIFIED_DESC @92
+    SAY DESC @136
+
+COPY ~PlanarSphereMod/itm/psBook01.itm~ ~override/psBook01.itm~
+    SAY NAME1 @137
+    SAY NAME2 @138
+    SAY UNIDENTIFIED_DESC @139
+    SAY DESC @140
+    SAY 0x10e @141
+
+COPY ~PlanarSphereMod/itm/psBook02.itm~ ~override/psBook02.itm~
+    SAY NAME1 @150
+    SAY NAME2 @150
+    SAY UNIDENTIFIED_DESC @151
+    SAY DESC @152
+
+  COPY ~PlanarSphereMod/itm/psCre11.itm~ ~override/psCre11.itm~
+    SAY NAME1 @95
+    SAY NAME2 @95
+    SAY UNIDENTIFIED_DESC @97
+
+  COPY ~PlanarSphereMod/itm/psCre12.itm~ ~override/psCre12.itm~
+    SAY NAME1 @88
+    SAY NAME2 ~~
+    SAY UNIDENTIFIED_DESC ~~
+    SAY DESC @157
+
+  COPY ~PlanarSphereMod/itm/psBook03.itm~ ~override/psBook03.itm~
+    SAY NAME1 @158
+    SAY NAME2 @158
+    SAY DESC @159
+
+COPY ~PlanarSphereMod/itm/psBook04.itm~ ~override/psBook04.itm~
+    SAY NAME1 @158
+    SAY NAME2 @158
+    SAY DESC @159
+
+  COPY ~PlanarSphereMod/itm/psRing02.ITM~ ~override/psRing02.ITM~
+    SAY NAME1 @82
+    SAY NAME2 @160
+    SAY UNIDENTIFIED_DESC @84
+    SAY DESC @161
+
+  COPY ~PlanarSphereMod/itm/psSCRL02.itm~ ~override/psSCRL02.itm~
+    SAY NAME1 @162
+    SAY NAME2 @162
+    SAY DESC @163
+
+  COPY ~PlanarSphereMod/itm/psCre13.itm~ ~override/psCre13.itm~
+    SAY NAME1 @82
+    SAY UNIDENTIFIED_DESC @84
+    SAY DESC @164
+
+  COPY ~PlanarSphereMod/itm/psClck01.itm~ ~override/psClck01.itm~
+    SAY NAME1 @165
+    SAY NAME2 @166
+    SAY UNIDENTIFIED_DESC @167
+    SAY DESC @168
+
+  COPY ~PlanarSphereMod/itm/psWand03.itm~ ~override/psWand03.itm~
+    SAY NAME1 @102
+    SAY NAME2 @169
+    SAY UNIDENTIFIED_DESC @112
+    SAY DESC @170
+
+  COPY ~PlanarSphereMod/itm/psPot05.itm~ ~override/psPot05.itm~
+    SAY NAME1 @171
+    SAY NAME2 @172
+    SAY UNIDENTIFIED_DESC @173
+    SAY DESC @174
+
+  COPY ~PlanarSphereMod/itm/psCre14.itm~ ~override/psCre14.itm~
+    SAY NAME1 @175
+    SAY NAME2 @176
+
+  COPY ~PlanarSphereMod/itm/psWand04.itm~ ~override/psWand04.itm~
+    SAY NAME1 @102
+    SAY NAME2 @177
+    SAY UNIDENTIFIED_DESC @112
+    SAY DESC @178
+    SAY 0x25e @179
+    SAY 0x2be @180
+
+  COPY ~PlanarSphereMod/itm/psRobe06.itm~ ~override/psRobe06.itm~
+    SAY NAME1 @181
+    SAY NAME2 @182
+    SAY UNIDENTIFIED_DESC @183
+    SAY DESC @184
+
+  COPY ~PlanarSphereMod/itm/psSCRL03.itm~ ~override/psSCRL03.itm~
+    SAY NAME1 @185
+    SAY NAME2 @185
+    SAY UNIDENTIFIED_DESC @186
+
+  COPY ~PlanarSphereMod/itm/psAxe01.itm~ ~override/psAxe01.itm~
+    SAY NAME1 @187
+    SAY NAME2 @188
+    SAY UNIDENTIFIED_DESC @189
+    SAY DESC @190
+
+  COPY ~PlanarSphereMod/itm/psRing03.itm~ ~override/psRing03.itm~
+    SAY NAME1 @82
+    SAY NAME2 @191
+    SAY UNIDENTIFIED_DESC @84
+    SAY DESC @192
+
+  COPY ~PlanarSphereMod/itm/psRing04.itm~ ~override/psRing04.itm~
+    SAY NAME1 @82
+    SAY NAME2 @193
+    SAY UNIDENTIFIED_DESC @194
+    SAY DESC @195
+
+  COPY ~PlanarSphereMod/itm/psCre15.itm~ ~override/psCre15.itm~
+    SAY NAME1 @95
+    SAY NAME2 @95
+    SAY UNIDENTIFIED_DESC @97
+
+  COPY ~PlanarSphereMod/itm/psCre03.itm~ ~override/psCre03.itm~
+    SAY NAME1 @89
+    SAY NAME2 @89
+
+  COPY ~PlanarSphereMod/itm/psCre04.itm~ ~override/psCre04.itm~
+    SAY NAME1 @88
+
+  COPY ~PlanarSphereMod/itm/psTalos.itm~ ~override/psTalos.itm~
+
+  COPY ~PlanarSphereMod/itm/psHelm.itm~ ~override/psHelm.itm~
+
+  COPY ~PlanarSphereMod/itm/psLothan.itm~ ~override/psLothan.itm~
+
+  COPY ~PlanarSphereMod/itm/psDivi.itm~ ~override/psDivi.itm~
+    SAY NAME1 @181
+    SAY NAME2 @198
+    SAY UNIDENTIFIED_DESC @199
+    SAY DESC @200
+
+  COPY ~PlanarSphereMod/itm/psIllu.itm~ ~override/psIllu.itm~
+    SAY NAME1 @181
+    SAY NAME2 @198
+    SAY UNIDENTIFIED_DESC @199
+    SAY DESC @200
+
+  COPY ~PlanarSphereMod/itm/psAbju.itm~ ~override/psAbju.itm~
+    SAY NAME1 @181
+    SAY NAME2 @198
+    SAY UNIDENTIFIED_DESC @199
+    SAY DESC @200
+
+  COPY ~PlanarSphereMod/itm/psAlte.itm~ ~override/psAlte.itm~
+    SAY NAME1 @181
+    SAY NAME2 @198
+    SAY UNIDENTIFIED_DESC @199
+    SAY DESC @200
+
+  COPY ~PlanarSphereMod/itm/psNecr.itm~ ~override/psNecr.itm~
+    SAY NAME1 @181
+    SAY NAME2 @198
+    SAY UNIDENTIFIED_DESC @199
+    SAY DESC @200
+
+  COPY ~PlanarSphereMod/itm/psConj.itm~ ~override/psConj.itm~
+    SAY NAME1 @181
+    SAY NAME2 @198
+    SAY UNIDENTIFIED_DESC @199
+    SAY DESC @200
+
+  COPY ~PlanarSphereMod/itm/psEnch.itm~ ~override/psEnch.itm~
+    SAY NAME1 @181
+    SAY NAME2 @198
+    SAY UNIDENTIFIED_DESC @199
+    SAY DESC @200
+
+  COPY ~PlanarSphereMod/itm/psInvo.itm~ ~override/psInvo.itm~
+    SAY NAME1 @181
+    SAY NAME2 @198
+    SAY UNIDENTIFIED_DESC @199
+    SAY DESC @200
+
+  COPY ~PlanarSphereMod/itm/psPot01.itm~ ~override/psPot01.itm~
+    SAY NAME1 @201
+    SAY NAME2 @202
+    SAY DESC @203
+
+  COPY ~PlanarSphereMod/itm/psMade01.itm~ ~override/psMade01.itm~
+    SAY NAME1 @204
+    SAY NAME2 @204
+    SAY UNIDENTIFIED_DESC @205
+    SAY DESC @206
+
+  COPY ~PlanarSphereMod/itm/psMade02.itm~ ~override/psMade02.itm~
+    SAY NAME1 @204
+    SAY NAME2 @204
+    SAY UNIDENTIFIED_DESC @205
+    SAY DESC @207
+
+  COPY ~PlanarSphereMod/itm/psMade03.itm~ ~override/psMade03.itm~
+    SAY NAME1 @204
+    SAY NAME2 @208
+    SAY UNIDENTIFIED_DESC @209
+    SAY DESC @210
+
+  COPY ~PlanarSphereMod/itm/psMade04.itm~ ~override/psMade04.itm~
+    SAY NAME1 @211
+    SAY NAME2 @212
+    SAY UNIDENTIFIED_DESC @213
+    SAY DESC @214
+
+  COPY ~PlanarSphereMod/itm/psMade05.itm~ ~override/psMade05.itm~
+    SAY NAME1 @211
+    SAY NAME2 @212
+    SAY UNIDENTIFIED_DESC @213
+    SAY DESC @215
+
+  COPY ~PlanarSphereMod/itm/psMade06.itm~ ~override/psMade06.itm~
+    SAY NAME1 @211
+    SAY NAME2 @216
+    SAY UNIDENTIFIED_DESC @213
+    SAY DESC @217
+
+  COPY ~PlanarSphereMod/itm/psMade07.itm~ ~override/psMade07.itm~
+    SAY NAME1 @211
+    SAY NAME2 @218
+    SAY UNIDENTIFIED_DESC @213
+    SAY DESC @219
+
+  COPY ~PlanarSphereMod/itm/psMade08.itm~ ~override/psMade08.itm~
+    SAY NAME1 @211
+    SAY NAME2 @218
+    SAY UNIDENTIFIED_DESC @213
+    SAY DESC @220
+
+  COPY ~PlanarSphereMod/itm/psMade09.itm~ ~override/psMade09.itm~
+    SAY NAME1 @211
+    SAY NAME2 @218
+    SAY UNIDENTIFIED_DESC @213
+    SAY DESC @221
+
+  COPY ~PlanarSphereMod/itm/psMade10.itm~ ~override/psMade10.itm~
+    SAY NAME1 @82
+    SAY NAME2 @222
+    SAY UNIDENTIFIED_DESC @84
+    SAY DESC @223
+
+  COPY ~PlanarSphereMod/itm/psMade11.itm~ ~override/psMade11.itm~
+    SAY NAME1 @82
+    SAY NAME2 @224
+    SAY UNIDENTIFIED_DESC @84
+    SAY DESC @225
+
+  COPY ~PlanarSphereMod/itm/psMade12.itm~ ~override/psMade12.itm~
+    SAY NAME1 @82
+    SAY NAME2 @226
+    SAY UNIDENTIFIED_DESC @84
+    SAY DESC @227
+
+  COPY ~PlanarSphereMod/itm/psMade13.itm~ ~override/psMade13.itm~
+    SAY NAME1 @82
+    SAY NAME2 @228
+    SAY UNIDENTIFIED_DESC @84
+    SAY DESC @229
+
+  COPY ~PlanarSphereMod/itm/psMade14.itm~ ~override/psMade14.itm~
+    SAY NAME1 @82
+    SAY NAME2 @230
+    SAY UNIDENTIFIED_DESC @84
+    SAY DESC @231
+
+  COPY ~PlanarSphereMod/itm/psMade15.itm~ ~override/psMade15.itm~
+    SAY NAME1 @232
+    SAY NAME2 @233
+    SAY UNIDENTIFIED_DESC @234
+    SAY DESC @235
+
+  COPY ~PlanarSphereMod/itm/psMade16.itm~ ~override/psMade16.itm~
+    SAY NAME1 @108
+    SAY NAME2 @236
+    SAY UNIDENTIFIED_DESC @237
+    SAY DESC @238
+
+  COPY ~PlanarSphereMod/itm/psMade17.itm~ ~override/psMade17.itm~
+    SAY NAME1 @108
+    SAY NAME2 @239
+    SAY UNIDENTIFIED_DESC @237
+    SAY DESC @240
+
+  COPY ~PlanarSphereMod/itm/psMade18.itm~ ~override/psMade18.itm~
+    SAY NAME1 @79
+    SAY NAME2 @241
+    SAY UNIDENTIFIED_DESC @77
+    SAY DESC @242
+
+  COPY ~PlanarSphereMod/itm/psMade19.itm~ ~override/psMade19.itm~
+    SAY NAME1 @102
+    SAY NAME2 @243
+    SAY UNIDENTIFIED_DESC @112
+    SAY DESC @244
+
+  COPY ~PlanarSphereMod/itm/psMade20.itm~ ~override/psMade20.itm~
+    SAY NAME1 @102
+    SAY NAME2 @245
+    SAY UNIDENTIFIED_DESC @112
+    SAY DESC @246
+
+  COPY ~PlanarSphereMod/itm/psMade21.itm~ ~override/psMade21.itm~
+    SAY NAME1 @95
+    SAY NAME2 @247
+    SAY UNIDENTIFIED_DESC @97
+    SAY DESC @248
+
+  COPY ~PlanarSphereMod/itm/psMade22.itm~ ~override/psMade22.itm~
+    SAY NAME1 @181
+    SAY NAME2 @249
+    SAY UNIDENTIFIED_DESC @183
+    SAY DESC @250
+
+  COPY ~PlanarSphereMod/itm/psRobe01.itm~ ~override/psRobe01.itm~
+    SAY NAME1 @181
+    SAY NAME2 @251
+    SAY UNIDENTIFIED_DESC @199
+    SAY DESC @252
+
+  COPY ~PlanarSphereMod/itm/psRobe02.itm~ ~override/psRobe02.itm~
+    SAY NAME1 @181
+    SAY NAME2 @253
+    SAY UNIDENTIFIED_DESC @199
+    SAY DESC @254
+
+  COPY ~PlanarSphereMod/itm/psRobe03.itm~ ~override/psRobe03.itm~
+    SAY NAME1 @181
+    SAY NAME2 @255
+    SAY UNIDENTIFIED_DESC @199
+    SAY DESC @256
+
+  COPY ~PlanarSphereMod/itm/psRobe04.itm~ ~override/psRobe04.itm~
+    SAY NAME1 @181
+    SAY NAME2 @257
+    SAY UNIDENTIFIED_DESC @199
+    SAY DESC @258
+
+  COPY ~PlanarSphereMod/itm/psMade23.itm~ ~override/psMade23.itm~
+    SAY NAME1 @131
+    SAY NAME2 @259
+    SAY UNIDENTIFIED_DESC @260
+    SAY DESC @261
+
+  COPY ~PlanarSphereMod/itm/psMade24.itm~ ~override/psMade24.itm~
+    SAY NAME1 @262
+    SAY NAME2 @263
+    SAY UNIDENTIFIED_DESC @264
+    SAY DESC @265
+
+  COPY ~PlanarSphereMod/itm/psMade25.itm~ ~override/psMade25.itm~
+    SAY NAME1 @266
+    SAY NAME2 @267
+    SAY UNIDENTIFIED_DESC @268
+    SAY DESC @269
+
+  COPY ~PlanarSphereMod/itm/psMade26.itm~ ~override/psMade26.itm~
+    SAY NAME1 @262
+    SAY NAME2 @270
+    SAY UNIDENTIFIED_DESC @264
+    SAY DESC @271
+
+  COPY ~PlanarSphereMod/itm/psMade27.itm~ ~override/psMade27.itm~
+    SAY NAME1 @272
+    SAY NAME2 @273
+    SAY UNIDENTIFIED_DESC @274
+    SAY DESC @275
+
+  COPY ~PlanarSphereMod/itm/psMade28.itm~ ~override/psMade28.itm~
+    SAY NAME1 @272
+    SAY NAME2 @276
+    SAY UNIDENTIFIED_DESC @274
+    SAY DESC @277
+
+  COPY ~PlanarSphereMod/itm/psMade29.itm~ ~override/psMade29.itm~
+    SAY NAME1 @278
+    SAY NAME2 @279
+    SAY UNIDENTIFIED_DESC @280
+    SAY DESC @281
+
+  COPY ~PlanarSphereMod/itm/psMade30.itm~ ~override/psMade30.itm~
+    SAY NAME1 @282
+    SAY NAME2 @283
+    SAY UNIDENTIFIED_DESC @284
+    SAY DESC @285
+
+  COPY ~PlanarSphereMod/itm/psMade31.itm~ ~override/psMade31.itm~
+    SAY NAME1 @286
+    SAY NAME2 @287
+    SAY UNIDENTIFIED_DESC @288
+    SAY DESC @289
+
+  COPY ~PlanarSphereMod/itm/psMade32.itm~ ~override/psMade32.itm~
+    SAY NAME1 @187
+    SAY NAME2 @290
+    SAY UNIDENTIFIED_DESC @291
+    SAY DESC @292
+
+  COPY ~PlanarSphereMod/itm/psMade33.itm~ ~override/psMade33.itm~
+    SAY NAME1 @187
+    SAY NAME2 @293
+    SAY UNIDENTIFIED_DESC @294
+    SAY DESC @295
+
+  COPY ~PlanarSphereMod/itm/psSPL01.itm~ ~override/psSPL01.itm~
+    SAY NAME1 @127
+    SAY NAME2 @296
+    SAY DESC @297
+
+  COPY ~PlanarSphereMod/itm/psSPL02.itm~ ~override/psSPL02.itm~
+    SAY NAME1 @127
+    SAY NAME2 @298
+    SAY DESC @299
+
+  COPY ~PlanarSphereMod/itm/psSPL03.itm~ ~override/psSPL03.itm~
+    SAY NAME1 @127
+    SAY NAME2 @300
+    SAY DESC @301
+
+  COPY ~PlanarSphereMod/itm/psSPL04.itm~ ~override/psSPL04.itm~
+    SAY NAME1 @127
+    SAY NAME2 @302
+    SAY DESC @303
+
+  COPY ~PlanarSphereMod/itm/psSPL05.itm~ ~override/psSPL05.itm~
+    SAY NAME1 @127
+    SAY NAME2 @304
+    SAY DESC @305
+
+  COPY ~PlanarSphereMod/itm/psSPL06.itm~ ~override/psSPL06.itm~
+    SAY NAME1 @127
+    SAY NAME2 @306
+    SAY DESC @307
+
+  COPY ~PlanarSphereMod/itm/psSPL07.itm~ ~override/psSPL07.itm~
+    SAY NAME1 @127
+    SAY NAME2 @308
+    SAY DESC @309
+
+  COPY ~PlanarSphereMod/itm/psSPL08.itm~ ~override/psSPL08.itm~
+    SAY NAME1 @127
+    SAY NAME2 @310
+    SAY DESC @311
+
+  COPY ~PlanarSphereMod/itm/psSPL09.itm~ ~override/psSPL09.itm~
+    SAY NAME1 @127
+    SAY NAME2 @312
+    SAY DESC @313
+
+  COPY ~PlanarSphereMod/itm/psSPL10.itm~ ~override/psSPL10.itm~
+    SAY NAME1 @82
+    SAY NAME2 @314
+    SAY UNIDENTIFIED_DESC @315
+
+  COPY ~PlanarSphereMod/itm/psSPL11.itm~ ~override/psSPL11.itm~
+    SAY NAME1 @127
+    SAY NAME2 @316
+    SAY DESC @317
+
+  COPY ~PlanarSphereMod/itm/psSPL12.itm~ ~override/psSPL12.itm~
+    SAY NAME1 @127
+    SAY NAME2 @318
+    SAY DESC @319
+
+  COPY ~PlanarSphereMod/itm/psSPL13.itm~ ~override/psSPL13.itm~
+    SAY NAME1 @127
+    SAY NAME2 @320
+    SAY DESC @321
+
+  COPY ~PlanarSphereMod/itm/psSPL14.itm~ ~override/psSPL14.itm~
+    SAY NAME1 @127
+    SAY NAME2 @322
+    SAY DESC @323
+
+  COPY ~PlanarSphereMod/itm/psSPL15.itm~ ~override/psSPL15.itm~
+    SAY NAME1 @127
+    SAY NAME2 @324
+    SAY DESC @325
+
+  COPY ~PlanarSphereMod/itm/psSPL16.itm~ ~override/psSPL16.itm~
+    SAY NAME1 @127
+    SAY NAME2 @326
+    SAY DESC @327
+
+  COPY ~PlanarSphereMod/itm/psSPL17.itm~ ~override/psSPL17.itm~
+    SAY NAME1 @127
+    SAY NAME2 @328
+    SAY DESC @329
+
+  COPY ~PlanarSphereMod/itm/psSPL18.itm~ ~override/psSPL18.itm~
+    SAY NAME1 @127
+    SAY NAME2 @330
+    SAY DESC @331
+
+  COPY ~PlanarSphereMod/itm/psRobe05.itm~ ~override/psRobe05.itm~
+    SAY NAME1 @181
+    SAY NAME2 @332
+    SAY UNIDENTIFIED_DESC @183
+    SAY DESC @333
+
+  COPY ~PlanarSphereMod/itm/psCre05.itm~ ~override/psCre05.itm~
+    SAY NAME1 @175
+    SAY NAME2 @176
+
+  COPY ~PlanarSphereMod/itm/psKey.itm~ ~override/psKey.itm~
+    SAY NAME1 @334
+    SAY NAME2 @334
+    SAY UNIDENTIFIED_DESC @335
+    SAY DESC @335
+
+  COPY ~PlanarSphereMod/itm/psPot02.itm~ ~override/psPot02.itm~
+    SAY NAME1 @338
+    SAY NAME2 @338
+    SAY UNIDENTIFIED_DESC @339
+    SAY DESC @340
+
+  COPY ~PlanarSphereMod/itm/psCre06.itm~ ~override/psCre06.itm~
+    SAY NAME1 @88
+
+  COPY ~PlanarSphereMod/itm/psBadge.itm~ ~override/psBadge.itm~
+    SAY NAME1 @79
+    SAY NAME2 @80
+    SAY UNIDENTIFIED_DESC @80
+    SAY DESC @81
+
+  COPY ~PlanarSphereMod/itm/psAmul01.itm~ ~override/psAmul01.itm~
+    SAY NAME1 @108
+    SAY NAME2 @341
+    SAY UNIDENTIFIED_DESC @77
+    SAY DESC @342
+
+  COPY ~PlanarSphereMod/itm/psAmul02.itm~ ~override/psAmul02.itm~
+    SAY NAME1 @75
+    SAY NAME2 @76
+    SAY UNIDENTIFIED_DESC @77
+    SAY DESC @78
+
+  COPY ~PlanarSphereMod/itm/psAmul03.itm~ ~override/psAmul03.itm~
+    SAY NAME1 @108
+    SAY NAME2 @109
+    SAY UNIDENTIFIED_DESC @77
+    SAY DESC @110
+
+  COPY ~PlanarSphereMod/itm/psAmul04.itm~ ~override/psAmul04.itm~
+    SAY NAME1 @108
+    SAY NAME2 @561
+    SAY UNIDENTIFIED_DESC @77
+    SAY DESC @562
+
+  COPY ~PlanarSphereMod/itm/psAmul05.itm~ ~override/psAmul05.itm~
+    SAY NAME1 @108
+    SAY NAME2 @593
+    SAY UNIDENTIFIED_DESC @77
+    SAY DESC @594
+
+  COPY ~PlanarSphereMod/itm/psCre07.itm~ ~override/psCre07.itm~
+    SAY NAME1 @88
+
+  COPY ~PlanarSphereMod/itm/psCre08.itm~ ~override/psCre08.itm~
+    SAY NAME1 @88
+
+  COPY ~PlanarSphereMod/itm/psCre09.itm~ ~override/psCre09.itm~
+    SAY NAME1 @88
+    SAY NAME2 ~~
+    SAY UNIDENTIFIED_DESC @343
+    SAY DESC ~~
+
+  COPY ~PlanarSphereMod/itm/psCre10.itm~ ~override/psCre10.itm~
+    SAY NAME1 @88
+
+  COPY ~PlanarSphereMod/itm/psPot03.itm~ ~override/psPot03.itm~
+    SAY NAME1 @201
+    SAY NAME2 @344
+    SAY UNIDENTIFIED_DESC @345
+    SAY DESC @346
+
+  COPY ~PlanarSphereMod/itm/psPot04.itm~ ~override/psPot04.itm~
+    SAY NAME1 @201
+    SAY NAME2 @347
+    SAY UNIDENTIFIED_DESC @345
+    SAY DESC @348
+
+  COPY ~PlanarSphereMod/itm/psqaura.itm~ ~override/psqaura.itm~
+    SAY NAME1 @127
+    SAY NAME2 @349
+    SAY DESC @350
+
+  COPY ~PlanarSphereMod/itm/psqbrbo.itm~ ~override/psqbrbo.itm~
+    SAY NAME1 @127
+    SAY NAME2 @351
+    SAY DESC @352
+
+  COPY ~PlanarSphereMod/itm/psqevis.itm~ ~override/psqevis.itm~
+    SAY NAME1 @127
+    SAY NAME2 @353
+    SAY DESC @354
+
+  COPY ~PlanarSphereMod/itm/psqirid.itm~ ~override/psqirid.itm~
+    SAY NAME1 @127
+    SAY NAME2 @355
+    SAY DESC @356
+
+  COPY ~PlanarSphereMod/itm/psqkcf.itm~ ~override/psqkcf.itm~
+    SAY NAME1 @127
+    SAY NAME2 @357
+    SAY DESC @358
+
+  COPY ~PlanarSphereMod/itm/psqkilpo.itm~ ~override/psqkilpo.itm~
+    SAY NAME1 @127
+    SAY NAME2 @359
+    SAY DESC @360
+
+  COPY ~PlanarSphereMod/itm/psqkkks.itm~ ~override/psqkkks.itm~
+    SAY NAME1 @127
+    SAY NAME2 @361
+    SAY DESC @362
+
+  COPY ~PlanarSphereMod/itm/psqnima.itm~ ~override/psqnima.itm~
+    SAY NAME1 @127
+    SAY NAME2 @363
+    SAY DESC @364
+
+  COPY ~PlanarSphereMod/itm/psqpyro.itm~ ~override/psqpyro.itm~
+    SAY NAME1 @127
+    SAY NAME2 @365
+    SAY DESC @366
+
+  COPY ~PlanarSphereMod/itm/psqrequ.itm~ ~override/psqrequ.itm~
+    SAY NAME1 @127
+    SAY NAME2 @367
+    SAY DESC @368
+
+  COPY ~PlanarSphereMod/itm/psqshh.itm~ ~override/psqshh.itm~
+    SAY NAME1 @127
+    SAY NAME2 @369
+    SAY DESC @370
+
+  COPY ~PlanarSphereMod/itm/psqslcg.itm~ ~override/psqslcg.itm~
+    SAY NAME1 @127
+    SAY NAME2 @371
+    SAY DESC @372
+
+  COPY ~PlanarSphereMod/itm/psqsmin.itm~ ~override/psqsmin.itm~
+    SAY NAME1 @127
+    SAY NAME2 @373
+    SAY DESC @374
+
+  COPY ~PlanarSphereMod/itm/psqtfir.itm~ ~override/psqtfir.itm~
+    SAY NAME1 @127
+    SAY NAME2 @375
+    SAY DESC @376
+
+  COPY ~PlanarSphereMod/itm/psqttc.itm~ ~override/psqttc.itm~
+    SAY NAME1 @127
+    SAY NAME2 @377
+    SAY DESC @378
+
+  COPY ~PlanarSphereMod/itm/psqtysp.itm~ ~override/psqtysp.itm~
+    SAY NAME1 @127
+    SAY NAME2 @379
+    SAY DESC @380
+
+  COPY ~PlanarSphereMod/itm/psqvorp.itm~ ~override/psqvorp.itm~
+    SAY NAME1 @127
+    SAY NAME2 @381
+    SAY DESC @382
+
+  COPY ~PlanarSphereMod/itm/sppsbta.itm~ ~override/sppsbta.itm~
+    SAY NAME1 @127
+    SAY NAME2 @383
+    SAY DESC @384
+
+  COPY ~PlanarSphereMod/itm/sppsdma.itm~ ~override/sppsdma.itm~
+    SAY NAME1 @127
+    SAY NAME2 @385
+    SAY DESC @386
+
+  COPY ~PlanarSphereMod/itm/sppsmfh.itm~ ~override/sppsmfh.itm~
+    SAY NAME1 @387
+    SAY NAME2 @387
+    SAY UNIDENTIFIED_DESC @388
+    SAY DESC @389
+
+  COPY ~PlanarSphereMod/itm/sppsmoh.itm~ ~override/sppsmoh.itm~
+    SAY NAME1 @127
+    SAY NAME2 @387
+    SAY DESC @390
+
+  COPY ~PlanarSphereMod/itm/sppsmsr.itm~ ~override/sppsmsr.itm~
+    SAY NAME1 @127
+    SAY NAME2 @391
+    SAY DESC @392
+
+  COPY ~PlanarSphereMod/itm/sppsobb.itm~ ~override/sppsobb.itm~
+    SAY NAME1 @127
+    SAY NAME2 @393
+    SAY DESC @394
+
+  COPY ~PlanarSphereMod/itm/sppsoif.itm~ ~override/sppsoif.itm~
+    SAY NAME1 @127
+    SAY NAME2 @395
+    SAY DESC @396
+
+  COPY ~PlanarSphereMod/itm/sppstpa.itm~ ~override/sppstpa.itm~
+    SAY NAME1 @127
+    SAY NAME2 @397
+    SAY DESC @398
+
+  COPY ~PlanarSphereMod/itm/Wa2robe.itm~ ~override/Wa2robe.itm~
+    SAY NAME1 @181
+    SAY NAME2 @399
+    SAY UNIDENTIFIED_DESC @199
+    SAY DESC @400
+
+
+
+
+// Spell Files
+
+
+COPY ~PlanarSphereMod/spl/SPCL650.spl~ ~override/SPCL650.spl~
+  SAY NAME1 @88
+
+COPY ~PlanarSphereMod/spl/SPCL199.spl~ ~override/SPCL199.spl~
+  SAY NAME1 @401
+  SAY UNIDENTIFIED_DESC @402
+
+COPY ~PlanarSphereMod/spl/SPCL645.spl~ ~override/SPCL645.spl~
+  SAY NAME1 @88
+
+COPY ~PlanarSphereMod/spl/SPCL646.spl~ ~override/SPCL646.spl~
+  SAY NAME1 @88
+
+COPY ~PlanarSphereMod/spl/SPCL647.spl~ ~override/SPCL647.spl~
+  SAY NAME1 @88
+
+COPY ~PlanarSphereMod/spl/SPCL648.spl~ ~override/SPCL648.spl~
+  SAY NAME1 @88
+
+COPY ~PlanarSphereMod/spl/SPCL649.spl~ ~override/SPCL649.spl~
+  SAY NAME1 @88
+
+COPY ~PlanarSphereMod/spl/Psqsor.spl~ ~override/Psqsor.spl~
+  SAY NAME1 @18
+  SAY UNIDENTIFIED_DESC @18
+
+COPY ~PlanarSphereMod/spl/SPCL651.spl~ ~override/SPCL651.spl~
+  SAY NAME1 @88
+
+COPY ~PlanarSphereMod/spl/SPCL652.spl~ ~override/SPCL652.spl~
+  SAY NAME1 @88
+
+COPY ~PlanarSphereMod/spl/SPCL653.spl~ ~override/SPCL653.spl~
+  SAY NAME1 @298
+  SAY UNIDENTIFIED_DESC @299
+
+COPY ~PlanarSphereMod/spl/SPCL654.spl~ ~override/SPCL654.spl~
+  SAY NAME1 @296
+  SAY UNIDENTIFIED_DESC @405
+
+COPY ~PlanarSphereMod/spl/SPCL655.spl~ ~override/SPCL655.spl~
+  SAY NAME1 @302
+  SAY UNIDENTIFIED_DESC @406
+
+COPY ~PlanarSphereMod/spl/SPCL656.spl~ ~override/SPCL656.spl~
+  SAY NAME1 @304
+  SAY UNIDENTIFIED_DESC @407
+
+COPY ~PlanarSphereMod/spl/SPCL657.spl~ ~override/SPCL657.spl~
+  SAY NAME1 @300
+  SAY UNIDENTIFIED_DESC @301
+
+COPY ~PlanarSphereMod/spl/SPCL658.spl~ ~override/SPCL658.spl~
+  SAY NAME1 @330
+  SAY UNIDENTIFIED_DESC @410
+
+COPY ~PlanarSphereMod/spl/SPCL659.spl~ ~override/SPCL659.spl~
+  SAY NAME1 @324
+  SAY UNIDENTIFIED_DESC @411
+
+COPY ~PlanarSphereMod/spl/SPCL660.spl~ ~override/SPCL660.spl~
+  SAY NAME1 @412
+  SAY UNIDENTIFIED_DESC @413
+
+COPY ~PlanarSphereMod/spl/SPCL661.spl~ ~override/SPCL661.spl~
+  SAY NAME1 @322
+  SAY UNIDENTIFIED_DESC @414
+
+COPY ~PlanarSphereMod/spl/SPCL662.spl~ ~override/SPCL662.spl~
+  SAY NAME1 @328
+  SAY UNIDENTIFIED_DESC @415
+
+COPY ~PlanarSphereMod/spl/SPCL663.spl~ ~override/SPCL663.spl~
+  SAY NAME1 @416
+  SAY UNIDENTIFIED_DESC @417
+
+COPY ~PlanarSphereMod/spl/SPCL664.spl~ ~override/SPCL664.spl~
+  SAY NAME1 @418
+
+COPY ~PlanarSphereMod/spl/SPCL665.spl~ ~override/SPCL665.spl~
+  SAY NAME1 @419
+  SAY UNIDENTIFIED_DESC @411
+
+COPY ~PlanarSphereMod/spl/SPCL666.spl~ ~override/SPCL666.spl~
+  SAY NAME1 @420
+  SAY UNIDENTIFIED_DESC @421
+
+COPY ~PlanarSphereMod/spl/SPCL667.spl~ ~override/SPCL667.spl~
+  SAY NAME1 @88
+  SAY UNIDENTIFIED_DESC @422
+
+COPY ~PlanarSphereMod/spl/SPCL668.spl~ ~override/SPCL668.spl~
+  SAY NAME1 @18
+  SAY UNIDENTIFIED_DESC @18
+
+COPY ~PlanarSphereMod/spl/Spps20.spl~ ~override/Spps20.spl~
+  SAY NAME1 @381
+  SAY UNIDENTIFIED_DESC @382
+
+COPY ~PlanarSphereMod/spl/Spps21.spl~ ~override/Spps21.spl~
+  SAY NAME1 @359
+  SAY UNIDENTIFIED_DESC @360
+
+COPY ~PlanarSphereMod/spl/Spps22.spl~ ~override/Spps22.spl~
+  SAY NAME1 @351
+  SAY UNIDENTIFIED_DESC @352
+
+COPY ~PlanarSphereMod/spl/SPPSaop.spl~ ~override/SPPSaop.spl~
+  SAY NAME1 @349
+  SAY UNIDENTIFIED_DESC @350
+
+COPY ~PlanarSphereMod/spl/Sppsap1.spl~ ~override/Sppsap1.spl~
+  SAY NAME1 @428
+  SAY UNIDENTIFIED_DESC @429
+
+COPY ~PlanarSphereMod/spl/Sppsap2.spl~ ~override/Sppsap2.spl~
+  SAY NAME1 @430
+  SAY UNIDENTIFIED_DESC @431
+
+COPY ~PlanarSphereMod/spl/SPPSAP3.spl~ ~override/SPPSAP3.spl~
+  SAY NAME1 @432
+  SAY UNIDENTIFIED_DESC @429
+
+COPY ~PlanarSphereMod/spl/SPPSBTA.spl~ ~override/SPPSBTA.spl~
+  SAY NAME1 @383
+  SAY UNIDENTIFIED_DESC @384
+
+COPY ~PlanarSphereMod/spl/SPPSBTA2.spl~ ~override/SPPSBTA2.spl~
+  SAY NAME1 @383
+  SAY UNIDENTIFIED_DESC @384
+
+COPY ~PlanarSphereMod/spl/SPPSCUT1.SPL~ ~override/SPPSCUT1.SPL~
+  SAY NAME1 @436
+
+COPY ~PlanarSphereMod/spl/SPPSCUT2.SPL~ ~override/SPPSCUT2.SPL~
+  SAY NAME1 @437
+  SAY UNIDENTIFIED_DESC @438
+
+COPY ~PlanarSphereMod/spl/SPPSDAP1.spl~ ~override/SPPSDAP1.spl~
+  SAY NAME1 @439
+  SAY UNIDENTIFIED_DESC @439
+
+COPY ~PlanarSphereMod/spl/SPPSDMA.spl~ ~override/SPPSDMA.spl~
+  SAY NAME1 @385
+  SAY UNIDENTIFIED_DESC @386
+
+COPY ~PlanarSphereMod/spl/spPSFor.spl~ ~override/spPSFor.spl~
+  SAY NAME1 @401
+  SAY UNIDENTIFIED_DESC @441
+
+COPY ~PlanarSphereMod/spl/SPPSIRS.SPL~ ~override/SPPSIRS.SPL~
+  SAY NAME1 @355
+  SAY UNIDENTIFIED_DESC @356
+
+COPY ~PlanarSphereMod/spl/SPPSKKK.spl~ ~override/SPPSKKK.spl~
+  SAY NAME1 @361
+  SAY UNIDENTIFIED_DESC @362
+
+COPY ~PlanarSphereMod/spl/SPpsLi.spl~ ~override/SPpsLi.spl~
+  SAY NAME1 @445
+  SAY UNIDENTIFIED_DESC @446
+
+COPY ~PlanarSphereMod/spl/SPpsLi2.spl~ ~override/SPpsLi2.spl~
+  SAY NAME1 @447
+  SAY UNIDENTIFIED_DESC @448
+
+COPY ~PlanarSphereMod/spl/SPpsLi3.spl~ ~override/SPpsLi3.spl~
+  SAY NAME1 @449
+  SAY UNIDENTIFIED_DESC @450
+
+COPY ~PlanarSphereMod/spl/SPPSMELH.SPL~ ~override/SPPSMELH.SPL~
+  SAY NAME1 @451
+  SAY UNIDENTIFIED_DESC @451
+
+COPY ~PlanarSphereMod/spl/SPPSMELR.SPL~ ~override/SPPSMELR.SPL~
+  SAY NAME1 @432
+  SAY UNIDENTIFIED_DESC @451
+
+COPY ~PlanarSphereMod/spl/SPPSMELS.SPL~ ~override/SPPSMELS.SPL~
+  SAY NAME1 @452
+  SAY UNIDENTIFIED_DESC @451
+
+COPY ~PlanarSphereMod/spl/SPPSMFH.spl~ ~override/SPPSMFH.spl~
+  SAY NAME1 @387
+  SAY UNIDENTIFIED_DESC @390
+
+COPY ~PlanarSphereMod/spl/Sppsmra.spl~ ~override/Sppsmra.spl~
+  SAY NAME1 @454
+  SAY UNIDENTIFIED_DESC @429
+
+COPY ~PlanarSphereMod/spl/SPPSMSR.spl~ ~override/SPPSMSR.spl~
+  SAY NAME1 @391
+  SAY UNIDENTIFIED_DESC @392
+
+COPY ~PlanarSphereMod/spl/SPPSMYS.SPL~ ~override/SPPSMYS.SPL~
+  SAY NAME1 @456
+  SAY 0xce @457
+
+COPY ~PlanarSphereMod/spl/Sppsnms.spl~ ~override/Sppsnms.spl~
+  SAY NAME1 @363
+  SAY UNIDENTIFIED_DESC @364
+
+COPY ~PlanarSphereMod/spl/SPPSOBB.spl~ ~override/SPPSOBB.spl~
+  SAY NAME1 @393
+  SAY UNIDENTIFIED_DESC @394
+
+COPY ~PlanarSphereMod/spl/SPPSOIF.spl~ ~override/SPPSOIF.spl~
+  SAY NAME1 @395
+  SAY UNIDENTIFIED_DESC @396
+
+COPY ~PlanarSphereMod/spl/SPpsq1.spl~ ~override/SPpsq1.spl~
+  SAY NAME1 @296
+  SAY UNIDENTIFIED_DESC @297
+
+COPY ~PlanarSphereMod/spl/SPpsq10.spl~ ~override/SPpsq10.spl~
+  SAY NAME1 @312
+  SAY UNIDENTIFIED_DESC @313
+
+COPY ~PlanarSphereMod/spl/SPpsq11.spl~ ~override/SPpsq11.spl~
+  SAY NAME1 @412
+  SAY UNIDENTIFIED_DESC @463
+
+COPY ~PlanarSphereMod/spl/SPpsq12.spl~ ~override/SPpsq12.spl~
+  SAY NAME1 @320
+  SAY UNIDENTIFIED_DESC @321
+
+COPY ~PlanarSphereMod/spl/SPpsq13.spl~ ~override/SPpsq13.spl~
+  SAY NAME1 @322
+  SAY UNIDENTIFIED_DESC @323
+
+COPY ~PlanarSphereMod/spl/SPpsq14.spl~ ~override/SPpsq14.spl~
+  SAY NAME1 @324
+  SAY UNIDENTIFIED_DESC @325
+
+COPY ~PlanarSphereMod/spl/SPpsq15.spl~ ~override/SPpsq15.spl~
+  SAY NAME1 @326
+  SAY UNIDENTIFIED_DESC @327
+
+COPY ~PlanarSphereMod/spl/SPpsq16.spl~ ~override/SPpsq16.spl~
+  SAY NAME1 @328
+  SAY UNIDENTIFIED_DESC @329
+
+COPY ~PlanarSphereMod/spl/SPpsq17.spl~ ~override/SPpsq17.spl~
+  SAY NAME1 @330
+  SAY UNIDENTIFIED_DESC @331
+
+COPY ~PlanarSphereMod/spl/SPpsq18.spl~ ~override/SPpsq18.spl~
+  SAY NAME1 @471
+  SAY UNIDENTIFIED_DESC @471
+
+COPY ~PlanarSphereMod/spl/SPpsq19.spl~ ~override/SPpsq19.spl~
+  SAY NAME1 @375
+  SAY UNIDENTIFIED_DESC @376
+
+COPY ~PlanarSphereMod/spl/SPpsq2.spl~ ~override/SPpsq2.spl~
+  SAY NAME1 @296
+  SAY UNIDENTIFIED_DESC @297
+
+COPY ~PlanarSphereMod/spl/SPpsq20.spl~ ~override/SPpsq20.spl~
+  SAY NAME1 @371
+  SAY UNIDENTIFIED_DESC @372
+
+COPY ~PlanarSphereMod/spl/SPpsq21.spl~ ~override/SPpsq21.spl~
+  SAY NAME1 @357
+  SAY UNIDENTIFIED_DESC @358
+
+COPY ~PlanarSphereMod/spl/SPpsq22.spl~ ~override/SPpsq22.spl~
+  SAY NAME1 @373
+  SAY UNIDENTIFIED_DESC @374
+
+COPY ~PlanarSphereMod/spl/SPpsq23.spl~ ~override/SPpsq23.spl~
+  SAY NAME1 @477
+  SAY UNIDENTIFIED_DESC @478
+
+COPY ~PlanarSphereMod/spl/SPpsq24.spl~ ~override/SPpsq24.spl~
+  SAY NAME1 @479
+  SAY UNIDENTIFIED_DESC @480
+
+COPY ~PlanarSphereMod/spl/SPpsq25.spl~ ~override/SPpsq25.spl~
+  SAY NAME1 @481
+  SAY UNIDENTIFIED_DESC @482
+
+COPY ~PlanarSphereMod/spl/SPpsq26.spl~ ~override/SPpsq26.spl~
+  SAY NAME1 @483
+  SAY UNIDENTIFIED_DESC @484
+
+COPY ~PlanarSphereMod/spl/SPpsq27.spl~ ~override/SPpsq27.spl~
+  SAY NAME1 @365
+  SAY UNIDENTIFIED_DESC @366
+
+COPY ~PlanarSphereMod/spl/SPpsq28.spl~ ~override/SPpsq28.spl~
+  SAY NAME1 @166
+  SAY UNIDENTIFIED_DESC @486
+
+COPY ~PlanarSphereMod/spl/SPpsq29.spl~ ~override/SPpsq29.spl~
+  SAY NAME1 @487
+  SAY UNIDENTIFIED_DESC @488
+
+COPY ~PlanarSphereMod/spl/SPpsq3.spl~ ~override/SPpsq3.spl~
+  SAY NAME1 @298
+  SAY UNIDENTIFIED_DESC @299
+
+COPY ~PlanarSphereMod/spl/SPpsq4.spl~ ~override/SPpsq4.spl~
+  SAY NAME1 @300
+  SAY UNIDENTIFIED_DESC @301
+
+COPY ~PlanarSphereMod/spl/SPpsq5.spl~ ~override/SPpsq5.spl~
+  SAY NAME1 @302
+  SAY UNIDENTIFIED_DESC @303
+
+COPY ~PlanarSphereMod/spl/SPpsq6.spl~ ~override/SPpsq6.spl~
+  SAY NAME1 @304
+  SAY UNIDENTIFIED_DESC @305
+
+COPY ~PlanarSphereMod/spl/SPpsq7.spl~ ~override/SPpsq7.spl~
+  SAY NAME1 @306
+  SAY UNIDENTIFIED_DESC @307
+
+COPY ~PlanarSphereMod/spl/SPpsq8.spl~ ~override/SPpsq8.spl~
+  SAY NAME1 @308
+  SAY UNIDENTIFIED_DESC @309
+  SAY 0xfe @496
+
+COPY ~PlanarSphereMod/spl/SPpsq9.spl~ ~override/SPpsq9.spl~
+  SAY NAME1 @310
+  SAY UNIDENTIFIED_DESC @311
+  SAY 0x12e @499
+
+COPY ~PlanarSphereMod/spl/Sppsrey.spl~ ~override/Sppsrey.spl~
+  SAY NAME1 @367
+  SAY UNIDENTIFIED_DESC @368
+
+COPY ~PlanarSphereMod/spl/sppsshh.spl~ ~override/sppsshh.spl~
+  SAY NAME1 @369
+  SAY UNIDENTIFIED_DESC @370
+
+COPY ~PlanarSphereMod/spl/SPPSTPA.spl~ ~override/SPPSTPA.spl~
+  SAY NAME1 @397
+  SAY UNIDENTIFIED_DESC @398
+
+COPY ~PlanarSphereMod/spl/SPPSTYS.SPL~ ~override/SPPSTYS.SPL~
+  SAY NAME1 @379
+  SAY UNIDENTIFIED_DESC @380
+
+COPY ~PlanarSphereMod/spl/SPPSTYT.SPL~ ~override/SPPSTYT.SPL~
+  SAY NAME1 @377
+  SAY UNIDENTIFIED_DESC @378
+
+COPY ~PlanarSphereMod/spl/Spsq126.spl~ ~override/Spsq126.spl~
+  SAY NAME1 @353
+  SAY UNIDENTIFIED_DESC @354
+
+COPY ~PlanarSphereMod/spl/SPWI998.SPL~ ~override/SPWI998.SPL~
+  SAY NAME1 @507
+  SAY UNIDENTIFIED_DESC @508
+
+COPY ~PlanarSphereMod/spl/psBlur.SPL~ ~override/psBlur.SPL~
+  SAY NAME1 @2
+  SAY UNIDENTIFIED_DESC @2
+
+ COPY ~PlanarSphereMod/itm/psqpyro.itm~ ~override/psqpyro.itm~
+    SAY NAME1 @127
+    SAY NAME2 @365
+    SAY DESC @366
+ COPY ~PlanarSphereMod/itm/psqrequ.itm~ ~override/psqrequ.itm~
+    SAY NAME1 @127
+    SAY NAME2 @367
+    SAY DESC @368
+ COPY ~PlanarSphereMod/itm/psqshh.itm~ ~override/psqshh.itm~
+    SAY NAME1 @127
+    SAY NAME2 @369
+    SAY DESC @370
+ COPY ~PlanarSphereMod/itm/psqslcg.itm~ ~override/psqslcg.itm~
+    SAY NAME1 @127
+    SAY NAME2 @371
+    SAY DESC @372
+ COPY ~PlanarSphereMod/itm/psqttc.itm~ ~override/psqttc.itm~
+    SAY NAME1 @127
+    SAY NAME2 @377
+    SAY DESC @378
+ COPY ~PlanarSphereMod/itm/psqtysp.itm~ ~override/psqtysp.itm~
+    SAY NAME1 @127
+    SAY NAME2 @379
+    SAY DESC @380
+ COPY ~PlanarSphereMod/itm/psqvorp.itm~ ~override/psqvorp.itm~
+    SAY NAME1 @127
+    SAY NAME2 @381
+    SAY DESC @382
+ COPY ~PlanarSphereMod/itm/sppsbta.itm~ ~override/sppsbta.itm~
+    SAY NAME1 @127
+    SAY NAME2 @383
+    SAY DESC @384
+ COPY ~PlanarSphereMod/itm/sppsdma.itm~ ~override/sppsdma.itm~
+    SAY NAME1 @127
+    SAY NAME2 @385
+    SAY DESC @386
+ COPY ~PlanarSphereMod/itm/sppsmoh.itm~ ~override/sppsmoh.itm~
+    SAY NAME1 @127
+    SAY NAME2 @387
+    SAY DESC @390
+ COPY ~PlanarSphereMod/itm/sppsmsr.itm~ ~override/sppsmsr.itm~
+    SAY NAME1 @127
+    SAY NAME2 @391
+    SAY DESC @392
+ COPY ~PlanarSphereMod/itm/sppsoif.itm~ ~override/sppsoif.itm~
+    SAY NAME1 @127
+    SAY NAME2 @395
+    SAY DESC @396
+ COPY ~PlanarSphereMod/itm/sppstpa.itm~ ~override/sppstpa.itm~
+    SAY NAME1 @127
+    SAY NAME2 @397
+    SAY DESC @398
+
+ COPY ~PlanarSphereMod/spl/Spps20.spl~ ~override/Spps20.spl~
+  SAY NAME1 @381
+  SAY UNIDENTIFIED_DESC @382
+
+ COPY ~PlanarSphereMod/spl/Spps21.spl~ ~override/Spps21.spl~
+  SAY NAME1 @359
+  SAY UNIDENTIFIED_DESC @360
+
+ COPY ~PlanarSphereMod/spl/Spps22.spl~ ~override/Spps22.spl~
+  SAY NAME1 @351
+  SAY UNIDENTIFIED_DESC @352
+
+COPY ~PlanarSphereMod/spl/SPPSaop.spl~ ~override/SPPSaop.spl~
+  SAY NAME1 @349
+  SAY UNIDENTIFIED_DESC @350
+
+COPY ~PlanarSphereMod/spl/SPPSBTA.spl~ ~override/SPPSBTA.spl~
+  SAY NAME1 @383
+  SAY UNIDENTIFIED_DESC @384
+
+COPY ~PlanarSphereMod/spl/SPPSDMA.spl~ ~override/SPPSDMA.spl~
+  SAY NAME1 @385
+  SAY UNIDENTIFIED_DESC @386
+
+COPY ~PlanarSphereMod/spl/SPPSIRS.SPL~ ~override/SPPSIRS.SPL~
+  SAY NAME1 @355
+  SAY UNIDENTIFIED_DESC @356
+
+COPY ~PlanarSphereMod/spl/SPPSKKK.spl~ ~override/SPPSKKK.spl~
+  SAY NAME1 @361
+  SAY UNIDENTIFIED_DESC @362
+
+COPY ~PlanarSphereMod/spl/SPPSMFH.spl~ ~override/SPPSMFH.spl~
+  SAY NAME1 @387
+  SAY UNIDENTIFIED_DESC @390
+
+COPY ~PlanarSphereMod/spl/SPPSMSR.spl~ ~override/SPPSMSR.spl~
+  SAY NAME1 @391
+  SAY UNIDENTIFIED_DESC @392
+
+COPY ~PlanarSphereMod/spl/SPPSOIF.spl~ ~override/SPPSOIF.spl~
+  SAY NAME1 @395
+  SAY UNIDENTIFIED_DESC @396
+
+COPY ~PlanarSphereMod/spl/SPpsq1.spl~ ~override/SPpsq1.spl~
+  SAY NAME1 @296
+  SAY UNIDENTIFIED_DESC @297
+
+COPY ~PlanarSphereMod/spl/SPpsq10.spl~ ~override/SPpsq10.spl~
+  SAY NAME1 @312
+  SAY UNIDENTIFIED_DESC @313
+
+COPY ~PlanarSphereMod/spl/SPpsq13.spl~ ~override/SPpsq13.spl~
+  SAY NAME1 @322
+  SAY UNIDENTIFIED_DESC @323
+
+COPY ~PlanarSphereMod/spl/SPpsq15.spl~ ~override/SPpsq15.spl~
+  SAY NAME1 @326
+  SAY UNIDENTIFIED_DESC @327
+
+COPY ~PlanarSphereMod/spl/SPpsq17.spl~ ~override/SPpsq17.spl~
+  SAY NAME1 @330
+  SAY UNIDENTIFIED_DESC @331
+
+COPY ~PlanarSphereMod/spl/SPpsq2.spl~ ~override/SPpsq2.spl~
+  SAY NAME1 @296
+  SAY UNIDENTIFIED_DESC @297
+
+COPY ~PlanarSphereMod/spl/SPpsq20.spl~ ~override/SPpsq20.spl~
+  SAY NAME1 @371
+  SAY UNIDENTIFIED_DESC @372
+
+COPY ~PlanarSphereMod/spl/SPpsq21.spl~ ~override/SPpsq21.spl~
+  SAY NAME1 @357
+  SAY UNIDENTIFIED_DESC @358
+
+COPY ~PlanarSphereMod/spl/SPpsq27.spl~ ~override/SPpsq27.spl~
+  SAY NAME1 @365
+  SAY UNIDENTIFIED_DESC @366
+
+COPY ~PlanarSphereMod/spl/SPpsq3.spl~ ~override/SPpsq3.spl~
+  SAY NAME1 @298
+  SAY UNIDENTIFIED_DESC @299
+
+COPY ~PlanarSphereMod/spl/SPpsq4.spl~ ~override/SPpsq4.spl~
+  SAY NAME1 @300
+  SAY UNIDENTIFIED_DESC @301
+
+COPY ~PlanarSphereMod/spl/SPpsq7.spl~ ~override/SPpsq7.spl~
+  SAY NAME1 @306
+  SAY UNIDENTIFIED_DESC @307
+
+COPY ~PlanarSphereMod/spl/SPpsq8.spl~ ~override/SPpsq8.spl~
+  SAY NAME1 @308
+  SAY UNIDENTIFIED_DESC @309
+
+COPY ~PlanarSphereMod/spl/SPpsq9.spl~ ~override/SPpsq9.spl~
+  SAY NAME1 @310
+  SAY UNIDENTIFIED_DESC @311
+
+COPY ~PlanarSphereMod/spl/Sppsrey.spl~ ~override/Sppsrey.spl~
+  SAY NAME1 @367
+  SAY UNIDENTIFIED_DESC @368
+
+COPY ~PlanarSphereMod/spl/sppsshh.spl~ ~override/sppsshh.spl~
+  SAY NAME1 @369
+  SAY UNIDENTIFIED_DESC @370
+
+COPY ~PlanarSphereMod/spl/SPPSTPA.spl~ ~override/SPPSTPA.spl~
+  SAY NAME1 @397
+  SAY UNIDENTIFIED_DESC @398
+
+COPY ~PlanarSphereMod/spl/SPPSTYS.SPL~ ~override/SPPSTYS.SPL~
+  SAY NAME1 @379
+  SAY UNIDENTIFIED_DESC @380
+
+COPY ~PlanarSphereMod/spl/SPPSTYT.SPL~ ~override/SPPSTYT.SPL~
+  SAY NAME1 @377
+  SAY UNIDENTIFIED_DESC @378
+
+COPY ~PlanarSphereMod/spl/Spsq126.spl~ ~override/Spsq126.spl~
+  SAY NAME1 @353
+  SAY UNIDENTIFIED_DESC @354
+
+// Compiling
+
+COMPILE ~PlanarSphereMod/dlg~  // Full dialogs
+     ~PlanarSphereMod/baf~  // Full Scripts
+
+COMPILE ~PlanarSphereMod/baf/psCut41.baf~
+USING ~PlanarSphereMod/english/ar0900.tra~
+
+COMPILE ~PlanarSphereMod/baf/psCut42.baf~
+USING ~PlanarSphereMod/english/ar0900.tra~
+
+COMPILE ~PlanarSphereMod/baf/psCut43.baf~
+USING ~PlanarSphereMod/english/ar0900.tra~
+
+COMPILE ~PlanarSphereMod/baf/psCut44.baf~
+USING ~PlanarSphereMod/english/ar0900.tra~
+
+COMPILE ~PlanarSphereMod/baf/psCut45.baf~
+USING ~PlanarSphereMod/english/ar0900.tra~
+
+COMPILE ~PlanarSphereMod/baf/psCut46.baf~
+USING ~PlanarSphereMod/english/ar0900.tra~
+
+COMPILE ~PlanarSphereMod/baf/psCut47.baf~
+USING ~PlanarSphereMod/english/ar0900.tra~
+
+COMPILE ~PlanarSphereMod/baf/psCut39.baf~
+USING ~PlanarSphereMod/english/ar0300.tra~
+
+// Extending existing scripts and possibly existing scripts
+
+COMPILE ~PlanarSphereMod/snip/ar0419.baf~
+COMPILE ~PlanarSphereMod/snip/ar0420.baf~
+
+
+EXTEND_TOP ~AR0412.bcs~ ~PlanarSphereMod/snip/psAR0412.baf~
+
+EXTEND_TOP ~AR0421.bcs~ ~PlanarSphereMod/snip/psAR0421.baf~
+
+EXTEND_TOP ~AR0069.bcs~ ~PlanarSphereMod/snip/psAR0069.baf~
+
+COPY_EXISTING ~AR0300.bcs~ ~Override/AR0300.bcs~
+EXTEND_TOP    ~AR0300.bcs~  ~PlanarSphereMod/snip/psAR0300.baf~
+
+COPY_EXISTING ~AR0308.bcs~ ~Override/AR0308.bcs~
+EXTEND_TOP    ~AR0308.bcs~  ~PlanarSphereMod/snip/psAR0308.baf~
+
+COPY_EXISTING ~AR0400.bcs~ ~Override/AR0400.bcs~
+EXTEND_TOP    ~AR0400.bcs~  ~PlanarSphereMod/snip/psAR0400.baf~
+
+COPY_EXISTING ~AR0410.bcs~ ~Override/AR0410.bcs~
+EXTEND_TOP    ~AR0410.bcs~  ~PlanarSphereMod/snip/psAR0410.baf~
+
+COPY_EXISTING ~AR0411.bcs~ ~Override/AR0411.bcs~
+EXTEND_TOP    ~AR0411.bcs~  ~PlanarSphereMod/snip/psAR0411.baf~
+
+COPY_EXISTING ~AR0500.bcs~ ~Override/AR0500.bcs~
+EXTEND_TOP    ~AR0500.bcs~  ~PlanarSphereMod/snip/psAR0500.baf~
+
+COPY_EXISTING ~AR0700.bcs~ ~Override/AR0700.bcs~
+EXTEND_TOP    ~AR0700.bcs~  ~PlanarSphereMod/snip/psAR0700.baf~
+USING ~PlanarSphereMod/english/AR0700.tra~
+
+COPY_EXISTING ~AR0709.bcs~ ~Override/AR0709.bcs~
+EXTEND_TOP    ~AR0709.bcs~  ~PlanarSphereMod/snip/psAR0709.baf~
+
+COPY_EXISTING ~AR1000.bcs~ ~Override/AR1000.bcs~
+EXTEND_TOP    ~AR1000.bcs~  ~PlanarSphereMod/snip/psAR1000.baf~
+
+COPY_EXISTING ~AR1002.bcs~ ~Override/AR1002.bcs~
+EXTEND_TOP    ~AR1002.bcs~  ~PlanarSphereMod/snip/psAR1002.baf~
+
+COPY_EXISTING ~FURNACE2.bcs~ ~Override/FURNACE2.bcs~
+EXTEND_TOP    ~FURNACE2.bcs~  ~PlanarSphereMod/snip/sFurnace.baf~
+
+COPY_EXISTING ~ar0900.bcs~ ~Override/ar0900.bcs~
+EXTEND_TOP    ~ar0900.bcs~  ~PlanarSphereMod/snip/psAR0900.baf~
+
+
+//Block replacements
+COPY_EXISTING ~ar0411.bcs~ ~override/ar0411.bcs~
+  REPLACE_BCS_BLOCK ~PlanarSphereMod/snip/ar0411SearchBlock.baf~ ~PlanarSphereMod/snip/ar0411ReplacementBlock.baf~
+
+
+////////////////////////////////////////////////////////
+// Appending the Projectl.IDS
+//COPY_EXISTING ~Projectl.IDS~ ~override/Projectl.IDS~
+////////////////////////////////////////////////////////
+ADD_PROJECTILE  ~PlanarSphereMod/misc/PSQSORB.PRO~
+COPY ~PlanarSphereMod/spl/SPPSCUT4.SPL~ ~override/SPPSCUT4.SPL~
+  SAY NAME1 @452
+  SAY UNIDENTIFIED_DESC @532
+  WRITE_SHORT   0x98 ~%PSQSORB%~
+
+//ADD_PROJECTILE  ~PlanarSphereMod/misc/PSQSORB.PRO~
+COPY ~PlanarSphereMod/spl/SPPSMELS.SPL~ ~override/SPPSMELS.SPL~
+  SAY NAME1 @452
+  SAY UNIDENTIFIED_DESC @451
+  WRITE_SHORT   0x98 ~%PSQSORB%~
+
+ADD_PROJECTILE  ~PlanarSphereMod/misc/FIREBLGR.PRO~
+COPY ~PlanarSphereMod/spl/SPPSCUT1.SPL~ ~override/SPPSCUT1.SPL~
+  SAY NAME1 @436
+  WRITE_SHORT   0x98 ~%FIREBLGR%~
+
+//ADD_PROJECTILE  ~PlanarSphereMod/misc/FIREBLGR.PRO~
+COPY ~PlanarSphereMod/spl/SPpsq27.spl~ ~override/SPpsq27.spl~
+  SAY NAME1 @365
+  SAY UNIDENTIFIED_DESC @366
+  WRITE_SHORT   0x98 ~%FIREBLGR%~
+
+ACTION_IF FILE_EXISTS ~script compiler/AICOMPILE.exe~
+THEN BEGIN
+  COPY_EXISTING + ~Projectl.IDS~   ~script compiler~
+END
+
+
+
+
+// Planar Sphere Store Copy
+
+
+BEGIN	~Planar Sphere Store~
+COPY~PlanarSphereMod/sto/psSphere.sto~ ~override/psSphere.sto~
+SAY NAME2 @2
+
+
+BEGIN	~Waukeen's Promenade Store~
+COPY~PlanarSphereMod/sto/psWauk.sto~ ~override/psWauk.sto~
+SAY NAME2 @570
+
+
+
+
+BEGIN ~Planar Sphere Return v2~
+FORBID_COMPONENT "Setup-PSTele.tp2" "0" @666
+
+COPY ~PlanarSphereMod/misc/RETURN.SPL~       ~override/RETURN.SPL~
+  SAY NAME1 ~Return~
+  SAY UNIDENTIFIED_DESC ~<No Text>~
+
+COPY ~PlanarSphereMod/misc/SPHHOME.SPL~      ~override/SPHHOME.SPL~
+  SAY NAME1 ~Planar Sphere~
+  SAY UNIDENTIFIED_DESC ~<No Text>~
+
+COPY ~PlanarSphereMod/misc/SPHHOME.bam~      ~override/SPHHOME.bam~
+
+COPY ~PlanarSphereMod/misc/RETURN.bam~      ~override/RETURN.bam~
+
+COPY_EXISTING ~BALDUR.bcs~ ~override/BALDUR.bcs~
+EXTEND_TOP ~BALDUR.BCS~ ~PlanarSphereMod/Raw/sBALDURs.bcs~
+
+COPY_EXISTING ~BALDUR25.bcs~ ~override/BALDUR25.bcs~
+EXTEND_TOP ~BALDUR25.BCS~ ~PlanarSphereMod/Raw/sBALDURs.bcs~
+

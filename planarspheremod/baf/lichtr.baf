@@ -1,0 +1,29 @@
+IF
+	Global("psLichTransformation","LOCALS",0)
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		CutSceneId(Player1)
+		CreateVisualEffectObject("SPBASERD",Player1)
+		Wait(1)
+		ForceSpell(Myself,FLASHY_2)
+		ScreenShake([4.4],5)
+		Wait(1)
+		CreateVisualEffectObject("SPFINODI",Player1)
+		ScreenShake([4.4],5)
+		Wait(3)
+		CreateVisualEffectObject("SPFDETH3",Player1)
+		ApplySpell(Myself,CLERIC_COMMAND)
+		Wait(1)
+		FadeToColor([30.0],0)
+		Polymorph(IC_LICHBLACK)
+		ChangeRace(Myself,LICH)
+		ReputationInc(-8)
+		Wait(2)
+		FadeFromColor([30.0],0)
+		SetGlobal("psLichTransformation","LOCALS",1)
+		EndCutSceneMode()
+END
+
+
+

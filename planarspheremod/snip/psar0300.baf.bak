@@ -1,0 +1,53 @@
+IF
+	Global("psDemiLichSpawnToggle","GLOBAL",1)
+	Global("psHavocEnsues", "GLOBAL", 0)
+	Dead("psDemi")
+THEN
+	RESPONSE #100
+		SetGlobal("psDemiLichSpawnToggle","GLOBAL",2)
+		SetGlobal("psHavocEnsues", "GLOBAL", 1)
+		CreateCreatureObject("psNarr", Player1,0,0,0)
+		ActionOverride("psNarr", StartDialogNoSet(Player1))
+END
+
+
+
+IF
+	Global("psMystrasInTrouble", "GLOBAL", 2)
+	Global("psRylockActive", "AR0300", 0)
+THEN
+	RESPONSE #100
+		SetGlobal("psRylockActive", "AR0300", 1)
+		Deactivate("rylock")
+END
+
+IF
+	Global("psFinalQuestToKillMelCounter", "GLOBAL", 3)
+	Global("psRylockActive", "AR0300", 1)
+THEN
+	RESPONSE #100
+		SetGlobal("psRylockActive", "AR0300", 2)
+		Activate("rylock")
+END
+
+IF
+	Global("psDemiLichSpawnToggle","GLOBAL",0)
+	Global("psRetrievedKeyTalkedToMysToggle","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("psDemiLichSpawnToggle","GLOBAL",1)
+		ActionOverride(Player1, JumpToPoint([1449.2958]))
+		ActionOverride(Player2, JumpToPoint([1418.2995]))
+		ActionOverride(Player3, JumpToPoint([1438.2908]))
+		ActionOverride(Player4, JumpToPoint([1353.3006]))
+		ActionOverride(Player5, JumpToPoint([1365.2950]))
+		ActionOverride(Player6, JumpToPoint([1387.2888]))
+		MoveViewPoint([1602.3004],INSTANT)
+		Wait(2)
+
+		CreateCreature("psDemi",[1602.3004],4)
+		CreateCreature("psPeas1",[1478.3070],4)
+		CreateCreature("psPeas2",[1609.2863],4)
+		CreateCreature("psPeas3",[1696.2950],4)
+		ActionOverride("psDemi", StartDialogNoSet(Player1))
+END

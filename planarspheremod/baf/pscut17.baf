@@ -1,0 +1,34 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		MultiPlayerSync()
+		StartCutSceneMode()
+		CutSceneId(Player1)
+		Explore()
+		ActionOverride("psSPTar5",ReallyForceSpell(Myself,4646))
+		ActionOverride("psSPTar1",ReallyForceSpell(Myself,4646))
+		ActionOverride("psSPTar2",ReallyForceSpell(Myself,4646))
+		ActionOverride("psSPTar3",ReallyForceSpell(Myself,4646))
+		ActionOverride("psSPTar4",ReallyForceSpell(Myself,4646))
+		ActionOverride("psSPTar5",ReallyForceSpell(Myself,4646))
+		ActionOverride("psSPTar1",ReallyForceSpell(Myself,4646))
+		ActionOverride("psSPTar2",ReallyForceSpell(Myself,4646))
+		ActionOverride("psSPTar3",ReallyForceSpell(Myself,4646))
+		ActionOverride("psSPTar4",ReallyForceSpell(Myself,4646))
+		SmallWait(1)
+		FadeToColor([30.0],0)
+		Wait(2)
+		ActionOverride("psMel",DestroySelf())
+		MoveViewPoint([2035.1518],INSTANT)
+		CreateCreatureImpassable("OBSERVE",[2030.1513],4) // No such index
+		CreateCreatureImpassable("psMel",[2030.1513],4) // Mage
+		ActionOverride("psMel",Polymorph(HULA_WIZARD))
+		ActionOverride("psMel",ApplySpell(Myself,4645))
+		SmallWait(1)
+		FadeFromColor([30.0],0)
+		ActionOverride("psMel",StartDialogue("psMelWin", "psMel"))
+END
+
+
+

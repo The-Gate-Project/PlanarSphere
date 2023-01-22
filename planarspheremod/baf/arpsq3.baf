@@ -1,0 +1,56 @@
+IF
+	Global("psFinalBattleSphereLockToggle","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("psFinalBattleSphereLockToggle","GLOBAL",1)
+		TriggerActivation("Tran0400",FALSE)
+		TriggerActivation("Tran0414",FALSE)
+		TriggerActivation("Rune1",FALSE)
+		Unlock("DoorGolem2")
+		OpenDoor("DoorGolem2")
+		Unlock("DoorSoldier3")
+		OpenDoor("DoorSoldier3")
+		Unlock("DoorRune3")
+		OpenDoor("DoorRune3")
+		Lock("DoorFurnace1")
+		Lock("DoorMordon")
+		Lock("Door0410")
+		Lock("DoorRune1")
+		Lock("DoorFurnace2")
+		Lock("DoorGolem1")
+		Lock("DoorSoldier1")
+		Lock("DoorPool2")
+		Lock("DoorTreasure1")
+		Lock("DoorTreasure2")
+		Lock("Rune01")
+		Lock("Rune02")
+		Lock("Rune03")
+		Lock("Rune04")
+		Lock("DoorPool1")
+		ActionOverride("GolemRoomTable",DestroyItem("BOOK90")) // Golem Building Book
+		ActionOverride("GolemRoomTable",DestroyItem("MISC7Z")) // Coal
+		ActionOverride("GolemRoomTable",DestroyItem("MISC43")) // Emerald
+		ActionOverride("ModronContainer",DestroyItem("MISC6J")) // Golem Head
+		ActionOverride("ModronContainer",DestroyItem("MISC7Z")) // Coal
+		ActionOverride("ToolCT1",DestroyItem("KEY03")) // Planar Key
+		ActionOverride("ToolCT1",DestroyItem("MISC6K")) // Golem Arm
+		ActionOverride("ToolCT2",DestroyItem("MISC43")) // Emerald
+		ActionOverride("ToolCT4",DestroyItem("MISC7Z")) // Coal
+		ActionOverride("KnightTable",DestroyItem("SCRL8H")) // Warding Whip
+		CreateCreature("psLordAo",[2995.2692],0)
+		CreateCreature("psVecna",[1356.1287],0)
+		CreateCreature("psChaos",[1535.2527],0)
+END
+
+IF
+	Dead("psVecna")
+	Global("psVecnaDead","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("psVecnaDead","GLOBAL",1)
+		Unlock("Door0412")
+		OpenDoor("Door0412")
+END
+
+
+

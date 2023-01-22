@@ -1,0 +1,56 @@
+IF
+    Global("sphhome","GLOBAL",1)
+THEN
+    RESPONSE #100
+        ClearAllActions()
+        StorePartyLocations()
+        FadeToColor([30.0],0)
+        Wait(2)
+        ActionOverride(Player1,LeaveAreaLUA("AR0411","",[2774.2650],14))
+        ActionOverride(Player2,LeaveAreaLUA("AR0411","",[2839.2781],11))
+        ActionOverride(Player3,LeaveAreaLUA("AR0411","",[3160.2717],4))
+        ActionOverride(Player4,LeaveAreaLUA("AR0411","",[2989.2821],8))
+        ActionOverride(Player5,LeaveAreaLUA("AR0411","",[2908.2795],8))
+        ActionOverride(Player6,LeaveAreaLUA("AR0411","",[2842.2772],8))
+        FadeFromColor([30.0],0)
+        SetGlobal("sphhome","GLOBAL",0)
+        Continue()
+END
+
+IF
+    Global("return","GLOBAL",1)
+THEN
+    RESPONSE #100
+        ClearAllActions()
+        FadeToColor([30.0],0)
+        CutSceneId(Player1)
+        RestorePartyLocations()
+        EndCutSceneMode()
+        FadeFromColor([30.0],0)
+        SetGlobal("return","GLOBAL",0)
+        Continue()
+END
+
+IF
+    True()
+    !Global("MageAbil","GLOBAL",2)
+    Global("PCSphere","GLOBAL",1)
+THEN
+    RESPONSE #100
+        SetGlobal("MageAbil","GLOBAL",1)
+        Continue()
+END
+
+IF
+    True()
+    Global("MageAbil","GLOBAL",1)
+    !Global("MageAbil","GLOBAL",2)
+THEN
+    RESPONSE #100
+        ActionOverride(Player1,AddSpecialAbility("return"))
+        ActionOverride(Player1,AddSpecialAbility("sphhome"))
+        SetGlobal("MageAbil","GLOBAL",2)
+        Continue()
+END
+
+

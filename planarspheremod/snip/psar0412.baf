@@ -1,0 +1,98 @@
+IF
+	Global("psItemCreationBookToggle","GLOBAL",1)
+	Global("psFurnaceSpawnedToggle", "GLOBAL", 0)
+THEN
+	RESPONSE #100
+		SetGlobal("psFurnaceSpawnedToggle", "GLOBAL", 1)
+		CreateCreatureImpassable("psFurn",[1885.891],4)
+END
+
+IF
+	Global("psTeosInitialDialogToggle", "GLOBAL", 1)
+	Global("psDwarfSpawnToggle", "GLOBAL", 0)
+THEN
+	Response #100
+		SetGlobal("psDwarfSpawnToggle", "GLOBAL", 1)
+		CreateCreature("psDwarf1", [1700.800], 0)
+		CreateCreature("psDwarf1", [1900.800], 0)
+		CreateCreature("psDwarf2", [1700.1000], 0)
+END
+
+IF
+	Global("psRetrievedKeyTalkedToMysToggle","GLOBAL",1)
+	Global("psMelsFinalSpellSceneToggle","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("psMelsFinalSpellSceneToggle","GLOBAL",1)
+		FadeToColor([30.0],0)
+		Wait(1)
+		MoveViewPoint([971.1312],INSTANT)
+		CreateCreature("psMel",[971.1312],4) // Mage
+		CreateCreature("psSPTar1",[951.1387],4) // Spell Globe
+		ActionOVerride("psSPTar1", Polymorph(WIZARD_EYE))
+		CreateCreature("psSPTar2",[869.1327],4) // Spell Globe
+		ActionOVerride("psSPTar2", Polymorph(WIZARD_EYE))
+		CreateCreature("psSPTar3",[919.1242],4) // Spell Globe
+		ActionOVerride("psSPTar3", Polymorph(WIZARD_EYE))
+		CreateCreature("psSPTar4",[1031.1243],4) // Spell Globe
+		ActionOVerride("psSPTar4", Polymorph(WIZARD_EYE))
+		CreateCreature("psSPTar5",[1049.1327],4) // Spell Globe
+		ActionOVerride("psSPTar5", Polymorph(WIZARD_EYE))
+		CreateCreature("OBSERVE",[796.1406],4) // No such index
+		CreateCreature("OBSERVE",[783.1200],4) // No such index
+		CreateCreature("OBSERVE",[1050.1451],4) // No such index
+		CreateCreature("OBSERVE",[1199.1310],4) // No such index
+		CreateCreature("OBSERVE",[1039.1160],4) // No such index
+		ActionOverride("psMel",Polymorph(HULA_WIZARD))
+		ActionOverride("psMel",ForceSpell(Myself,4645))
+		ActionOverride(Player1,JumpToPoint([963.1592]))
+		ActionOverride(Player2,JumpToPoint([565.1436]))
+		ActionOverride(Player3,JumpToPoint([636.1160]))
+		ActionOverride(Player4,JumpToPoint([917.1068]))
+		ActionOverride(Player5,JumpToPoint([1298.1157]))
+		ActionOverride(Player6,JumpToPoint([1403.1484]))
+		StartCutSceneMode()
+		StartCutScene("psCut08")
+END
+
+IF
+	Global("psFinalPortalToggle","GLOBAL",1)
+	Global("psCreatePortalToMelsPrisonToggle","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("psCreatePortalToMelsPrisonToggle","GLOBAL",1)
+		CreateCreature("psPPort",[971.1312],4) // Prison Portal
+END
+
+IF
+	Global("psCreatePortalToMelsPrisonToggle","GLOBAL",1)
+	Global("psFinalQuestToKillMelCounter","GLOBAL",0)
+THEN
+	RESPONSE #100
+		CreateVisualEffect("SPCALLLI",[951.1387])
+		SmallWait(1)
+		CreateVisualEffect("SPCALLLI",[869.1327])
+		SmallWait(1)
+		CreateVisualEffect("SPCALLLI",[919.1242])
+		SmallWait(1)
+		CreateVisualEffect("SPCALLLI",[1031.1243])
+		SmallWait(1)
+		CreateVisualEffect("SPCALLLI",[1049.1327])
+		SmallWait(1)
+END
+IF
+	Global("psFinalQuestToKillMelCounter","GLOBAL",5)
+	Global("psAoToKillMel","GLOBAL",0)
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		SetGlobal("psAoToKillMel","GLOBAL",1)
+		Wait(1)
+		UndoExplore()
+		MoveViewPoint([2096.1637],INSTANT)
+		CreateCreature("OBSERVE",[2089.1637],4) // No such index
+		CreateCreature("psLordAo",[2097.1824],4) // Lord Ao
+		CreateCreature("psMel",[2096.1462],4) // Melanthium
+		Wait(1)
+		ActionOverride("psMel",StartDialogue("psMelEnd", "psLordAo"))
+END

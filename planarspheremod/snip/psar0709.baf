@@ -1,0 +1,25 @@
+IF
+	Global("psTeosRetrieveArtifactQuest","GLOBAL",1)
+THEN
+	RESPONSE #100
+		CreateCreature("psTrait",[1051.279],0) // Traitor
+		SetGlobal("psTeosRetrieveArtifactQuest","GLOBAL",2)
+		Continue()
+END
+
+IF
+	Allegiance("psTrait",ENEMY)
+	Global("psRedWizardTrapSpawnToggle","GLOBAL",0)
+THEN
+	RESPONSE #100
+		CreateCreatureDoor("psRedWiz",[926.388],0) // Red Wizard
+		CreateCreatureDoor("psRedWiz",[1001.461],0) // Red Wizard
+		CreateCreatureDoor("psRedW2",[436.566],0) // Red Wizard
+		CreateCreatureDoor("psRedWiz",[641.616],0) // Red Wizard
+		CreateCreatureDoor("psRedWiz",[576.773],0) // Red Wizard
+		SetGlobal("psRedWizardTrapSpawnToggle","GLOBAL",1)
+		Continue()
+END
+
+
+

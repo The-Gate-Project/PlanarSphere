@@ -1,0 +1,39 @@
+IF
+	OnCreation()
+	Global("psAr1NotExplored", "ARpsq1", 0)
+THEN
+	RESPONSE #100
+		Explore()
+		SetGlobal("psAr1NotExplored", "ARpsq1", 1)
+		Continue()
+END
+
+IF
+	Global("psRetrievedKeyTalkedToMysToggle","GLOBAL",1)
+	Global("psForcedEncounterCutSceneToggle","GLOBAL",0)
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		CutSceneID(Player1)
+		SetGlobal("psForcedEncounterToggle","GLOBAL",1)
+		SetGlobal("psForcedEncounterCutSceneToggle","GLOBAL",1)
+		Explore()
+		MoveViewPoint([560.452],INSTANT)
+		FadeFromColor([30.0],0)
+		CreateCreature("psMel",[444.553],4) // Mage
+		ActionOverride("psMel",Polymorph(HULA_WIZARD))
+		ActionOverride("psMel",ApplySpell(Myself,4645))
+		CreateCreature("psKOrd01",[855.161],4)
+		CreateCreature("psKOrd02",[855.161],4)
+		CreateCreature("psKOrd03",[855.161],4)
+		CreateCreature("psKOrd04",[855.161],4)
+		CreateCreature("psKOrd05",[855.161],4)
+		CreateCreature("OBSERVE",[569.355],4) // No such index
+		CreateCreature("OBSERVE",[707.481],4) // No such index
+		SmallWait(1)
+		ActionOverride("psMel",SetDialog("psMelFED"))
+		ActionOverride("psMel",StartDialogueNoSet(Player1))
+END
+
+
+

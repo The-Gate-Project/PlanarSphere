@@ -1,0 +1,111 @@
+IF
+	Dead("psMDivi")
+	Global("psGovtBuildingMageSpawnCounter","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("psGovtBuildingMageSpawnCounter","GLOBAL",2)
+		CreateCreature("psMIllu",[1130.480],4) // Illusion
+END
+
+IF
+	Dead("psMIllu")
+	Global("psGovtBuildingMageSpawnCounter","GLOBAL",2)
+THEN
+	RESPONSE #100
+		SetGlobal("psGovtBuildingMageSpawnCounter","GLOBAL",3)
+		CreateCreature("psMAbju",[1130.480],4) // Abjuration
+END
+
+IF
+	Dead("psMAbju")
+	Global("psGovtBuildingMageSpawnCounter","GLOBAL",3)
+THEN
+	RESPONSE #100
+		SetGlobal("psGovtBuildingMageSpawnCounter","GLOBAL",4)
+		CreateCreature("psMAlte",[1130.480],4) // Alteration
+END
+
+IF
+	Dead("psMAlte")
+	Global("psGovtBuildingMageSpawnCounter","GLOBAL",4)
+THEN
+	RESPONSE #100
+		SetGlobal("psGovtBuildingMageSpawnCounter","GLOBAL",5)
+		CreateCreature("psMNecr",[1130.480],4) // Necromancy
+END
+
+IF
+	Dead("psMNecr")
+	Global("psGovtBuildingMageSpawnCounter","GLOBAL",5)
+THEN
+	RESPONSE #100
+		SetGlobal("psGovtBuildingMageSpawnCounter","GLOBAL",6)
+		CreateCreature("psMConj",[1130.480],4) // Conjuration
+END
+
+IF
+	Dead("psMConj")
+	Global("psGovtBuildingMageSpawnCounter","GLOBAL",6)
+THEN
+	RESPONSE #100
+		SetGlobal("psGovtBuildingMageSpawnCounter","GLOBAL",7)
+		CreateCreature("psMEnch",[1130.480],4) // Enchantment
+END
+
+IF
+	Dead("psMEnch")
+	Global("psGovtBuildingMageSpawnCounter","GLOBAL",7)
+THEN
+	RESPONSE #100
+		SetGlobal("psGovtBuildingMageSpawnCounter","GLOBAL",8)
+		CreateCreature("psMInvo",[1130.480],4) // Invocation
+END
+
+IF
+	Global("psRetrieveSpellKeyCounter","GLOBAL",2)
+	Global("psGovtBuildingSpawnCounter","GLOBAL",1)
+THEN
+	RESPONSE #100
+		ClearAllActions()
+		SetGlobal("psGovtBuildingSpawnCounter","GLOBAL",2)
+		SetGlobal("psRetrieveSpellKeyCounter","GLOBAL",3)
+		ActionOverride("CUIMOEN",DestroySelf())
+		ActionOverride("CUJON",DestroySelf())
+		ActionOverride("CUWIZC",DestroySelf())
+		ActionOverride("CUWIZSU",DestroySelf())
+		ActionOverride("CUWIZ1",DestroySelf())
+		ActionOverride("CUWIZ2",DestroySelf())
+		ActionOverride("CUWIZ3",DestroySelf())
+		ActionOverride("CUWIZ4",DestroySelf())
+		ActionOverride("OBSERVE",DestroySelf())
+		ActionOverride("OBSERVE",DestroySelf())
+		ActionOverride("OBSERVE",DestroySelf())
+		ActionOverride("OBSERVE",DestroySelf())
+		ActionOverride("OBSERVE",DestroySelf())
+		ActionOverride("OBSERVE",DestroySelf())
+		ActionOverride("CUWIZ5",DestroySelf())
+		ActionOverride("CUWIZ6",DestroySelf())
+		SmallWait(1)
+		CreateCreature("psGlobe1",[544.808],2) // Spell Globe
+		CreateCreature("psGlobe2",[700.930],2) // Spell Globe
+		CreateCreature("psGlobe3",[690.700],2) // Spell Globe
+		CreateCreature("psGlobe4",[855.845],2) // Spell Globe
+		CreateCreature("psGlobe5",[959.776],2) // Spell Globe
+		CreateCreature("psGlobe6",[785.635],2) // Spell Globe
+		CreateCreature("psMagic",[1130.480],2) // Magic
+		SetMasterArea("AR0069")
+		ClearAllActions()
+		Continue()
+END
+
+IF
+	Dead("psMInvo")
+	Global("psGovtBuildingMageSpawnCounter","GLOBAL",8)
+THEN
+	RESPONSE #100
+		SetGlobal("psGovtBuildingMageSpawnCounter","GLOBAL",9)
+		CreateCreature("psMagic",[1130.480],4) // Magic
+END
+
+
+

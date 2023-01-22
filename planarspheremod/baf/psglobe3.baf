@@ -1,0 +1,92 @@
+IF
+	Global("psGlobeSpellCounter", "LOCALS", 8)
+THEN
+	RESPONSE #100
+		ReallyForceSpell(Myself, WIZARD_SUN_FIRE)
+		DestroySelf()
+END
+
+IF
+	RandomNum(5, 1)
+THEN
+	RESPONSE #100
+		IncrementGlobal("psGlobeSpellCounter", "LOCALS", 1)
+		Wait(1)
+		ReallyForceSpell(Player1,CLERIC_SILENCE_15_FOOT)
+		ReallyForceSpell(Player2,CLERIC_SILENCE_15_FOOT)
+		ReallyForceSpell(Player3,CLERIC_SILENCE_15_FOOT)
+		ReallyForceSpell(Player4,CLERIC_SILENCE_15_FOOT)
+		ReallyForceSpell(Player5,CLERIC_SILENCE_15_FOOT)
+		ReallyForceSpell(Player6,CLERIC_SILENCE_15_FOOT)
+END
+
+IF
+	RandomNum(5, 1)
+THEN
+	RESPONSE #100
+		IncrementGlobal("psGlobeSpellCounter", "LOCALS", 1)
+		Wait(1)
+		ReallyForceSpell(Player1,CLERIC_ENTANGLE)
+		ReallyForceSpell(Player2,CLERIC_ENTANGLE)
+		ReallyForceSpell(Player3,CLERIC_ENTANGLE)
+		ReallyForceSpell(Player4,CLERIC_ENTANGLE)
+		ReallyForceSpell(Player5,CLERIC_ENTANGLE)
+		ReallyForceSpell(Player6,CLERIC_ENTANGLE)
+END
+
+IF
+	RandomNum(5, 1)
+THEN
+	RESPONSE #100
+		IncrementGlobal("psGlobeSpellCounter", "LOCALS", 1)
+		Wait(1)
+		ReallyForceSpell(Player1,CLERIC_CHARM_PERSON)
+		ReallyForceSpell(Player2,CLERIC_CHARM_PERSON)
+		ReallyForceSpell(Player3,CLERIC_CHARM_PERSON)
+		ReallyForceSpell(Player4,CLERIC_CHARM_PERSON)
+		ReallyForceSpell(Player5,CLERIC_CHARM_PERSON)
+		ReallyForceSpell(Player6,CLERIC_CHARM_PERSON)
+END
+
+IF
+	RandomNum(5, 1)
+THEN
+	RESPONSE #100
+		IncrementGlobal("psGlobeSpellCounter", "LOCALS", 1)
+		Wait(2)
+		ReallyForceSpell(Player1,CLERIC_HOLD_PERSON)
+		ReallyForceSpell(Player2,CLERIC_HOLD_PERSON)
+		ReallyForceSpell(Player3,CLERIC_HOLD_PERSON)
+		ReallyForceSpell(Player4,CLERIC_HOLD_PERSON)
+		ReallyForceSpell(Player5,CLERIC_HOLD_PERSON)
+		ReallyForceSpell(Player6,CLERIC_HOLD_PERSON)
+END
+
+IF
+	RandomNum(5, 1)
+THEN
+	RESPONSE #100
+		IncrementGlobal("psGlobeSpellCounter", "LOCALS", 1)
+		Wait(3)
+		ReallyForceSpell(Player1,CLERIC_MENTAL_DOMINATION)
+		ReallyForceSpell(Player2,CLERIC_MENTAL_DOMINATION)
+		ReallyForceSpell(Player3,CLERIC_MENTAL_DOMINATION)
+		ReallyForceSpell(Player4,CLERIC_MENTAL_DOMINATION)
+		ReallyForceSpell(Player5,CLERIC_MENTAL_DOMINATION)
+		ReallyForceSpell(Player6,CLERIC_MENTAL_DOMINATION)
+END
+
+
+IF
+	RandomNum(5, 1)
+THEN
+	RESPONSE #100
+		IncrementGlobal("psGlobeSpellCounter", "LOCALS", 1)
+		Wait(1)
+		ReallyForceSpell(Player1,CLERIC_RIGID_THINKING)
+		ReallyForceSpell(Player2,CLERIC_RIGID_THINKING)
+		ReallyForceSpell(Player3,CLERIC_RIGID_THINKING)
+		ReallyForceSpell(Player4,CLERIC_RIGID_THINKING)
+		ReallyForceSpell(Player5,CLERIC_RIGID_THINKING)
+		ReallyForceSpell(Player6,CLERIC_RIGID_THINKING)
+END

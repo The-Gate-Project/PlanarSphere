@@ -1,0 +1,91 @@
+IF
+	Global("psGlobeSpellCounter", "LOCALS", 8)
+THEN
+	RESPONSE #100
+		ReallyForceSpell(Myself, WIZARD_SUN_FIRE)
+		DestroySelf()
+END
+
+IF
+	RandomNum(5, 1)
+THEN
+	RESPONSE #100
+		IncrementGlobal("psGlobeSpellCounter", "LOCALS", 1)
+		Wait(2)
+		ReallyForceSpell(Player1,WIZARD_DISPEL_MAGIC)
+		ReallyForceSpell(Player2,WIZARD_DISPEL_MAGIC)
+		ReallyForceSpell(Player3,WIZARD_DISPEL_MAGIC)
+		ReallyForceSpell(Player4,WIZARD_DISPEL_MAGIC)
+		ReallyForceSpell(Player5,WIZARD_DISPEL_MAGIC)
+		ReallyForceSpell(Player6,WIZARD_DISPEL_MAGIC)
+END
+
+IF
+	RandomNum(5, 1)
+THEN
+	RESPONSE #100
+		IncrementGlobal("psGlobeSpellCounter", "LOCALS", 1)
+		Wait(1)
+		ReallyForceSpell(Player1,WIZARD_DETECT_ILLUSION)
+		ReallyForceSpell(Player2,WIZARD_DETECT_ILLUSION)
+		ReallyForceSpell(Player3,WIZARD_DETECT_ILLUSION)
+		ReallyForceSpell(Player4,WIZARD_DETECT_ILLUSION)
+		ReallyForceSpell(Player5,WIZARD_DETECT_ILLUSION)
+		ReallyForceSpell(Player6,WIZARD_DETECT_ILLUSION)
+END
+
+IF
+	RandomNum(5, 1)
+THEN
+	RESPONSE #100
+		IncrementGlobal("psGlobeSpellCounter", "LOCALS", 1)
+		Wait(4)
+		ReallyForceSpell(Player1,WIZARD_POLYMORPH_OTHER)
+		ReallyForceSpell(Player2,WIZARD_POLYMORPH_OTHER)
+		ReallyForceSpell(Player3,WIZARD_POLYMORPH_OTHER)
+		ReallyForceSpell(Player4,WIZARD_POLYMORPH_OTHER)
+		ReallyForceSpell(Player5,WIZARD_POLYMORPH_OTHER)
+		ReallyForceSpell(Player6,WIZARD_POLYMORPH_OTHER)
+END
+
+IF
+	RandomNum(5, 1)
+THEN
+	RESPONSE #100
+		IncrementGlobal("psGlobeSpellCounter", "LOCALS", 1)
+		Wait(3)
+		ReallyForceSpell(Player1,WIZARD_BREACH)
+		ReallyForceSpell(Player2,WIZARD_BREACH)
+		ReallyForceSpell(Player3,WIZARD_BREACH)
+		ReallyForceSpell(Player4,WIZARD_BREACH)
+		ReallyForceSpell(Player5,WIZARD_BREACH)
+		ReallyForceSpell(Player6,WIZARD_BREACH)
+END
+
+IF
+	RandomNum(5, 1)
+THEN
+	RESPONSE #100
+		IncrementGlobal("psGlobeSpellCounter", "LOCALS", 1)
+		Wait(2)
+		ReallyForceSpell(Player1,WIZARD_SPOOK)
+		ReallyForceSpell(Player2,WIZARD_SPOOK)
+		ReallyForceSpell(Player3,WIZARD_SPOOK)
+		ReallyForceSpell(Player4,WIZARD_SPOOK)
+		ReallyForceSpell(Player5,WIZARD_SPOOK)
+		ReallyForceSpell(Player6,WIZARD_SPOOK)
+END
+
+IF
+	RandomNum(5, 1)
+THEN
+	RESPONSE #100
+		IncrementGlobal("psGlobeSpellCounter", "LOCALS", 1)
+		Wait(2)
+		ReallyForceSpell(Player1,WIZARD_CHAOS)
+		ReallyForceSpell(Player2,WIZARD_CHAOS)
+		ReallyForceSpell(Player3,WIZARD_CHAOS)
+		ReallyForceSpell(Player4,WIZARD_CHAOS)
+		ReallyForceSpell(Player5,WIZARD_CHAOS)
+		ReallyForceSpell(Player6,WIZARD_CHAOS)
+END
