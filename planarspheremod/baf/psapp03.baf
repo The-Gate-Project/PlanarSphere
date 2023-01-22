@@ -8,7 +8,7 @@ THEN
 		ForceSpellPoint([1542.1103],WIZARD_FIREBALL)
 		Wait(5)
 	RESPONSE #10
-		CreateVisualEffectObject("ANCALL",Myself)
+		CreateVisualEffectObject("AMCALL",Myself)
 		Wait(2)
 	RESPONSE #10
 		ForceSpellPointRES("SPWI302",[1542.1103])

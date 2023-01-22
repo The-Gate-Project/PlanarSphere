@@ -8,7 +8,7 @@ THEN
 		CreateVisualEffectObject("ICMAGICH",Myself)
 		Wait(2)
 	RESPONSE #10
-		CreateVisualEffectObject("ANCALL",Myself)
+		CreateVisualEffectObject("AMCALL",Myself)
 		Wait(2)
 	RESPONSE #10
 		CreateVisualEffectObject("ICRMPARI",Myself)

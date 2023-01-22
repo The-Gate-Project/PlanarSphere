@@ -10,7 +10,7 @@ THEN
 		CreateVisualEffectObject("SPBASERD",Myself)
 		Wait(2)
 	RESPONSE #10
-		CreateVisualEffectObject("ANCALL",Myself)
+		CreateVisualEffectObject("AMCALL",Myself)
 		Wait(2)
 	RESPONSE #10
 		CreateVisualEffectObject("SPCONTIN",Myself)

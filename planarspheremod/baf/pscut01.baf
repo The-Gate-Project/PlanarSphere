@@ -29,7 +29,7 @@ THEN
 		CreateVisualEffect("SPCALLLI",[641.564])
 		ScreenShake([20.20],10)
 		Wait(1)
-		CreateVisualEffect("SPBASSWT",[694.647])
+		CreateVisualEffect("SPBASEWT",[694.647])
 		ActionOverride("CSCowl1",ForceSpell(Myself,LONG_VISUAL))
 		ActionOverride("CSCowl2",ForceSpell(Myself,LONG_VISUAL))
 		ActionOverride("CSCowl3",ForceSpell(Myself,LONG_VISUAL))

@@ -1,4 +1,4 @@
- BEGIN ~psFurn~
+BEGIN ~psFurn~
 
 IF ~True()~ THEN BEGIN 0 // from:
   SAY @0
@@ -35,20 +35,20 @@ END
 IF ~~ THEN BEGIN 3 // from: 2.0
   SAY @22
   IF ~LevelLT(Player1,9)~ THEN REPLY @79 EXIT
-  IF ~LevelGT(Player1,9)~ THEN REPLY @23 DO ~~ GOTO 4
-  IF ~LevelGT(Player1,10)~ THEN REPLY @24 DO ~~ GOTO 7
-  IF ~LevelGT(Player1,12)~ THEN REPLY @25 DO ~~ GOTO 9
+  IF ~LevelGT(Player1,9)~ THEN REPLY @23 GOTO 4
+  IF ~LevelGT(Player1,10)~ THEN REPLY @24 GOTO 7
+  IF ~LevelGT(Player1,12)~ THEN REPLY @25 GOTO 9
 END
 
 IF ~~ THEN BEGIN 4 // from: 3.0
   SAY @26
   IF ~~ THEN REPLY @27 GOTO 5
-  IF ~~ THEN REPLY @28 DO ~~ GOTO 6
+  IF ~~ THEN REPLY @28 GOTO 6
 END
 
 IF ~~ THEN BEGIN 5 // from: 4.0
   SAY @29
-  IF ~~ THEN DO ~MultiPlayerSync()
+  IF ~~ THEN DO ~ClearAllActions()
 StartCutSceneMode()
 ActionOverride(Player1,ForceSpell(Myself,WIZARD_ENCHANTED_WEAPON))
 SmallWait(1)
@@ -73,7 +73,7 @@ END
 
 IF ~~ THEN BEGIN 8 // from: 7.0
   SAY @29
-  IF ~~ THEN DO ~MultiPlayerSync()
+  IF ~~ THEN DO ~ClearAllActions()
 StartCutSceneMode()
 ActionOverride(Player1,ForceSpell(Myself,WIZARD_ENCHANTED_WEAPON))
 SmallWait(1)
@@ -93,7 +93,7 @@ END
 
 IF ~~ THEN BEGIN 10 // from: 9.0
   SAY @29
-  IF ~~ THEN DO ~MultiPlayerSync()
+  IF ~~ THEN DO ~ClearAllActions()
 StartCutSceneMode()
 ActionOverride(Player1,ForceSpell(Myself,WIZARD_ENCHANTED_WEAPON))
 SmallWait(1)
@@ -121,7 +121,7 @@ END
 
 IF ~~ THEN BEGIN 13 // from: 12.0
   SAY @29
-  IF ~~ THEN DO ~MultiPlayerSync()
+  IF ~~ THEN DO ~ClearAllActions()
 StartCutSceneMode()
 ActionOverride(Player1,ForceSpell(Myself,WIZARD_ENCHANTED_WEAPON))
 SmallWait(1)
@@ -141,7 +141,7 @@ END
 
 IF ~~ THEN BEGIN 15 // from: 14.0
   SAY @29
-  IF ~~ THEN DO ~MultiPlayerSync()
+  IF ~~ THEN DO ~ClearAllActions()
 StartCutSceneMode()
 ActionOverride(Player1,ForceSpell(Myself,WIZARD_ENCHANTED_WEAPON))
 SmallWait(1)
@@ -161,7 +161,7 @@ END
 
 IF ~~ THEN BEGIN 17 // from: 16.0
   SAY @29
-  IF ~~ THEN DO ~MultiPlayerSync()
+  IF ~~ THEN DO ~ClearAllActions()
 StartCutSceneMode()
 ActionOverride(Player1,ForceSpell(Myself,WIZARD_ENCHANTED_WEAPON))
 SmallWait(1)
@@ -189,7 +189,7 @@ END
 
 IF ~~ THEN BEGIN 20 // from: 19.0
   SAY @29
-  IF ~~ THEN DO ~MultiPlayerSync()
+  IF ~~ THEN DO ~ClearAllActions()
 StartCutSceneMode()
 ActionOverride(Player1,ForceSpell(Myself,WIZARD_ENCHANTED_WEAPON))
 SmallWait(1)
@@ -209,7 +209,7 @@ END
 
 IF ~~ THEN BEGIN 22 // from: 21.0
   SAY @29
-  IF ~~ THEN DO ~MultiPlayerSync()
+  IF ~~ THEN DO ~ClearAllActions()
 StartCutSceneMode()
 ActionOverride(Player1,ForceSpell(Myself,WIZARD_ENCHANTED_WEAPON))
 SmallWait(1)
@@ -229,7 +229,7 @@ END
 
 IF ~~ THEN BEGIN 24 // from: 23.0
   SAY @29
-  IF ~~ THEN DO ~MultiPlayerSync()
+  IF ~~ THEN DO ~ClearAllActions()
 StartCutSceneMode()
 ActionOverride(Player1,ForceSpell(Myself,WIZARD_ENCHANTED_WEAPON))
 SmallWait(1)
@@ -257,7 +257,7 @@ END
 
 IF ~~ THEN BEGIN 27 // from: 26.0
   SAY @29
-  IF ~~ THEN DO ~MultiPlayerSync()
+  IF ~~ THEN DO ~ClearAllActions()
 StartCutSceneMode()
 ActionOverride(Player1,ForceSpell(Myself,WIZARD_ENCHANTED_WEAPON))
 SmallWait(1)
@@ -277,7 +277,7 @@ END
 
 IF ~~ THEN BEGIN 29 // from: 28.0
   SAY @29
-  IF ~~ THEN DO ~MultiPlayerSync()
+  IF ~~ THEN DO ~ClearAllActions()
 StartCutSceneMode()
 ActionOverride(Player1,ForceSpell(Myself,WIZARD_ENCHANTED_WEAPON))
 SmallWait(1)
@@ -297,7 +297,7 @@ END
 
 IF ~~ THEN BEGIN 31 // from: 30.0
   SAY @29
-  IF ~~ THEN DO ~MultiPlayerSync()
+  IF ~~ THEN DO ~ClearAllActions()
 StartCutSceneMode()
 ActionOverride(Player1,ForceSpell(Myself,WIZARD_ENCHANTED_WEAPON))
 SmallWait(1)
@@ -626,7 +626,7 @@ END
 
 IF ~~ THEN BEGIN 94 // from: 93.0
   SAY @29
-  IF ~~ THEN DO ~MultiPlayerSync()
+  IF ~~ THEN DO ~ClearAllActions()
 StartCutSceneMode()
 ActionOverride(Player1,ForceSpell(Myself,WIZARD_ENCHANTED_WEAPON))
 SmallWait(1)
@@ -646,7 +646,7 @@ END
 
 IF ~~ THEN BEGIN 96 // from: 95.0
   SAY @29
-  IF ~~ THEN DO ~MultiPlayerSync()
+  IF ~~ THEN DO ~ClearAllActions()
 StartCutSceneMode()
 ActionOverride(Player1,ForceSpell(Myself,WIZARD_ENCHANTED_WEAPON))
 SmallWait(1)
@@ -666,7 +666,7 @@ END
 
 IF ~~ THEN BEGIN 98 // from: 97.0
   SAY @29
-  IF ~~ THEN DO ~MultiPlayerSync()
+  IF ~~ THEN DO ~ClearAllActions()
 StartCutSceneMode()
 ActionOverride(Player1,ForceSpell(Myself,WIZARD_ENCHANTED_WEAPON))
 SmallWait(1)
@@ -686,7 +686,7 @@ END
 
 IF ~~ THEN BEGIN 100 // from: 99.0
   SAY @29
-  IF ~~ THEN DO ~MultiPlayerSync()
+  IF ~~ THEN DO ~ClearAllActions()
 StartCutSceneMode()
 ActionOverride(Player1,ForceSpell(Myself,WIZARD_ENCHANTED_WEAPON))
 SmallWait(1)
@@ -718,7 +718,7 @@ END
 
 IF ~~ THEN BEGIN 104 // from: 103.0
   SAY @29
-  IF ~~ THEN DO ~MultiPlayerSync()
+  IF ~~ THEN DO ~ClearAllActions()
 StartCutSceneMode()
 ActionOverride(Player1,ForceSpell(Myself,WIZARD_ENCHANTED_WEAPON))
 SmallWait(1)
@@ -738,7 +738,7 @@ END
 
 IF ~~ THEN BEGIN 106 // from: 105.0
   SAY @29
-  IF ~~ THEN DO ~MultiPlayerSync()
+  IF ~~ THEN DO ~ClearAllActions()
 StartCutSceneMode()
 ActionOverride(Player1,ForceSpell(Myself,WIZARD_ENCHANTED_WEAPON))
 SmallWait(1)
@@ -758,7 +758,7 @@ END
 
 IF ~~ THEN BEGIN 108 // from: 107.0
   SAY @29
-  IF ~~ THEN DO ~MultiPlayerSync()
+  IF ~~ THEN DO ~ClearAllActions()
 StartCutSceneMode()
 ActionOverride(Player1,ForceSpell(Myself,WIZARD_ENCHANTED_WEAPON))
 SmallWait(1)
@@ -787,7 +787,7 @@ END
 
 IF ~~ THEN BEGIN 111 // from: 110.0
   SAY @29
-  IF ~~ THEN DO ~MultiPlayerSync()
+  IF ~~ THEN DO ~ClearAllActions()
 StartCutSceneMode()
 ActionOverride(Player1,ForceSpell(Myself,WIZARD_ENCHANTED_WEAPON))
 SmallWait(1)
@@ -807,7 +807,7 @@ END
 
 IF ~~ THEN BEGIN 113 // from: 112.0
   SAY @29
-  IF ~~ THEN DO ~MultiPlayerSync()
+  IF ~~ THEN DO ~ClearAllActions()
 StartCutSceneMode()
 ActionOverride(Player1,ForceSpell(Myself,WIZARD_ENCHANTED_WEAPON))
 SmallWait(1)
@@ -827,7 +827,7 @@ END
 
 IF ~~ THEN BEGIN 115 // from: 114.0
   SAY @29
-  IF ~~ THEN DO ~MultiPlayerSync()
+  IF ~~ THEN DO ~ClearAllActions()
 StartCutSceneMode()
 ActionOverride(Player1,ForceSpell(Myself,WIZARD_ENCHANTED_WEAPON))
 SmallWait(1)
@@ -847,7 +847,7 @@ END
 
 IF ~~ THEN BEGIN 117 // from: 116.0
   SAY @29
-  IF ~~ THEN DO ~MultiPlayerSync()
+  IF ~~ THEN DO ~ClearAllActions()
 StartCutSceneMode()
 ActionOverride(Player1,ForceSpell(Myself,WIZARD_ENCHANTED_WEAPON))
 SmallWait(1)
@@ -861,7 +861,7 @@ END
 
 IF ~~ THEN BEGIN 118 // from: 0.2
   SAY @44
-  IF ~~ THEN DO ~MultiPlayerSync()
+  IF ~~ THEN DO ~ClearAllActions()
 StartCutSceneMode()
 ActionOverride(Player1,ForceSpell(Myself,WIZARD_ENCHANTED_WEAPON))
 ActionOverride(Player1,ForceSpell(Myself,FLASHY_2))
@@ -875,7 +875,7 @@ END
 
 IF ~~ THEN BEGIN 119 // from: 0.3
   SAY @45
-  IF ~~ THEN DO ~MultiPlayerSync()
+  IF ~~ THEN DO ~ClearAllActions()
 StartCutSceneMode()
 ActionOverride(Player1,ForceSpell(Myself,WIZARD_ENCHANTED_WEAPON))
 ActionOverride(Player1,ApplySpell(Myself,FIFTY_PERCENT_DAMAGE))
@@ -915,7 +915,7 @@ END
 
 IF ~~ THEN BEGIN furn02-3 // from: 1.1
   SAY @56
-  IF ~~ THEN DO ~MultiPlayerSync()
+  IF ~~ THEN DO ~ClearAllActions()
 StartCutSceneMode()
 ActionOverride(Player1,ForceSpell(Myself,WIZARD_ENCHANTED_WEAPON))
 SmallWait(1)
@@ -935,7 +935,7 @@ END
 
 IF ~~ THEN BEGIN furn02-5 // from: 4.1
   SAY @56
-  IF ~~ THEN DO ~MultiPlayerSync()
+  IF ~~ THEN DO ~ClearAllActions()
 StartCutSceneMode()
 ActionOverride(Player1,ForceSpell(Myself,WIZARD_ENCHANTED_WEAPON))
 SmallWait(1)
@@ -955,7 +955,7 @@ END
 
 IF ~~ THEN BEGIN furn02-7 // from: 6.1
   SAY @56
-  IF ~~ THEN DO ~MultiPlayerSync()
+  IF ~~ THEN DO ~ClearAllActions()
 StartCutSceneMode()
 ActionOverride(Player1,ForceSpell(Myself,WIZARD_ENCHANTED_WEAPON))
 SmallWait(1)
@@ -975,7 +975,7 @@ END
 
 IF ~~ THEN BEGIN furn02-9 // from: 8.1
   SAY @56
-  IF ~~ THEN DO ~MultiPlayerSync()
+  IF ~~ THEN DO ~ClearAllActions()
 StartCutSceneMode()
 ActionOverride(Player1,ForceSpell(Myself,WIZARD_ENCHANTED_WEAPON))
 SmallWait(1)
@@ -995,7 +995,7 @@ END
 
 IF ~~ THEN BEGIN furn02-11 // from: 10.1
   SAY @56
-  IF ~~ THEN DO ~MultiPlayerSync()
+  IF ~~ THEN DO ~ClearAllActions()
 StartCutSceneMode()
 ActionOverride(Player1,ForceSpell(Myself,WIZARD_ENCHANTED_WEAPON))
 SmallWait(1)
@@ -1035,7 +1035,7 @@ END
 
 IF ~~ THEN BEGIN furn03-3 // from: 1.1
   SAY @56
-  IF ~~ THEN DO ~MultiPlayerSync()
+  IF ~~ THEN DO ~ClearAllActions()
 StartCutSceneMode()
 ActionOverride(Player1,ForceSpell(Myself,WIZARD_ENCHANTED_WEAPON))
 SmallWait(1)
@@ -1055,7 +1055,7 @@ END
 
 IF ~~ THEN BEGIN furn03-5 // from: 4.1
   SAY @56
-  IF ~~ THEN DO ~MultiPlayerSync()
+  IF ~~ THEN DO ~ClearAllActions()
 StartCutSceneMode()
 ActionOverride(Player1,ForceSpell(Myself,WIZARD_ENCHANTED_WEAPON))
 SmallWait(1)
@@ -1075,7 +1075,7 @@ END
 
 IF ~~ THEN BEGIN furn03-7 // from: 6.1
   SAY @56
-  IF ~~ THEN DO ~MultiPlayerSync()
+  IF ~~ THEN DO ~ClearAllActions()
 StartCutSceneMode()
 ActionOverride(Player1,ForceSpell(Myself,WIZARD_ENCHANTED_WEAPON))
 SmallWait(1)
@@ -1095,7 +1095,7 @@ END
 
 IF ~~ THEN BEGIN furn03-9 // from: 8.1
   SAY @56
-  IF ~~ THEN DO ~MultiPlayerSync()
+  IF ~~ THEN DO ~ClearAllActions()
 StartCutSceneMode()
 ActionOverride(Player1,ForceSpell(Myself,WIZARD_ENCHANTED_WEAPON))
 SmallWait(1)
@@ -1115,7 +1115,7 @@ END
 
 IF ~~ THEN BEGIN furn03-11 // from: 10.1
   SAY @56
-  IF ~~ THEN DO ~MultiPlayerSync()
+  IF ~~ THEN DO ~ClearAllActions()
 StartCutSceneMode()
 ActionOverride(Player1,ForceSpell(Myself,WIZARD_ENCHANTED_WEAPON))
 SmallWait(1)
@@ -1153,7 +1153,7 @@ END
 
 IF ~~ THEN BEGIN furn04-3 // from: 1.1
   SAY @56
-  IF ~~ THEN DO ~MultiPlayerSync()
+  IF ~~ THEN DO ~ClearAllActions()
 StartCutSceneMode()
 ActionOverride(Player1,ForceSpell(Myself,WIZARD_ENCHANTED_WEAPON))
 SmallWait(1)
@@ -1173,7 +1173,7 @@ END
 
 IF ~~ THEN BEGIN furn04-5 // from: 4.1
   SAY @56
-  IF ~~ THEN DO ~MultiPlayerSync()
+  IF ~~ THEN DO ~ClearAllActions()
 StartCutSceneMode()
 ActionOverride(Player1,ForceSpell(Myself,WIZARD_ENCHANTED_WEAPON))
 SmallWait(1)
@@ -1193,7 +1193,7 @@ END
 
 IF ~~ THEN BEGIN furn04-7 // from: 6.1
   SAY @56
-  IF ~~ THEN DO ~MultiPlayerSync()
+  IF ~~ THEN DO ~ClearAllActions()
 StartCutSceneMode()
 ActionOverride(Player1,ForceSpell(Myself,WIZARD_ENCHANTED_WEAPON))
 SmallWait(1)
@@ -1213,7 +1213,7 @@ END
 
 IF ~~ THEN BEGIN furn04-9 // from: 8.1
   SAY @56
-  IF ~~ THEN DO ~MultiPlayerSync()
+  IF ~~ THEN DO ~ClearAllActions()
 StartCutSceneMode()
 ActionOverride(Player1,ForceSpell(Myself,WIZARD_ENCHANTED_WEAPON))
 SmallWait(1)
@@ -1252,7 +1252,7 @@ END
 
 IF ~~ THEN BEGIN furn05-3 // from: 1.1
   SAY @56
-  IF ~~ THEN DO ~MultiPlayerSync()
+  IF ~~ THEN DO ~ClearAllActions()
 StartCutSceneMode()
 ActionOverride(Player1,ForceSpell(Myself,WIZARD_ENCHANTED_WEAPON))
 SmallWait(1)
@@ -1272,7 +1272,7 @@ END
 
 IF ~~ THEN BEGIN furn05-5 // from: 4.1
   SAY @56
-  IF ~~ THEN DO ~MultiPlayerSync()
+  IF ~~ THEN DO ~ClearAllActions()
 StartCutSceneMode()
 ActionOverride(Player1,ForceSpell(Myself,WIZARD_ENCHANTED_WEAPON))
 SmallWait(1)
@@ -1292,7 +1292,7 @@ END
 
 IF ~~ THEN BEGIN furn05-7 // from: 6.1
   SAY @56
-  IF ~~ THEN DO ~MultiPlayerSync()
+  IF ~~ THEN DO ~ClearAllActions()
 StartCutSceneMode()
 ActionOverride(Player1,ForceSpell(Myself,WIZARD_ENCHANTED_WEAPON))
 SmallWait(1)
@@ -1312,7 +1312,7 @@ END
 
 IF ~~ THEN BEGIN furn05-9 // from: 8.1
   SAY @56
-  IF ~~ THEN DO ~MultiPlayerSync()
+  IF ~~ THEN DO ~ClearAllActions()
 StartCutSceneMode()
 ActionOverride(Player1,ForceSpell(Myself,WIZARD_ENCHANTED_WEAPON))
 SmallWait(1)
@@ -1350,7 +1350,7 @@ END
 
 IF ~~ THEN BEGIN furn06-3 // from: 1.1
   SAY @56
-  IF ~~ THEN DO ~MultiPlayerSync()
+  IF ~~ THEN DO ~ClearAllActions()
 StartCutSceneMode()
 ActionOverride(Player1,ForceSpell(Myself,WIZARD_ENCHANTED_WEAPON))
 SmallWait(1)
@@ -1370,7 +1370,7 @@ END
 
 IF ~~ THEN BEGIN furn06-5 // from: 4.1
   SAY @56
-  IF ~~ THEN DO ~MultiPlayerSync()
+  IF ~~ THEN DO ~ClearAllActions()
 StartCutSceneMode()
 ActionOverride(Player1,ForceSpell(Myself,WIZARD_ENCHANTED_WEAPON))
 SmallWait(1)
@@ -1390,7 +1390,7 @@ END
 
 IF ~~ THEN BEGIN furn06-7 // from: 6.1
   SAY @56
-  IF ~~ THEN DO ~MultiPlayerSync()
+  IF ~~ THEN DO ~ClearAllActions()
 StartCutSceneMode()
 ActionOverride(Player1,ForceSpell(Myself,WIZARD_ENCHANTED_WEAPON))
 SmallWait(1)
@@ -1410,7 +1410,7 @@ END
 
 IF ~~ THEN BEGIN furn06-9 // from: 8.1
   SAY @56
-  IF ~~ THEN DO ~MultiPlayerSync()
+  IF ~~ THEN DO ~ClearAllActions()
 StartCutSceneMode()
 ActionOverride(Player1,ForceSpell(Myself,WIZARD_ENCHANTED_WEAPON))
 SmallWait(1)
@@ -1449,7 +1449,7 @@ END
 
 IF ~~ THEN BEGIN furn07-3 // from: 1.1
   SAY @56
-  IF ~~ THEN DO ~MultiPlayerSync()
+  IF ~~ THEN DO ~ClearAllActions()
 StartCutSceneMode()
 ActionOverride(Player1,ForceSpell(Myself,WIZARD_ENCHANTED_WEAPON))
 SmallWait(1)
@@ -1469,7 +1469,7 @@ END
 
 IF ~~ THEN BEGIN furn07-5 // from: 4.1
   SAY @56
-  IF ~~ THEN DO ~MultiPlayerSync()
+  IF ~~ THEN DO ~ClearAllActions()
 StartCutSceneMode()
 ActionOverride(Player1,ForceSpell(Myself,WIZARD_ENCHANTED_WEAPON))
 SmallWait(1)
@@ -1489,7 +1489,7 @@ END
 
 IF ~~ THEN BEGIN furn07-7 // from: 6.1
   SAY @56
-  IF ~~ THEN DO ~MultiPlayerSync()
+  IF ~~ THEN DO ~ClearAllActions()
 StartCutSceneMode()
 ActionOverride(Player1,ForceSpell(Myself,WIZARD_ENCHANTED_WEAPON))
 SmallWait(1)
@@ -1509,7 +1509,7 @@ END
 
 IF ~~ THEN BEGIN furn07-9 // from: 8.1
   SAY @56
-  IF ~~ THEN DO ~MultiPlayerSync()
+  IF ~~ THEN DO ~ClearAllActions()
 StartCutSceneMode()
 ActionOverride(Player1,ForceSpell(Myself,WIZARD_ENCHANTED_WEAPON))
 SmallWait(1)
@@ -1529,7 +1529,7 @@ END
 
 IF ~~ THEN BEGIN furn07-11 // from: 10.1
   SAY @56
-  IF ~~ THEN DO ~MultiPlayerSync()
+  IF ~~ THEN DO ~ClearAllActions()
 StartCutSceneMode()
 ActionOverride(Player1,ForceSpell(Myself,WIZARD_ENCHANTED_WEAPON))
 SmallWait(1)
