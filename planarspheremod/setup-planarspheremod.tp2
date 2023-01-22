@@ -2554,9 +2554,9 @@ COPY~PlanarSphereMod/sto/psSphere.sto~ ~override/psSphere.sto~
 SAY NAME2 @2
 
 
-BEGIN	~Waukeen's Promenade Store~
+/*BEGIN	~Waukeen's Promenade Store~
 COPY~PlanarSphereMod/sto/psWauk.sto~ ~override/psWauk.sto~
-SAY NAME2 @570
+SAY NAME2 @570*/
 
 
 
