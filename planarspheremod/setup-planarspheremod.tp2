@@ -8,26 +8,51 @@ AUTHOR ~See_The_Readme (Org: Inferno & M, Updates: Hlid, Duality, Malbolgia)~
 //MODDER
 
 /* WeiDU v204 allows tp2 level version listing in the .log, so no more tra changes  */
-VERSION ~v2.6c~
+VERSION ~v2.6e BWP Trim + Fix~
 
 /* launch the readme file immediately. If you want to disable the ReadMe, place two slashes before it, like //README  */
 README ~PlanarSphereMod/readme-planarsphere.html~
 
-AUTO_TRA ~PlanarSphereMod/%s~
+/* Ineth - make sure strings are correctly encoded for both EE and non-EE games */
+ALWAYS
+      //Copies tra files into the autotra-folder (to leave the originals untouched)
+    DEFINE_ACTION_FUNCTION autotra_workaround BEGIN
+      COPY ~planarspheremod/language/english~  ~planarspheremod/language/autotra/%LANGUAGE%~
+      COPY ~planarspheremod/language/%LANGUAGE%~  ~planarspheremod/language/autotra/%LANGUAGE%~
+    END
+
+    LAF autotra_workaround END
+
+
+//  ACTION_DEFINE_ARRAY fl#noconvert BEGIN END
+
+ ACTION_DEFINE_ARRAY fl#reload BEGIN planarspheremod_setup END
+
+    LAF HANDLE_CHARSETS
+      INT_VAR
+        infer_charsets = 1
+      STR_VAR
+        tra_path = EVAL ~planarspheremod/language/autotra~
+//        noconvert_array = fl#noconvert
+        reload_array = fl#reload
+ END
+END
+
+AUTO_TRA ~PlanarSphereMod/language/%s~
 
 LANGUAGE ~English~
 ~english~
-//~PlanarSphereMod/english~
-~PlanarSphereMod/english/setup.tra~
+~PlanarSphereMod/language/english/setup.tra~
 
 BEGIN ~PlanarSphereMod v2.6c~
+REQUIRE_FILE ~Data/25Dialog.bif~ ~You do not appear to have TOB installed.~
 
-COPY + ~Setup-PlanarSphereMod.exe~ ~WeiDU.exe~
-
-COPY + ~chitin.key~ ~PlanarSphereMod/chitin.psm~
-COPY_LARGE + ~dialog.tlk~ ~PlanarSphereMod/dialog.psm~
-MKDIR ~PlanarSphereMod/over.bak~
-COPY_LARGE + ~override~ ~PlanarSphereMod/over.bak~
+//COPY + ~Setup-PlanarSphereMod.exe~ ~WeiDU.exe~
+//
+//COPY + ~chitin.key~ ~PlanarSphereMod/chitin.psm~
+//COPY_LARGE + ~dialog.tlk~ ~PlanarSphereMod/dialog.psm~
+//MKDIR ~PlanarSphereMod/over.bak~
+//COPY_LARGE + ~override~ ~PlanarSphereMod/over.bak~
 
 
 // TOB Check prior to compiling.
@@ -961,7 +986,20 @@ COPY ~PlanarSphereMod/cre/psFlay2.cre~ ~override/psFlay2.cre~
     SAY NAME2 @96
     SAY UNIDENTIFIED_DESC @97
     SAY DESC @98
-    SAY 0x8de @99
+
+    READ_LONG  0x64 "abil_off" ELSE 0
+    READ_SHORT 0x68 "abil_num" ELSE 0
+    READ_LONG  0x6a "fx_off" ELSE 0
+    FOR (index = 0; index < abil_num; index = index + 1) BEGIN
+      READ_SHORT ("%abil_off%" + 0x1e + (0x38 * "%index%")) "abil_fx_num"
+      READ_SHORT ("%abil_off%" + 0x20 + (0x38 * "%index%")) "abil_fx_idx"
+      FOR (index1 = 0; index1 < abil_fx_num; index1 = index1 + 1) BEGIN
+        READ_SHORT ("%fx_off%" + (("%abil_fx_idx%" + "%index1%") * 0x30)) "opcode"
+        PATCH_IF ("%opcode%" = 139) BEGIN
+          SAY ("%fx_off%" + 0x04 + (("%abil_fx_idx%" + "%index1%") * 0x30)) @99
+        END
+      END
+    END
 
   COPY ~PlanarSphereMod/itm/psHelm01.itm~ ~override/psHelm01.itm~
     SAY NAME1 @82
@@ -1016,7 +1054,20 @@ COPY ~PlanarSphereMod/itm/psBolt01.itm~ ~override/psBolt01.itm~
     SAY NAME2 @115
     SAY UNIDENTIFIED_DESC @116
     SAY DESC @117
-    SAY 0x1ce @118
+
+    READ_LONG  0x64 "abil_off" ELSE 0
+    READ_SHORT 0x68 "abil_num" ELSE 0
+    READ_LONG  0x6a "fx_off" ELSE 0
+    FOR (index = 0; index < abil_num; index = index + 1) BEGIN
+      READ_SHORT ("%abil_off%" + 0x1e + (0x38 * "%index%")) "abil_fx_num"
+      READ_SHORT ("%abil_off%" + 0x20 + (0x38 * "%index%")) "abil_fx_idx"
+      FOR (index1 = 0; index1 < abil_fx_num; index1 = index1 + 1) BEGIN
+        READ_SHORT ("%fx_off%" + (("%abil_fx_idx%" + "%index1%") * 0x30)) "opcode"
+        PATCH_IF ("%opcode%" = 139) BEGIN
+          SAY ("%fx_off%" + 0x04 + (("%abil_fx_idx%" + "%index1%") * 0x30)) @118
+        END
+      END
+    END
 
 COPY ~PlanarSphereMod/itm/psBolt02.itm~ ~override/psBolt02.itm~
     SAY NAME1 @0
@@ -1058,7 +1109,20 @@ COPY ~PlanarSphereMod/itm/psBook01.itm~ ~override/psBook01.itm~
     SAY NAME2 @138
     SAY UNIDENTIFIED_DESC @139
     SAY DESC @140
-    SAY 0x10e @141
+
+    READ_LONG  0x64 "abil_off" ELSE 0
+    READ_SHORT 0x68 "abil_num" ELSE 0
+    READ_LONG  0x6a "fx_off" ELSE 0
+    FOR (index = 0; index < abil_num; index = index + 1) BEGIN
+      READ_SHORT ("%abil_off%" + 0x1e + (0x38 * "%index%")) "abil_fx_num"
+      READ_SHORT ("%abil_off%" + 0x20 + (0x38 * "%index%")) "abil_fx_idx"
+      FOR (index1 = 0; index1 < abil_fx_num; index1 = index1 + 1) BEGIN
+        READ_SHORT ("%fx_off%" + (("%abil_fx_idx%" + "%index1%") * 0x30)) "opcode"
+        PATCH_IF ("%opcode%" = 139) BEGIN
+          SAY ("%fx_off%" + 0x04 + (("%abil_fx_idx%" + "%index1%") * 0x30)) @141
+        END
+      END
+    END
 
 COPY ~PlanarSphereMod/itm/psBook02.itm~ ~override/psBook02.itm~
     SAY NAME1 @150
@@ -1130,8 +1194,24 @@ COPY ~PlanarSphereMod/itm/psBook04.itm~ ~override/psBook04.itm~
     SAY NAME2 @177
     SAY UNIDENTIFIED_DESC @112
     SAY DESC @178
-    SAY 0x25e @179
-    SAY 0x2be @180
+
+    READ_LONG  0x64 "abil_off" ELSE 0
+    READ_SHORT 0x68 "abil_num" ELSE 0
+    READ_LONG  0x6a "fx_off" ELSE 0
+    FOR (index = 0; index < abil_num; index = index + 1) BEGIN
+      READ_SHORT ("%abil_off%" + 0x1e + (0x38 * "%index%")) "abil_fx_num"
+      READ_SHORT ("%abil_off%" + 0x20 + (0x38 * "%index%")) "abil_fx_idx"
+      FOR (index1 = 0; index1 < abil_fx_num; index1 = index1 + 1) BEGIN
+        READ_SHORT ("%fx_off%" +        (("%abil_fx_idx%" + "%index1%") * 0x30)) "opcode"
+        READ_BYTE  ("%fx_off%" + 0x12 + (("%abil_fx_idx%" + "%index1%") * 0x30)) "prob1"
+        PATCH_IF (("%opcode%" = 139) AND ("%prob1%" = 86)) BEGIN
+          SAY ("%fx_off%" + 0x04 + (("%abil_fx_idx%" + "%index1%") * 0x30)) @179
+        END ELSE
+        PATCH_IF (("%opcode%" = 139) AND ("%prob1%" = 100)) BEGIN
+          SAY ("%fx_off%" + 0x04 + (("%abil_fx_idx%" + "%index1%") * 0x30)) @180
+        END
+      END
+    END
 
   COPY ~PlanarSphereMod/itm/psRobe06.itm~ ~override/psRobe06.itm~
     SAY NAME1 @181
@@ -1967,7 +2047,20 @@ COPY ~PlanarSphereMod/spl/SPPSMSR.spl~ ~override/SPPSMSR.spl~
 
 COPY ~PlanarSphereMod/spl/SPPSMYS.SPL~ ~override/SPPSMYS.SPL~
   SAY NAME1 @456
-  SAY 0xce @457
+
+  READ_LONG  0x64 "abil_off" ELSE 0
+  READ_SHORT 0x68 "abil_num" ELSE 0
+  READ_LONG  0x6a "fx_off" ELSE 0
+  FOR (index = 0; index < abil_num; index = index + 1) BEGIN
+    READ_SHORT ("%abil_off%" + 0x1e + (0x28 * "%index%")) "abil_fx_num"
+    READ_SHORT ("%abil_off%" + 0x20 + (0x28 * "%index%")) "abil_fx_idx"
+    FOR (index1 = 0; index1 < abil_fx_num; index1 = index1 + 1) BEGIN
+      READ_SHORT ("%fx_off%" + (("%abil_fx_idx%" + "%index1%") * 0x30)) "opcode"
+      PATCH_IF ("%opcode%" = 139) BEGIN
+        SAY ("%fx_off%" + 0x04 + (("%abil_fx_idx%" + "%index1%") * 0x30)) @457
+      END
+    END
+  END
 
 COPY ~PlanarSphereMod/spl/Sppsnms.spl~ ~override/Sppsnms.spl~
   SAY NAME1 @363
@@ -2092,12 +2185,38 @@ COPY ~PlanarSphereMod/spl/SPpsq7.spl~ ~override/SPpsq7.spl~
 COPY ~PlanarSphereMod/spl/SPpsq8.spl~ ~override/SPpsq8.spl~
   SAY NAME1 @308
   SAY UNIDENTIFIED_DESC @309
-  SAY 0xfe @496
+
+  READ_LONG  0x64 "abil_off" ELSE 0
+  READ_SHORT 0x68 "abil_num" ELSE 0
+  READ_LONG  0x6a "fx_off" ELSE 0
+  FOR (index = 0; index < abil_num; index = index + 1) BEGIN
+    READ_SHORT ("%abil_off%" + 0x1e + (0x28 * "%index%")) "abil_fx_num"
+    READ_SHORT ("%abil_off%" + 0x20 + (0x28 * "%index%")) "abil_fx_idx"
+    FOR (index1 = 0; index1 < abil_fx_num; index1 = index1 + 1) BEGIN
+      READ_SHORT ("%fx_off%" + (("%abil_fx_idx%" + "%index1%") * 0x30)) "opcode"
+      PATCH_IF ("%opcode%" = 139) BEGIN
+        SAY ("%fx_off%" + 0x04 + (("%abil_fx_idx%" + "%index1%") * 0x30)) @496
+      END
+    END
+  END
 
 COPY ~PlanarSphereMod/spl/SPpsq9.spl~ ~override/SPpsq9.spl~
   SAY NAME1 @310
   SAY UNIDENTIFIED_DESC @311
-  SAY 0x12e @499
+
+  READ_LONG  0x64 "abil_off" ELSE 0
+  READ_SHORT 0x68 "abil_num" ELSE 0
+  READ_LONG  0x6a "fx_off" ELSE 0
+  FOR (index = 0; index < abil_num; index = index + 1) BEGIN
+    READ_SHORT ("%abil_off%" + 0x1e + (0x28 * "%index%")) "abil_fx_num"
+    READ_SHORT ("%abil_off%" + 0x20 + (0x28 * "%index%")) "abil_fx_idx"
+    FOR (index1 = 0; index1 < abil_fx_num; index1 = index1 + 1) BEGIN
+      READ_SHORT ("%fx_off%" + (("%abil_fx_idx%" + "%index1%") * 0x30)) "opcode"
+      PATCH_IF ("%opcode%" = 139) BEGIN
+        SAY ("%fx_off%" + 0x04 + (("%abil_fx_idx%" + "%index1%") * 0x30)) @499
+      END
+    END
+  END
 
 COPY ~PlanarSphereMod/spl/Sppsrey.spl~ ~override/Sppsrey.spl~
   SAY NAME1 @367
@@ -2314,28 +2433,28 @@ COMPILE ~PlanarSphereMod/dlg~  // Full dialogs
      ~PlanarSphereMod/baf~  // Full Scripts
 
 COMPILE ~PlanarSphereMod/baf/psCut41.baf~
-USING ~PlanarSphereMod/english/ar0900.tra~
+USING ~PlanarSphereMod/language/%s/ar0900.tra~
 
 COMPILE ~PlanarSphereMod/baf/psCut42.baf~
-USING ~PlanarSphereMod/english/ar0900.tra~
+USING ~PlanarSphereMod/language/%s/ar0900.tra~
 
 COMPILE ~PlanarSphereMod/baf/psCut43.baf~
-USING ~PlanarSphereMod/english/ar0900.tra~
+USING ~PlanarSphereMod/language/%s/ar0900.tra~
 
 COMPILE ~PlanarSphereMod/baf/psCut44.baf~
-USING ~PlanarSphereMod/english/ar0900.tra~
+USING ~PlanarSphereMod/language/%s/ar0900.tra~
 
 COMPILE ~PlanarSphereMod/baf/psCut45.baf~
-USING ~PlanarSphereMod/english/ar0900.tra~
+USING ~PlanarSphereMod/language/%s/ar0900.tra~
 
 COMPILE ~PlanarSphereMod/baf/psCut46.baf~
-USING ~PlanarSphereMod/english/ar0900.tra~
+USING ~PlanarSphereMod/language/%s/ar0900.tra~
 
 COMPILE ~PlanarSphereMod/baf/psCut47.baf~
-USING ~PlanarSphereMod/english/ar0900.tra~
+USING ~PlanarSphereMod/language/%s/ar0900.tra~
 
 COMPILE ~PlanarSphereMod/baf/psCut39.baf~
-USING ~PlanarSphereMod/english/ar0300.tra~
+USING ~PlanarSphereMod/language/%s/ar0300.tra~
 
 // Extending existing scripts and possibly existing scripts
 
@@ -2369,7 +2488,7 @@ EXTEND_TOP    ~AR0500.bcs~  ~PlanarSphereMod/snip/psAR0500.baf~
 
 COPY_EXISTING ~AR0700.bcs~ ~Override/AR0700.bcs~
 EXTEND_TOP    ~AR0700.bcs~  ~PlanarSphereMod/snip/psAR0700.baf~
-USING ~PlanarSphereMod/english/AR0700.tra~
+USING ~PlanarSphereMod/language/%s/AR0700.tra~
 
 COPY_EXISTING ~AR0709.bcs~ ~Override/AR0709.bcs~
 EXTEND_TOP    ~AR0709.bcs~  ~PlanarSphereMod/snip/psAR0709.baf~
@@ -2463,3 +2582,9 @@ EXTEND_TOP ~BALDUR.BCS~ ~PlanarSphereMod/Raw/sBALDURs.bcs~
 COPY_EXISTING ~BALDUR25.bcs~ ~override/BALDUR25.bcs~
 EXTEND_TOP ~BALDUR25.BCS~ ~PlanarSphereMod/Raw/sBALDURs.bcs~
 
+// PVRZ
+ ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
+ 
+ COPY ~PlanarSphereMod/PVRZ~ ~override~
+ 
+END

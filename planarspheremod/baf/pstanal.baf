@@ -4,6 +4,7 @@ IF
 	See(NearestEnemyOf(Myself))
 Then
 	Response #100
+		ReallyForceSpell(Myself, CLERIC_HEAL)
 		IncrementGlobal("psTanaSummonedCounter", "LOCALS", 1)
 		CreateCreatureObject("psTana01", NearestEnemyOf(Myself), 0, 0, 0)
 		CreateCreatureObject("psTana02", NearestEnemyOf(Myself), 0, 0, 0)
