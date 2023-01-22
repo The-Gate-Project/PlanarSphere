@@ -26,7 +26,7 @@ ALWAYS
 
 //  ACTION_DEFINE_ARRAY fl#noconvert BEGIN END
 
- ACTION_DEFINE_ARRAY fl#reload BEGIN planarspheremod_setup END
+ ACTION_DEFINE_ARRAY fl#reload BEGIN setup END
 
     LAF HANDLE_CHARSETS
       INT_VAR
@@ -2554,9 +2554,9 @@ COPY~PlanarSphereMod/sto/psSphere.sto~ ~override/psSphere.sto~
 SAY NAME2 @2
 
 
-/*BEGIN	~Waukeen's Promenade Store~
+BEGIN	~Waukeen's Promenade Store~
 COPY~PlanarSphereMod/sto/psWauk.sto~ ~override/psWauk.sto~
-SAY NAME2 @570*/
+SAY NAME2 @570
 
 
 
