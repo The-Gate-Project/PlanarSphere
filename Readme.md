@@ -4,11 +4,12 @@
 
 **Autor** : **Inferno**
 
-[Link to original Mod Forum]()
+[Link to SHS Mod Forum](http://www.shsforums.net/topic/24405-planar-sphere-mod-v26a/)
 
 [Link to Beamdog Mod Forum](https://forums.beamdog.com/discussion/75761/mod-spotlight-planar-sphere-mod)
 
 [Link to original Mod Download](http://www.shsforums.net/files/file/131-planarsphere/)
+
 
 ## Description:
 ---------------
@@ -51,7 +52,7 @@ Run (click on) "Setup-PlanarSphere.exe" and follow further instructions from the
 
 To uninstall, run "Setup-PlanarSphere.exe" again and select the uninstall option.  
 
-**EET** : Install this mod **in your BGEE game AFTER** EET !
+**EET** : Install this mod **in your BG2EE game AFTER** EET !
 
 ## Compatibility :
 ------------------
@@ -160,6 +161,33 @@ v2.6c
 - Bug with Key fixed YET AGAIN
 
 - Streamlined tp2 file courtesy of erebusant (it got messy with various people's fixes and erebusant also cleaned up some of my messes)
+
+v2.8  
+- Correction  
+	- arpsq2.are Bwp fix  
+	- psbaatl.baf, pstanal.baf Bwp fix  
+	-  psglobe1.baf, psglobe2.baf, psglobe3.baf, psglobe4.baf, psglobe6.baf Bwp fix  
+	- psadapp1.cre Bwp fix  
+	- pstest01.cre, pstest02.cre, pstest03.cre, pstest04.cre Bwp fix  
+	- pstutor6.d Bwp fix  
+	- pshelm02.itm, psmade12.itm Bwp fix  
+	- psstaf01.itm, psstaf02.itm Bwp fix  
+	- pssw1h02.itm Bwp fix  
+	- Missing Bwp fix for psglobe5.baf  
+	- Meaningful corrections from the mod Magestronghold  
+
+- Additions  
+	- APPEND  
+	`APPEND ~Animate.ids~ ~0xE050 IC_LICHBLACK~ UNLESS ~0xE050 IC_LICHBLACK~
+APPEND ~Animate.ids~ ~0x7f3a HULA_WIZARD~ UNLESS ~0x7f3a HULA_WIZARD~` 
+	- PVRZ for AR0452  
+	- Add IconV / Handle Charset and  language / autotra folders  
+	- Modified tp2 (slightly)  
+	- Add readme md  
+	- Russian translation  
+	- Missing traification from ArcaneCoast	  
+	- Delete duplicate psmari1.baf  
+	- Delete backup  
 
 ## SPOILERS
 ------------------

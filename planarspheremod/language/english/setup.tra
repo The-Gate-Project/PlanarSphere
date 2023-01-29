@@ -1,4 +1,4 @@
-@0    = ~PlanarSphereMod v2.7~
+@0    = ~PlanarSphereMod v2.8~
 @1    = ~TOB Required~
 @2    = ~Planar Sphere~
 @3    = ~Test Dummy~
@@ -2221,4 +2221,13 @@ Unusuable by:
 @619  = ~The Wailing~
 @620  = ~Speak to each of the apprenti in turn, they will demonstrate a spell of their choice. Once you have spoken to all of them, speak with me again.~
 @621  = ~Assistant Scott! Begin the opening of the portal!~
+
+// Missing traification from tp2 (Thanks to ArcaneCoast)
+@622  = ~Short Sword~
+@623  = ~Planar Sphere Store~
+@624  = ~Waukeen's Promenade Store~
+@625  = ~Planar Sphere Return v2~
+@626  = ~Return~
+@627  = ~Planar Sphere~
+
 @666  = ~You must uninstall the old Planar Sphere Return mod before installing it with PSM v2.6!~

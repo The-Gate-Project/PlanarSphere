@@ -8,12 +8,12 @@ AUTHOR ~See_The_Readme (Org: Inferno & M, Updates: Hlid, Duality, Malbolgia)~
 //MODDER
 
 /* WeiDU v204 allows tp2 level version listing in the .log, so no more tra changes  */
-VERSION ~v2.6e BWP Trim + Fix~
+VERSION ~v2.8~
 
 /* launch the readme file immediately. If you want to disable the ReadMe, place two slashes before it, like //README  */
 README ~PlanarSphereMod/readme-planarsphere.html~
 
-/* Ineth - make sure strings are correctly encoded for both EE and non-EE games */
+/* Make sure strings are correctly encoded for both EE and non-EE games */
 ALWAYS
       //Copies tra files into the autotra-folder (to leave the originals untouched)
     DEFINE_ACTION_FUNCTION autotra_workaround BEGIN
@@ -44,8 +44,15 @@ LANGUAGE ~English~
 ~english~
 ~PlanarSphereMod/language/english/setup.tra~
 
-BEGIN ~PlanarSphereMod v2.6c~
+LANGUAGE ~Russian~
+~russian~
+~PlanarSphereMod/language/russian/setup.tra~
+
+BEGIN @0
 REQUIRE_FILE ~Data/25Dialog.bif~ ~You do not appear to have TOB installed.~
+
+APPEND ~Animate.ids~ ~0xE050 IC_LICHBLACK~ UNLESS ~0xE050 IC_LICHBLACK~
+APPEND ~Animate.ids~ ~0x7f3a HULA_WIZARD~ UNLESS ~0x7f3a HULA_WIZARD~
 
 //COPY + ~Setup-PlanarSphereMod.exe~ ~WeiDU.exe~
 //
@@ -959,13 +966,13 @@ COPY ~PlanarSphereMod/cre/psFlay2.cre~ ~override/psFlay2.cre~
     SAY NAME2 @89
 
   COPY ~PlanarSphereMod/itm/psSW1H01.itm~ ~override/psSW1H01.itm~
-    SAY NAME1 @0
+    SAY NAME1 @622
     SAY NAME2 @557
-    SAY UNIDENTIFIED_DESC @0
+    SAY UNIDENTIFIED_DESC @576
     SAY DESC @558
 
   COPY ~PlanarSphereMod/itm/psSW1H02.itm~ ~override/psSW1H02.itm~
-    SAY NAME1 ~Short Sword~
+    SAY NAME1 @622
     SAY NAME2 @574
     SAY UNIDENTIFIED_DESC @576
     SAY DESC @575
@@ -1020,15 +1027,15 @@ COPY ~PlanarSphereMod/cre/psFlay2.cre~ ~override/psFlay2.cre~
     SAY DESC @149
 
   COPY ~PlanarSphereMod/itm/psHelm04.itm~ ~override/psHelm04.itm~
-    SAY NAME1 @0
+    SAY NAME1 @146
     SAY NAME2 @553
-    SAY UNIDENTIFIED_DESC @0
+    SAY UNIDENTIFIED_DESC @148
     SAY DESC @554
 
   COPY ~PlanarSphereMod/itm/psHelm05.itm~ ~override/psHelm05.itm~
-    SAY NAME1 @0
+    SAY NAME1 @146
     SAY NAME2 @555
-    SAY UNIDENTIFIED_DESC @0
+    SAY UNIDENTIFIED_DESC @148
     SAY DESC @556
 
   COPY ~PlanarSphereMod/itm/psWand01.itm~ ~override/psWand01.itm~
@@ -1070,9 +1077,9 @@ COPY ~PlanarSphereMod/itm/psBolt01.itm~ ~override/psBolt01.itm~
     END
 
 COPY ~PlanarSphereMod/itm/psBolt02.itm~ ~override/psBolt02.itm~
-    SAY NAME1 @0
+    SAY NAME1 @114
     SAY NAME2 @559
-    SAY UNIDENTIFIED_DESC @0
+    SAY UNIDENTIFIED_DESC @116
     SAY DESC @560
 
 COPY ~PlanarSphereMod/itm/psBrac01.itm~ ~override/psBrac01.itm~
@@ -2549,27 +2556,27 @@ END
 // Planar Sphere Store Copy
 
 
-BEGIN	~Planar Sphere Store~
+BEGIN @623
 COPY~PlanarSphereMod/sto/psSphere.sto~ ~override/psSphere.sto~
 SAY NAME2 @2
 
 
-BEGIN	~Waukeen's Promenade Store~
+BEGIN @624
 COPY~PlanarSphereMod/sto/psWauk.sto~ ~override/psWauk.sto~
 SAY NAME2 @570
 
 
 
 
-BEGIN ~Planar Sphere Return v2~
+BEGIN @625
 FORBID_COMPONENT "Setup-PSTele.tp2" "0" @666
 
 COPY ~PlanarSphereMod/misc/RETURN.SPL~       ~override/RETURN.SPL~
-  SAY NAME1 ~Return~
+  SAY NAME1 @626
   SAY UNIDENTIFIED_DESC ~<No Text>~
 
 COPY ~PlanarSphereMod/misc/SPHHOME.SPL~      ~override/SPHHOME.SPL~
-  SAY NAME1 ~Planar Sphere~
+  SAY NAME1 @627
   SAY UNIDENTIFIED_DESC ~<No Text>~
 
 COPY ~PlanarSphereMod/misc/SPHHOME.bam~      ~override/SPHHOME.bam~
