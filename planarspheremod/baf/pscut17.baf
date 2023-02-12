@@ -2,10 +2,7 @@ IF
 	True()
 THEN
 	RESPONSE #100
-		MultiPlayerSync()
-		StartCutSceneMode()
 		CutSceneId(Player1)
-		Explore()
 		ActionOverride("psSPTar5",ReallyForceSpell(Myself,4646))
 		ActionOverride("psSPTar1",ReallyForceSpell(Myself,4646))
 		ActionOverride("psSPTar2",ReallyForceSpell(Myself,4646))
@@ -21,8 +18,8 @@ THEN
 		Wait(2)
 		ActionOverride("psMel",DestroySelf())
 		MoveViewPoint([2035.1518],INSTANT)
-		CreateCreatureImpassable("OBSERVE",[2030.1513],4) // No such index
-		CreateCreatureImpassable("psMel",[2030.1513],4) // Mage
+		CreateCreatureImpassable("OBSERVE",[2544.1913],4) // No such index
+		CreateCreatureImpassable("psMel",[2544.1913],4) // Mage
 		ActionOverride("psMel",Polymorph(HULA_WIZARD))
 		ActionOverride("psMel",ApplySpell(Myself,4645))
 		SmallWait(1)

@@ -38,7 +38,7 @@ ALWAYS
  END
 END
 
-AUTO_TRA ~PlanarSphereMod/language/%s~
+AUTO_TRA ~PlanarSphereMod/language/autotra/%s~
 
 LANGUAGE ~English~
 ~english~
