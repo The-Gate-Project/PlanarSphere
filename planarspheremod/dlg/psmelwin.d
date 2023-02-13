@@ -1,38 +1,25 @@
 BEGIN ~psMelWin~
 
 IF ~True()~ THEN BEGIN 0 // from:
-  SAY @0
-  IF ~~ THEN GOTO 1
-END
-
-IF ~~ THEN BEGIN 1 // from: 0.0
-  SAY @1
-  IF ~~ THEN GOTO 2
-END
-
-IF ~~ THEN BEGIN 2 // from: 1.0
-  SAY @2
-  IF ~~ THEN GOTO 3
-END
-
-IF ~~ THEN BEGIN 3 // from: 2.0
-  SAY @3
-  IF ~~ THEN GOTO 4
-END
-
-IF ~~ THEN BEGIN 4 // from: 3.0
-  SAY @4
-  IF ~~ THEN GOTO 5
-END
-
-IF ~~ THEN BEGIN 5 // from: 4.0
-  SAY @5
-  IF ~~ THEN GOTO 6
-END
-
-IF ~~ THEN BEGIN 6 // from: 5.0
-  SAY @6
-  IF ~~ THEN DO ~FadeToColor([30.0],0)
+  SAY #5383
+  IF ~~ THEN  DO ~StartCutSceneMode()
+HideGUI()
+DisplayStringHead("psMel",@0)
+Wait(4)
+DisplayStringHead("psMel",@1)
+Wait(3)
+DisplayStringHead("psMel",@2)
+Wait(2)
+DisplayStringHead("psMel",@3)
+Wait(5)
+DisplayStringHead("psMel",@4)
+Wait(2)
+DisplayStringHead("psMel",@5)
+Wait(6)
+DisplayStringHead("psMel",@6)
+Wait(2)
+  FadeToColor([30.0],0)
 SmallWait(2)
-EndCredits()~ EXIT
+EndCredits()
+EndCutSceneMode()~ EXIT
 END

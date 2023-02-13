@@ -2437,31 +2437,31 @@ COPY ~PlanarSphereMod/spl/Spsq126.spl~ ~override/Spsq126.spl~
 // Compiling
 
 COMPILE ~PlanarSphereMod/dlg~  // Full dialogs
-     ~PlanarSphereMod/baf~  // Full Scripts
+COMPILE ~PlanarSphereMod/baf~  // Full Scripts
 
 COMPILE ~PlanarSphereMod/baf/psCut41.baf~
-USING ~PlanarSphereMod/language/%s/ar0900.tra~
+USING ~PlanarSphereMod/language/autotra/%s/ar0900.tra~
 
 COMPILE ~PlanarSphereMod/baf/psCut42.baf~
-USING ~PlanarSphereMod/language/%s/ar0900.tra~
+USING ~PlanarSphereMod/language/autotra/%s/ar0900.tra~
 
 COMPILE ~PlanarSphereMod/baf/psCut43.baf~
-USING ~PlanarSphereMod/language/%s/ar0900.tra~
+USING ~PlanarSphereMod/language/autotra/%s/ar0900.tra~
 
 COMPILE ~PlanarSphereMod/baf/psCut44.baf~
-USING ~PlanarSphereMod/language/%s/ar0900.tra~
+USING ~PlanarSphereMod/language/autotra/%s/ar0900.tra~
 
 COMPILE ~PlanarSphereMod/baf/psCut45.baf~
-USING ~PlanarSphereMod/language/%s/ar0900.tra~
+USING ~PlanarSphereMod/language/autotra/%s/ar0900.tra~
 
 COMPILE ~PlanarSphereMod/baf/psCut46.baf~
-USING ~PlanarSphereMod/language/%s/ar0900.tra~
+USING ~PlanarSphereMod/language/autotra/%s/ar0900.tra~
 
 COMPILE ~PlanarSphereMod/baf/psCut47.baf~
-USING ~PlanarSphereMod/language/%s/ar0900.tra~
+USING ~PlanarSphereMod/language/autotra/%s/ar0900.tra~
 
 COMPILE ~PlanarSphereMod/baf/psCut39.baf~
-USING ~PlanarSphereMod/language/%s/ar0300.tra~
+USING ~PlanarSphereMod/language/autotra/%s/ar0300.tra~
 
 // Extending existing scripts and possibly existing scripts
 
@@ -2495,7 +2495,7 @@ EXTEND_TOP    ~AR0500.bcs~  ~PlanarSphereMod/snip/psAR0500.baf~
 
 COPY_EXISTING ~AR0700.bcs~ ~Override/AR0700.bcs~
 EXTEND_TOP    ~AR0700.bcs~  ~PlanarSphereMod/snip/psAR0700.baf~
-USING ~PlanarSphereMod/language/%s/AR0700.tra~
+USING ~PlanarSphereMod/language/autotra/%s/AR0700.tra~
 
 COPY_EXISTING ~AR0709.bcs~ ~Override/AR0709.bcs~
 EXTEND_TOP    ~AR0709.bcs~  ~PlanarSphereMod/snip/psAR0709.baf~
