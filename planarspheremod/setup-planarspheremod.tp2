@@ -36,6 +36,10 @@ ALWAYS
 //        noconvert_array = fl#noconvert
         reload_array = fl#reload
  END
+
+//
+INCLUDE ~planarspheremod/lib/gw_functions.tpa~
+
 END
 
 AUTO_TRA ~PlanarSphereMod/language/autotra/%s~
@@ -64,7 +68,6 @@ APPEND ~Animate.ids~ ~0x7f3a HULA_WIZARD~ UNLESS ~0x7f3a HULA_WIZARD~
 
 // TOB Check prior to compiling.
 REQUIRE_FILE ~Data/25Dialog.bif~ @1 // ToB  check// Base Copy Overs
-
 
 COPY ~PlanarSphereMod/are~   ~override~ // Area Files (new area files not previously installed in game)
      ~PlanarSphereMod/Pics~   ~override~ // Mos and Bmp files including additional search regions in AR0412SR.bmp
@@ -939,12 +942,11 @@ COPY ~PlanarSphereMod/cre/psFlay2.cre~ ~override/psFlay2.cre~
     SAY UNIDENTIFIED_DESC @615
     SAY DESC @615
 
-
   COPY ~PlanarSphereMod/itm/psBelt01.itm~ ~override/psBelt01.itm~
     SAY NAME1 @563
     SAY NAME2 @564
     SAY UNIDENTIFIED_DESC @565
-    SAY DESC @566
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@566" END
 
   COPY ~PlanarSphereMod/itm/psRing01.itm~ ~override/psRing01.itm~
     SAY NAME1 @82
@@ -969,19 +971,19 @@ COPY ~PlanarSphereMod/cre/psFlay2.cre~ ~override/psFlay2.cre~
     SAY NAME1 @622
     SAY NAME2 @557
     SAY UNIDENTIFIED_DESC @576
-    SAY DESC @558
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@558" END
 
   COPY ~PlanarSphereMod/itm/psSW1H02.itm~ ~override/psSW1H02.itm~
     SAY NAME1 @622
     SAY NAME2 @574
     SAY UNIDENTIFIED_DESC @576
-    SAY DESC @575
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@575" END
 
   COPY ~PlanarSphereMod/itm/psSW2h01.itm~ ~override/psSW2h01.itm~
     SAY NAME1 @90
     SAY NAME2 @91
-    SAY UNIDENTIFIED_DESC @92
-    SAY DESC @93
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_undesc_to_update = "@92" END
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@93" END
 
 //  COPY ~PlanarSphereMod/itm/helloip.itm~ ~override/helloip.itm~
 //    SAY NAME1 @82
@@ -992,7 +994,7 @@ COPY ~PlanarSphereMod/cre/psFlay2.cre~ ~override/psFlay2.cre~
     SAY NAME1 @95
     SAY NAME2 @96
     SAY UNIDENTIFIED_DESC @97
-    SAY DESC @98
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@98" END
 
     READ_LONG  0x64 "abil_off" ELSE 0
     READ_SHORT 0x68 "abil_num" ELSE 0
@@ -1018,43 +1020,43 @@ COPY ~PlanarSphereMod/cre/psFlay2.cre~ ~override/psFlay2.cre~
     SAY NAME1 @142
     SAY NAME2 @143
     SAY UNIDENTIFIED_DESC @144
-    SAY DESC @145
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@145" END
 
   COPY ~PlanarSphereMod/itm/psHelm03.itm~ ~override/psHelm03.itm~
     SAY NAME1 @146
     SAY NAME2 @147
     SAY UNIDENTIFIED_DESC @148
-    SAY DESC @149
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@149" END
 
   COPY ~PlanarSphereMod/itm/psHelm04.itm~ ~override/psHelm04.itm~
     SAY NAME1 @146
     SAY NAME2 @553
     SAY UNIDENTIFIED_DESC @148
-    SAY DESC @554
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@554" END
 
   COPY ~PlanarSphereMod/itm/psHelm05.itm~ ~override/psHelm05.itm~
     SAY NAME1 @146
     SAY NAME2 @555
     SAY UNIDENTIFIED_DESC @148
-    SAY DESC @556
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@556" END
 
   COPY ~PlanarSphereMod/itm/psWand01.itm~ ~override/psWand01.itm~
     SAY NAME1 @102
     SAY NAME2 @103
     SAY UNIDENTIFIED_DESC @104
-    SAY DESC @105
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@105" END
 
  COPY ~PlanarSphereMod/itm/psStaf02.itm~ ~override/psStaf02.itm~
     SAY NAME1 @95
     SAY NAME2 @106
     SAY UNIDENTIFIED_DESC @97
-    SAY DESC @107
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@107" END
 
 COPY ~PlanarSphereMod/itm/psWand02.itm~ ~override/psWand02.itm~
     SAY NAME1 @102
     SAY NAME2 @111
     SAY UNIDENTIFIED_DESC @112
-    SAY DESC @113
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@113" END
 
 COPY ~PlanarSphereMod/itm/psBolt01.itm~ ~override/psBolt01.itm~
     SAY NAME1 @114
@@ -1093,6 +1095,7 @@ COPY ~PlanarSphereMod/itm/psSands.itm~ ~override/psSands.itm~
     SAY NAME2 @124
     SAY UNIDENTIFIED_DESC @125
     SAY DESC @126
+	
 COPY ~PlanarSphereMod/itm/psSCRL01.itm~ ~override/psSCRL01.itm~
     SAY NAME1 @127
     SAY NAME2 @128
@@ -1103,13 +1106,13 @@ COPY ~PlanarSphereMod/itm/psShld01.itm~ ~override/psShld01.itm~
     SAY NAME1 @131
     SAY NAME2 @132
     SAY UNIDENTIFIED_DESC @133
-    SAY DESC @134
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@134" END
 
 COPY ~PlanarSphereMod/itm/psSW2H02.itm~ ~override/psSW2H02.itm~
     SAY NAME1 @90
     SAY NAME2 @135
-    SAY UNIDENTIFIED_DESC @92
-    SAY DESC @136
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_undesc_to_update = "@92" END
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@136" END
 
 COPY ~PlanarSphereMod/itm/psBook01.itm~ ~override/psBook01.itm~
     SAY NAME1 @137
@@ -1183,14 +1186,14 @@ COPY ~PlanarSphereMod/itm/psBook04.itm~ ~override/psBook04.itm~
   COPY ~PlanarSphereMod/itm/psWand03.itm~ ~override/psWand03.itm~
     SAY NAME1 @102
     SAY NAME2 @169
-    SAY UNIDENTIFIED_DESC @112
-    SAY DESC @170
+	SAY UNIDENTIFIED_DESC @112
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@170" END
 
   COPY ~PlanarSphereMod/itm/psPot05.itm~ ~override/psPot05.itm~
     SAY NAME1 @171
     SAY NAME2 @172
     SAY UNIDENTIFIED_DESC @173
-    SAY DESC @174
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@174" END
 
   COPY ~PlanarSphereMod/itm/psCre14.itm~ ~override/psCre14.itm~
     SAY NAME1 @175
@@ -1224,7 +1227,7 @@ COPY ~PlanarSphereMod/itm/psBook04.itm~ ~override/psBook04.itm~
     SAY NAME1 @181
     SAY NAME2 @182
     SAY UNIDENTIFIED_DESC @183
-    SAY DESC @184
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@184" END
 
   COPY ~PlanarSphereMod/itm/psSCRL03.itm~ ~override/psSCRL03.itm~
     SAY NAME1 @185
@@ -1234,9 +1237,9 @@ COPY ~PlanarSphereMod/itm/psBook04.itm~ ~override/psBook04.itm~
   COPY ~PlanarSphereMod/itm/psAxe01.itm~ ~override/psAxe01.itm~
     SAY NAME1 @187
     SAY NAME2 @188
-    SAY UNIDENTIFIED_DESC @189
-    SAY DESC @190
-
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_undesc_to_update = "@189" END
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@190" END
+	
   COPY ~PlanarSphereMod/itm/psRing03.itm~ ~override/psRing03.itm~
     SAY NAME1 @82
     SAY NAME2 @191
@@ -1247,7 +1250,7 @@ COPY ~PlanarSphereMod/itm/psBook04.itm~ ~override/psBook04.itm~
     SAY NAME1 @82
     SAY NAME2 @193
     SAY UNIDENTIFIED_DESC @194
-    SAY DESC @195
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@195" END
 
   COPY ~PlanarSphereMod/itm/psCre15.itm~ ~override/psCre15.itm~
     SAY NAME1 @95
@@ -1271,49 +1274,49 @@ COPY ~PlanarSphereMod/itm/psBook04.itm~ ~override/psBook04.itm~
     SAY NAME1 @181
     SAY NAME2 @198
     SAY UNIDENTIFIED_DESC @199
-    SAY DESC @200
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@200" END
 
   COPY ~PlanarSphereMod/itm/psIllu.itm~ ~override/psIllu.itm~
     SAY NAME1 @181
     SAY NAME2 @198
     SAY UNIDENTIFIED_DESC @199
-    SAY DESC @200
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@200" END
 
   COPY ~PlanarSphereMod/itm/psAbju.itm~ ~override/psAbju.itm~
     SAY NAME1 @181
     SAY NAME2 @198
     SAY UNIDENTIFIED_DESC @199
-    SAY DESC @200
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@200" END
 
   COPY ~PlanarSphereMod/itm/psAlte.itm~ ~override/psAlte.itm~
     SAY NAME1 @181
     SAY NAME2 @198
     SAY UNIDENTIFIED_DESC @199
-    SAY DESC @200
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@200" END
 
   COPY ~PlanarSphereMod/itm/psNecr.itm~ ~override/psNecr.itm~
     SAY NAME1 @181
     SAY NAME2 @198
     SAY UNIDENTIFIED_DESC @199
-    SAY DESC @200
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@200" END
 
   COPY ~PlanarSphereMod/itm/psConj.itm~ ~override/psConj.itm~
     SAY NAME1 @181
     SAY NAME2 @198
     SAY UNIDENTIFIED_DESC @199
-    SAY DESC @200
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@200" END
 
   COPY ~PlanarSphereMod/itm/psEnch.itm~ ~override/psEnch.itm~
     SAY NAME1 @181
     SAY NAME2 @198
     SAY UNIDENTIFIED_DESC @199
-    SAY DESC @200
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@200" END
 
   COPY ~PlanarSphereMod/itm/psInvo.itm~ ~override/psInvo.itm~
     SAY NAME1 @181
     SAY NAME2 @198
     SAY UNIDENTIFIED_DESC @199
-    SAY DESC @200
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@200" END
 
   COPY ~PlanarSphereMod/itm/psPot01.itm~ ~override/psPot01.itm~
     SAY NAME1 @201
@@ -1323,56 +1326,56 @@ COPY ~PlanarSphereMod/itm/psBook04.itm~ ~override/psBook04.itm~
   COPY ~PlanarSphereMod/itm/psMade01.itm~ ~override/psMade01.itm~
     SAY NAME1 @204
     SAY NAME2 @204
-    SAY UNIDENTIFIED_DESC @205
-    SAY DESC @206
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_undesc_to_update = "@205" END
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@206" END
 
   COPY ~PlanarSphereMod/itm/psMade02.itm~ ~override/psMade02.itm~
     SAY NAME1 @204
     SAY NAME2 @204
-    SAY UNIDENTIFIED_DESC @205
-    SAY DESC @207
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_undesc_to_update = "@205" END
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@207" END
 
   COPY ~PlanarSphereMod/itm/psMade03.itm~ ~override/psMade03.itm~
     SAY NAME1 @204
     SAY NAME2 @208
-    SAY UNIDENTIFIED_DESC @209
-    SAY DESC @210
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_undesc_to_update = "@209" END
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@210" END
 
   COPY ~PlanarSphereMod/itm/psMade04.itm~ ~override/psMade04.itm~
     SAY NAME1 @211
     SAY NAME2 @212
-    SAY UNIDENTIFIED_DESC @213
-    SAY DESC @214
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_undesc_to_update = "@213" END
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@214" END
 
   COPY ~PlanarSphereMod/itm/psMade05.itm~ ~override/psMade05.itm~
     SAY NAME1 @211
     SAY NAME2 @212
-    SAY UNIDENTIFIED_DESC @213
-    SAY DESC @215
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_undesc_to_update = "@213" END
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@215" END
 
   COPY ~PlanarSphereMod/itm/psMade06.itm~ ~override/psMade06.itm~
     SAY NAME1 @211
     SAY NAME2 @216
-    SAY UNIDENTIFIED_DESC @213
-    SAY DESC @217
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_undesc_to_update = "@213" END
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@217" END
 
   COPY ~PlanarSphereMod/itm/psMade07.itm~ ~override/psMade07.itm~
     SAY NAME1 @211
     SAY NAME2 @218
-    SAY UNIDENTIFIED_DESC @213
-    SAY DESC @219
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_undesc_to_update = "@213" END
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@219" END
 
   COPY ~PlanarSphereMod/itm/psMade08.itm~ ~override/psMade08.itm~
     SAY NAME1 @211
     SAY NAME2 @218
-    SAY UNIDENTIFIED_DESC @213
-    SAY DESC @220
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_undesc_to_update = "@213" END
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@220" END
 
   COPY ~PlanarSphereMod/itm/psMade09.itm~ ~override/psMade09.itm~
     SAY NAME1 @211
     SAY NAME2 @218
-    SAY UNIDENTIFIED_DESC @213
-    SAY DESC @221
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_undesc_to_update = "@213" END
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@221" END
 
   COPY ~PlanarSphereMod/itm/psMade10.itm~ ~override/psMade10.itm~
     SAY NAME1 @82
@@ -1390,7 +1393,7 @@ COPY ~PlanarSphereMod/itm/psBook04.itm~ ~override/psBook04.itm~
     SAY NAME1 @82
     SAY NAME2 @226
     SAY UNIDENTIFIED_DESC @84
-    SAY DESC @227
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@227" END
 
   COPY ~PlanarSphereMod/itm/psMade13.itm~ ~override/psMade13.itm~
     SAY NAME1 @82
@@ -1450,13 +1453,13 @@ COPY ~PlanarSphereMod/itm/psBook04.itm~ ~override/psBook04.itm~
     SAY NAME1 @181
     SAY NAME2 @249
     SAY UNIDENTIFIED_DESC @183
-    SAY DESC @250
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@250" END
 
   COPY ~PlanarSphereMod/itm/psRobe01.itm~ ~override/psRobe01.itm~
     SAY NAME1 @181
     SAY NAME2 @251
     SAY UNIDENTIFIED_DESC @199
-    SAY DESC @252
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@252" END
 
   COPY ~PlanarSphereMod/itm/psRobe02.itm~ ~override/psRobe02.itm~
     SAY NAME1 @181
@@ -1468,79 +1471,79 @@ COPY ~PlanarSphereMod/itm/psBook04.itm~ ~override/psBook04.itm~
     SAY NAME1 @181
     SAY NAME2 @255
     SAY UNIDENTIFIED_DESC @199
-    SAY DESC @256
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@256" END
 
   COPY ~PlanarSphereMod/itm/psRobe04.itm~ ~override/psRobe04.itm~
     SAY NAME1 @181
     SAY NAME2 @257
     SAY UNIDENTIFIED_DESC @199
-    SAY DESC @258
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@258" END
 
   COPY ~PlanarSphereMod/itm/psMade23.itm~ ~override/psMade23.itm~
     SAY NAME1 @131
     SAY NAME2 @259
-    SAY UNIDENTIFIED_DESC @260
-    SAY DESC @261
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_undesc_to_update = "@260" END
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@261" END
 
   COPY ~PlanarSphereMod/itm/psMade24.itm~ ~override/psMade24.itm~
     SAY NAME1 @262
     SAY NAME2 @263
-    SAY UNIDENTIFIED_DESC @264
-    SAY DESC @265
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_undesc_to_update = "@264" END
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@265" END
 
   COPY ~PlanarSphereMod/itm/psMade25.itm~ ~override/psMade25.itm~
     SAY NAME1 @266
     SAY NAME2 @267
-    SAY UNIDENTIFIED_DESC @268
-    SAY DESC @269
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_undesc_to_update = "@268" END
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@269" END
 
   COPY ~PlanarSphereMod/itm/psMade26.itm~ ~override/psMade26.itm~
     SAY NAME1 @262
     SAY NAME2 @270
-    SAY UNIDENTIFIED_DESC @264
-    SAY DESC @271
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_undesc_to_update = "@264" END
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@271" END
 
   COPY ~PlanarSphereMod/itm/psMade27.itm~ ~override/psMade27.itm~
     SAY NAME1 @272
     SAY NAME2 @273
-    SAY UNIDENTIFIED_DESC @274
-    SAY DESC @275
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_undesc_to_update = "@274" END
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@275" END
 
   COPY ~PlanarSphereMod/itm/psMade28.itm~ ~override/psMade28.itm~
     SAY NAME1 @272
     SAY NAME2 @276
-    SAY UNIDENTIFIED_DESC @274
-    SAY DESC @277
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_undesc_to_update = "@274" END
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@277" END
 
   COPY ~PlanarSphereMod/itm/psMade29.itm~ ~override/psMade29.itm~
     SAY NAME1 @278
     SAY NAME2 @279
-    SAY UNIDENTIFIED_DESC @280
-    SAY DESC @281
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_undesc_to_update = "@280" END
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@281" END
 
   COPY ~PlanarSphereMod/itm/psMade30.itm~ ~override/psMade30.itm~
     SAY NAME1 @282
     SAY NAME2 @283
-    SAY UNIDENTIFIED_DESC @284
-    SAY DESC @285
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@284" END
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@285" END
 
   COPY ~PlanarSphereMod/itm/psMade31.itm~ ~override/psMade31.itm~
     SAY NAME1 @286
     SAY NAME2 @287
-    SAY UNIDENTIFIED_DESC @288
-    SAY DESC @289
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_undesc_to_update = "@288" END
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@289" END
 
   COPY ~PlanarSphereMod/itm/psMade32.itm~ ~override/psMade32.itm~
     SAY NAME1 @187
     SAY NAME2 @290
-    SAY UNIDENTIFIED_DESC @291
-    SAY DESC @292
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_undesc_to_update = "@291" END
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@292" END
 
   COPY ~PlanarSphereMod/itm/psMade33.itm~ ~override/psMade33.itm~
     SAY NAME1 @187
     SAY NAME2 @293
-    SAY UNIDENTIFIED_DESC @294
-    SAY DESC @295
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_undesc_to_update = "@294" END
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@295" END
 
   COPY ~PlanarSphereMod/itm/psSPL01.itm~ ~override/psSPL01.itm~
     SAY NAME1 @127
@@ -1636,7 +1639,7 @@ COPY ~PlanarSphereMod/itm/psBook04.itm~ ~override/psBook04.itm~
     SAY NAME1 @181
     SAY NAME2 @332
     SAY UNIDENTIFIED_DESC @183
-    SAY DESC @333
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@333" END
 
   COPY ~PlanarSphereMod/itm/psCre05.itm~ ~override/psCre05.itm~
     SAY NAME1 @175
@@ -1661,13 +1664,13 @@ COPY ~PlanarSphereMod/itm/psBook04.itm~ ~override/psBook04.itm~
     SAY NAME1 @79
     SAY NAME2 @80
     SAY UNIDENTIFIED_DESC @80
-    SAY DESC @81
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@81" END
 
   COPY ~PlanarSphereMod/itm/psAmul01.itm~ ~override/psAmul01.itm~
     SAY NAME1 @108
     SAY NAME2 @341
     SAY UNIDENTIFIED_DESC @77
-    SAY DESC @342
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@342" END
 
   COPY ~PlanarSphereMod/itm/psAmul02.itm~ ~override/psAmul02.itm~
     SAY NAME1 @75
@@ -1685,13 +1688,13 @@ COPY ~PlanarSphereMod/itm/psBook04.itm~ ~override/psBook04.itm~
     SAY NAME1 @108
     SAY NAME2 @561
     SAY UNIDENTIFIED_DESC @77
-    SAY DESC @562
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@562" END
 
   COPY ~PlanarSphereMod/itm/psAmul05.itm~ ~override/psAmul05.itm~
     SAY NAME1 @108
     SAY NAME2 @593
     SAY UNIDENTIFIED_DESC @77
-    SAY DESC @594
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@594" END
 
   COPY ~PlanarSphereMod/itm/psCre07.itm~ ~override/psCre07.itm~
     SAY NAME1 @88
@@ -1702,7 +1705,7 @@ COPY ~PlanarSphereMod/itm/psBook04.itm~ ~override/psBook04.itm~
   COPY ~PlanarSphereMod/itm/psCre09.itm~ ~override/psCre09.itm~
     SAY NAME1 @88
     SAY NAME2 ~~
-    SAY UNIDENTIFIED_DESC @343
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_undesc_to_update = "@343" END
     SAY DESC ~~
 
   COPY ~PlanarSphereMod/itm/psCre10.itm~ ~override/psCre10.itm~
@@ -1712,13 +1715,13 @@ COPY ~PlanarSphereMod/itm/psBook04.itm~ ~override/psBook04.itm~
     SAY NAME1 @201
     SAY NAME2 @344
     SAY UNIDENTIFIED_DESC @345
-    SAY DESC @346
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@346" END
 
   COPY ~PlanarSphereMod/itm/psPot04.itm~ ~override/psPot04.itm~
     SAY NAME1 @201
     SAY NAME2 @347
     SAY UNIDENTIFIED_DESC @345
-    SAY DESC @348
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@348" END
 
   COPY ~PlanarSphereMod/itm/psqaura.itm~ ~override/psqaura.itm~
     SAY NAME1 @127
@@ -1850,7 +1853,7 @@ COPY ~PlanarSphereMod/itm/psBook04.itm~ ~override/psBook04.itm~
     SAY NAME1 @181
     SAY NAME2 @399
     SAY UNIDENTIFIED_DESC @199
-    SAY DESC @400
+    LPF ~GW_WRITE_EE_ITM_DESCRIPTIONS~ STR_VAR GW_desc_to_update = "@400" END
 
 
 
@@ -2261,50 +2264,62 @@ COPY ~PlanarSphereMod/spl/psBlur.SPL~ ~override/psBlur.SPL~
     SAY NAME1 @127
     SAY NAME2 @365
     SAY DESC @366
+	
  COPY ~PlanarSphereMod/itm/psqrequ.itm~ ~override/psqrequ.itm~
     SAY NAME1 @127
     SAY NAME2 @367
     SAY DESC @368
+	
  COPY ~PlanarSphereMod/itm/psqshh.itm~ ~override/psqshh.itm~
     SAY NAME1 @127
     SAY NAME2 @369
     SAY DESC @370
+	
  COPY ~PlanarSphereMod/itm/psqslcg.itm~ ~override/psqslcg.itm~
     SAY NAME1 @127
     SAY NAME2 @371
     SAY DESC @372
+	
  COPY ~PlanarSphereMod/itm/psqttc.itm~ ~override/psqttc.itm~
     SAY NAME1 @127
     SAY NAME2 @377
     SAY DESC @378
+	
  COPY ~PlanarSphereMod/itm/psqtysp.itm~ ~override/psqtysp.itm~
     SAY NAME1 @127
     SAY NAME2 @379
     SAY DESC @380
+	
  COPY ~PlanarSphereMod/itm/psqvorp.itm~ ~override/psqvorp.itm~
     SAY NAME1 @127
     SAY NAME2 @381
     SAY DESC @382
+	
  COPY ~PlanarSphereMod/itm/sppsbta.itm~ ~override/sppsbta.itm~
     SAY NAME1 @127
     SAY NAME2 @383
     SAY DESC @384
+	
  COPY ~PlanarSphereMod/itm/sppsdma.itm~ ~override/sppsdma.itm~
     SAY NAME1 @127
     SAY NAME2 @385
     SAY DESC @386
+	
  COPY ~PlanarSphereMod/itm/sppsmoh.itm~ ~override/sppsmoh.itm~
     SAY NAME1 @127
     SAY NAME2 @387
     SAY DESC @390
+	
  COPY ~PlanarSphereMod/itm/sppsmsr.itm~ ~override/sppsmsr.itm~
     SAY NAME1 @127
     SAY NAME2 @391
     SAY DESC @392
+	
  COPY ~PlanarSphereMod/itm/sppsoif.itm~ ~override/sppsoif.itm~
     SAY NAME1 @127
     SAY NAME2 @395
     SAY DESC @396
+	
  COPY ~PlanarSphereMod/itm/sppstpa.itm~ ~override/sppstpa.itm~
     SAY NAME1 @127
     SAY NAME2 @397

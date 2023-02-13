@@ -1,3 +1,6 @@
+@9001 = ~\([Oo]nly[ %tab%]+\)?[Uu]sable[ %tab%]+[Bb]y[ %tab%]*:~
+@9002 = ~\(Not[ %tab%]+\|Un\)[Uu]sable[ %tab%]+[Bb]y[ %tab%]*:~
+
 @0    = ~PlanarSphereMod v2.8~
 @1    = ~TOB Required~
 @2    = ~Planar Sphere~
@@ -2066,7 +2069,7 @@ STATISTICS:
   -1 Mage spells for levels 1 - 8
   +1 to casting speed
 
-Usuable by:
+Usable by:
   Fighter/Mage/Clerics and Cleric/Mages~
 @555 = ~Mages Sight~
 @556 = ~Mages Sight
@@ -2077,7 +2080,7 @@ STATISTICS:
   -1 Cleric Spells for levels 1 - 7
   +1 to casting speed
 
-Usuable by:
+Usable by:
   Fighter/Mage/Clerics and Cleric/Mages~
 @557 = ~Thieves Friend, Thieves foe~
 @558 = ~Thieves Friend, Thieves foe
@@ -2091,7 +2094,7 @@ STATISTICS:
   Makes weilder immune to haste and improved haste
   Removes the weilders ability to cast level 6, 7, 8 and 9 spells
 
-Usuable by:
+Usable by:
   Fighter/Thief/Mages and Thief/Mages~
 @559 = ~Dragon Bolts~
 @560 = ~Dragon Bolts
@@ -2130,9 +2133,9 @@ Ok, ok, so the names makes no sense, I plead sleep deprivation.
 
 STATISTICS:
   80% missile resistance
-  -20% crushing/piercing/slashing resistance
+ -20% crushing/piercing/slashing resistance
 
-Unusuable by:
+Unusable by:
   Wizard Slayer~
 
 @574 = ~Triumph of the Caster~
@@ -2150,7 +2153,7 @@ STATISTICS:
   Grants permanent Aura Cleansing
   Off-hand THACO bonus: -20
 
-Usuable by:
+Usable by:
   Fighter/Mage
   Fighter/Mage/Thief
   Fighter/Mage/Cleric~
@@ -2165,7 +2168,7 @@ STATISTICS:
   1 HP regen per second
   -50 to ALL resistances
 
-Unusuable by:
+Unusable by:
   Wizard Slayer~
 
 @567  = ~Githyanki Captain~
