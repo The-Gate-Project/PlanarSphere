@@ -1,7 +1,7 @@
 @9001 = ~\([Oo]nly[ %tab%]+\)?[Uu]sable[ %tab%]+[Bb]y[ %tab%]*:~
 @9002 = ~\(Not[ %tab%]+\|Un\)[Uu]sable[ %tab%]+[Bb]y[ %tab%]*:~
 
-@0    = ~PlanarSphereMod v2.8~
+@0    = ~PlanarSphereMod v2.8.5~
 @1    = ~TOB Required~
 @2    = ~Planar Sphere~
 @3    = ~Test Dummy~

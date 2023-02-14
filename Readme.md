@@ -1,6 +1,6 @@
-# WIP Planarsphere WIP
+# Planarsphere
 
-![Language](https://img.shields.io/static/v1?label=language&message=english%20%7C%20&color=informational)
+![Language](https://img.shields.io/static/v1?label=language&message=english%20%7C%20russian%20%7C%20&color=informational)
 
 **Autor** : **Inferno**
 
@@ -28,6 +28,7 @@ Some of the new content is *somewhat* hard to find. To find a complete list of n
 
 
 If you who don't like spoilers but want to know what to expect:
+
 - There are two stores, one selling mostly spells, one selling all sorts of fun equipment.
 
 - There are a number of optional encounters around the city at one point in the game, it *should* be obvious when you should go wandering around, looking for weird stuff.
@@ -57,7 +58,7 @@ To uninstall, run "Setup-PlanarSphere.exe" again and select the uninstall option
 ## Compatibility :
 ------------------
 
-**This mod is a work in progress don't install it except for testing purpose**
+**This mod should work without significant issues, but it is still a work in progress.**
 
 
 ## Known bugs
@@ -188,6 +189,21 @@ APPEND ~Animate.ids~ ~0x7f3a HULA_WIZARD~ UNLESS ~0x7f3a HULA_WIZARD~`
 	- Missing traification from ArcaneCoast	  
 	- Delete duplicate psmari1.baf  
 	- Delete backup  
+	
+v2.8.5  
+- Correct Sorcery ability (pssorc.baf)
+- Correct bad ending for final battle (if you don't have the key), (psmelwin.d) and (pscut17.baf) modified
+- Correction for spcl668.spl
+  - Removed class change to sorcerer
+  - Removed effect applied to other npc (only the main one will be affected)
+
+- Correction for tp2 (Autotra for translation files)	
+- Update Russian encoding in setup.tra (Thanks to Paladin84)
+- Using right files for translation (hopefully...)
+
+- Attempt to adapt item description for EE
+  - Using GW_WRITE_EE_ITM_DESCRIPTIONS fonction from Freddy_Gwendo
+  - Add gw_functions.tpa
 
 ## SPOILERS
 ------------------
