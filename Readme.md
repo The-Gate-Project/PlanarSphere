@@ -74,26 +74,26 @@ Also, there MAY be conflicts with Beyond The Law. BTL requires that you spend so
 ## Changelog
 ------------------
 
-v1.7 - Hlidskialf
+v1.7 - **Hlidskialf**
 - Updated code and a fixed encounter with the "mage".
 
-v1.8 - Hlidskialf
+v1.8 - **Hlidskialf**
 - Included a bugfix forgotten to include with v1.7. You should be able to complete the mod unhindered now.
 
-v1.9 - Hlidskialf
+v1.9 - **Hlidskialf**
 - Includes some minor bugfixes discovered after fixing the quest-breakers in the last version.
 
-v2.0 - Jack Archer (thedonkeyman@gmail.com)
+v2.0 - **Jack Archer** (thedonkeyman@gmail.com)
 - Includes the massive text update.
 
 v2.1 
 - Died stillborn, and to prevent confusion is omitted.
 
-v2.2 - Hlidskialf
+v2.2 - **Hlidskialf**
 - Small bugfixes and script changes. 
 - Spanish translation added. (Thanks much for the folks at ClanREO!)
 
-v2.5 - Duality (dualities.shadow@gmail.com)
+v2.5 - **Duality** (dualities.shadow@gmail.com)
 - Re-named almost all the files. 
 
 - Numerous mid-quest fixes. Some quests were tweaked.
@@ -130,7 +130,7 @@ v2.5 - Duality (dualities.shadow@gmail.com)
 
 - Removed a large number of duplicate entries from setup.tra.
 
-v2.6 - Malbolgia
+v2.6 - **Malbolgia**
 - Spanish translation not included due to dialog changes in 2.5 and 2.6 (I do not know any Spanish)
 
 - Changed and fixed the rakshasa dialog
@@ -156,12 +156,12 @@ v2.6 - Malbolgia
 - Changed dream dialog 
 
 v2.6b
-- Bug fixes implemented by Ieldra, Ikki, and ScuD (mostly to fix stuff that I couldn't manage to do before I went missing :p) -Duality
+- Bug fixes implemented by Ieldra, Ikki, and ScuD (mostly to fix stuff that I couldn't manage to do before I went missing :p) -**Duality**
 
 v2.6c
 - Bug with Key fixed YET AGAIN
 
-- Streamlined tp2 file courtesy of erebusant (it got messy with various people's fixes and erebusant also cleaned up some of my messes)
+- Streamlined tp2 file courtesy of **erebusant** (it got messy with various people's fixes and erebusant also cleaned up some of my messes)
 
 v2.8  
 - Correction  
@@ -208,47 +208,47 @@ v2.8.5
 ## SPOILERS
 ------------------
 
-Waukeen's Promenade - Averners Odd Items
+**Waukeen's Promenade** - Averners Odd Items
 A New shop. As some of you will notice, many of the items from the shop contained within the PS have been replaced. They have been moved to a NEW shop. This new shop also sells a number of other powerful items. For exorbitant prices.
 To find this new shop, go to the bottom left of Waukeens, on top of the Coliseum walls, AFTER killing the Demilich and BEFORE killing the final boss. Speak to the Moose. (yeah, you heard me right) Once you have entered Waukeen's Promenade, the shop will only exist for 7 days before disappearing. This is because the shop sells some very overpowered items. Thus it is only accessible IF you took the main quest and even then, not for very long.
 
-Temple District - 'ware the Demons!
+**Temple District** - 'ware the Demons!
 A new encounter has been added in the Temple District AFTER you kill the Demilich and BEFORE you kill the final boss. This encounter can be skipped completely if you wish. This encounter contains the longest cutscene ever. (Well, maybe not, but close) And contains a large number of actors are running around at the same time. Plus it has some of my worst/best attempts at humor. I still laugh when watching the scene. Which is probably bad for the rest of you since I have a weird sense of humor. (Lemurs!) Due to the large number of actors, if you have a very low end machine, I'd advise you to skip this encounter.
 
-Bridge District - Twins? No. Triplets? No. What's next?
+**Bridge District** - Twins? No. Triplets? No. What's next?
 A new encounter has been added in the Bridge District, AFTER you kill the Demilich and BEFORE you kill the final boss. (heard that before?) This encounter can be skipped if you wish. I mainly made it to test some script options. But there is a nice reward if you finish it. Without getting swarmed and destroyed.
 
-PS: Upper Level
+**Planar Sphere** : Upper Level
 Most of the original quests have been modified. The demons quest has been rewritten slightly. The Examiner mini-quest is unchanged as are the three fed-ex quests, but the Cowled Enforcer quest has been changed slightly. (To find all of these people, talk to everyone in the room where Teos spawns. The demons are in the room where the Guardian Golem spawns)
 
 Also, once you have finished the main quest, your new contact, named Belle, will appear. Talk to her. There are two quests associated with her, one has yet to be completed. And wont be completed until the next version.
 
-PS: Control Room
+**Planar Sphere** : Control Room
 A new Quest has been added here. It is started by talking to the Professor on the platform.
 Note: As of v2.5 this quest is not complete. Just the intro is available (talking to the Professor). The quest itself will be somewhat long and I decided if I waited to release PS until I had finished this quest, it would never be released.
 
-PS: Weird mushroom room off of Control Room
+**Planar Sphere** : Weird mushroom room off of Control Room
 For lack of a better name. The area reference is AR0420. This is where Inchantra is hiding if you took the Cowled Enforcer's quest.
 
-PS: Room with weird device off of Control Room
+**Planar Sphere** : Room with weird device off of Control Room
 Check back here after you have finished off the final boss, you might be surprised. :)
 
-PS: Hot/Cold Room where Tolgerias spawns
+**Planar Sphere** : Hot/Cold Room where Tolgerias spawns
 The forge now spawns in the fire room. Along with a few dwarfs to tell you what to do.
 
 
 ### FINAL BATTLE:
 ------------------
 
-This is a rough synopsis of how Mel's script changes for the different difficulty levels. There are a few other minor changes between difficulties that aren't listed.
-Also note that the higher the difficulty, the better the reward.
+**This is a rough synopsis of how Mel's script changes for the different difficulty levels. There are a few other minor changes between difficulties that aren't listed.
+Also note that the higher the difficulty, the better the reward.**
 
 Spells:
 Shield Of Oblivion - Grants immunity to ALL spells and ALL weapons for 40 seconds.
 Melanthiums Rage - Think GIANT METEORS smashing you to bits. Like dinosaur extinction size meteors.
 Rain of Terror - 50 damage to the target. No save, no nothing.
 
-Easy:
+**Easy** :
 Mel can only cast timestop 3 times
 He can never cast Shield of Oblivion after it is first cast
 Can cast Bigbys Crushing Hand 4 times
@@ -268,7 +268,7 @@ Fireball, Flame Arrow, Magic Missile, Acid Arrow
 Reward is: 20,000 gold.
 
 
-Core:
+**Core** :
 Mel can cast timestop 4 times
 Can cast Horrid Wilting 4 times
 Can cast Rain of Terror once
@@ -290,7 +290,7 @@ Some spells occur more frequently
 Reward is: 25,000 gold and two Rogue Stones.
 
 
-Normal:
+**Normal** :
 Mel can cast timestop 5 times
 Can cast Horrid Wilting 6 times
 Can cast Rain of Terror twice
@@ -310,7 +310,7 @@ Sunfire, Finger of Death, Mordenkainens Sword, Magic Missile
 Reward is: 30,000 gold, two Rogue stones and the Amulet of cheetah speed.
 
 
-Hard:
+**Hard** :
 Mel can cast timestop 6 times
 Can cast Horrid Wilting 7 times
 Can cast Rain of Terror 3 times
@@ -340,7 +340,7 @@ Reward is: 35,000 gold, two Rogue Stones, the Amulet of Cheetah Speed and the Gl
 **DO NOT SET IT TO INSANE UNLESS YOU WANT TO RELOAD. ALOT.**
 Melanthium's Rage alone will do 150 (roughly) to any party members caught in the blast. Get the point?
 
-Insane:
+**Insane** :
 Mel can cast timestop 15 times
 Can cast Horrid Wilting 25 times
 Can cast Rain of Terror 5 times
