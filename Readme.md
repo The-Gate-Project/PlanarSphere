@@ -11,6 +11,9 @@
 [Link to original Mod Download](http://www.shsforums.net/files/file/131-planarsphere/)
 
 
+[See readme-planarsphere.html](https://the-gate-project.github.io/PlanarSphere/planarspheremod/readme/readme-planarsphere.html)
+
+
 ## Description:
 ---------------
 
@@ -19,7 +22,7 @@ This mod is for mature players. There is very limited swearing/sexual innuendo c
 As said by Hlidskialfs "The Planar Sphere mini-mod is worth installing if you?re playing a mage, and nicely answers the question of what you?re going to do with that huge empty sphere now that you have it."
 However, if you didn't find the warped humor in the original Planar Sphere mod amusing, it's strongly advised against playing it now. That aspect of it has not been changed at all. If anything, it's worse. Much much worse.
 
-After the first apprentices quest has been done you will have one last encounter with Teos (all native in the game) in which the Sphere is attacked by anti-magic fanatics. After undertaking the quest to get rid of the offenders, and reporting back to Teos, the mod begins as Teos returns some days later. 
+After the first apprentices quest has been done you will have one last encounter with Teos (all native in the game) in which the Sphere is attacked by anti-magic fanatics. After undertaking the quest to get rid of the offenders, and reporting back to Teos, the mod begins as Teos returns some days later (seven days later). 
 If you have already done the normal Planar Sphere quest (or even entered the Sphere) you will have to cheat. Simply type ClueConsole:CreateCreature("psTeos") within the cheatconsole, on the first level of the Planar Sphere and you can start the mod.
 
 

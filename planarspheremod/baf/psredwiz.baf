@@ -91,7 +91,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("psSomeSpellToggle","LOCALS",1)
-		ForceSpellRES("psSomeSpellToggle",NearestEnemyOf(Myself))
+		ForceSpellRES("SPWI929",NearestEnemyOf(Myself)) // psSomeSpellToggle is not a valid ressource, so random choice get SPWI929.SPL (To verify)
 END
 
 IF

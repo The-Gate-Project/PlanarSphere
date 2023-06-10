@@ -144,7 +144,7 @@ END
 CHAIN
 IF ~Global("psElminsterFoughtMelCounter","GLOBAL",2)~ THEN ~psMel~ deathtalk @34 = @35 = @36
 == ~psElmin~ @37 = @38
-DO ~ActionOverride("spElmin", ApplySpell(Myself,CLERIC_DRAW_UPON_HOLY_MIGHT))
-ActionOverride("spElmin", DestroyItem("MINHP1"))
-ActionOverride("spElmin", DestroyItem("IMMUNE1"))
+DO ~ActionOverride("psElmin", ApplySpell(Myself,CLERIC_DRAW_UPON_HOLY_MIGHT))
+ActionOverride("psElmin", DestroyItem("MINHP1"))
+ActionOverride("psElmin", DestroyItem("IMMUNE1"))
 StartCutScene("psCut04")~ EXIT

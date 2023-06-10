@@ -1,0 +1,1685 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles/style_shs.css" type="text/css">
+
+    <title>
+        Spellhold Studios - The Planar Sphere Mod
+    </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <script src="scripts/script_shs_trick.js"></script>
+
+    <link href="images/shsweb.ico" rel="icon" type="image/bmp" />
+
+</head>
+
+<body onload="showHints('hintbox', 'en', 'hint')">
+
+    <script type="module">
+        document.getElementById("latestVersion").innerText = document.getElementById('versionHistory').getElementsByTagName("h6")[0].innerText
+    </script>
+
+    <div id="wrap">
+        <a name="top" id="top"></a>
+        <div id="header">
+
+            <h1 style="color: #781808;text-shadow: 0.1rem 0.1rem 0.25rem #807559;">The Planar Sphere Mod</h1>
+
+            <span style="font-style: italic;"><strong>A Spellhold Studios mod for Baldur's Gate II:<acronym title="Throne of Bhaal">ToB</acronym>, Baldur's Gate Trilogy, Baldur's Gate II: Enhanced Edition and Enhanced Edition Trilogy.</strong></span>
+            <hr style="margin: 10px 0 10px 0; padding: 0; height: 1px; border: 0; color: #aaa; background-color: #aaa;" />
+
+            <p class="about">
+                Originally made by <strong>Inferno</strong> </p>
+				<p><acronym title="Weimer Dialogue Utility">WeiDU</acronym> packaged and cleaned up by Hlidskialf </p>
+<p>Further fixed and edited by Duality</p>
+
+<p>Bug fixes by Ieldra's, Ikki's, and ScuD</p>
+<p>Current streamlined tp2 by erebusant</p>
+
+<p> &#8226; Yes, that's quite a few people &#8226; </p>
+            </p>
+            <p class="about">
+                <a href="http://www.shsforums.net/topic/24405-planar-sphere-mod-v26a/">Forum on SHS</a> &#8226; <a href="https://forums.beamdog.com/discussion/75761/mod-spotlight-planar-sphere-mod">Forum on Beamdog</a> &#8226; <a href="http://www.shsforums.net/files/file/131-planarsphere/">Original mod on SHS</a> &#8226; </p> <p> <a href="https://github.com/The-Gate-Project/PlanarSphere">New version at GitHub</a> &#8226; <span id="latestVersion">
+            </p>
+            <hr style="margin: 10px 0 10px 0; padding: 0; height: 1px; border: 0; color: #aaa; background-color: #aaa;" />
+
+            <p class="menu">
+                <a href="#intro">Overview</a> &#x2B25; <a href="#compat">Compatibility</a> &#x2B25; <a href="#installation">Installation</a> &#x2B25; <a href="#compon">Components</a> &#x2B25; <a href="#images">Screenshots</a> &#x2B25; <a href="#trouble">Troubleshooting</a> &#x2B25; <a href="#credits">Credits</a> &#x2B25; <a href="#version">Version History</a>
+            </p>
+        </div>
+
+        <div id="maindiv">
+            <!-- ================== I n t r o d u c t i o n ================== -->
+            <a name="intro" id="intro"></a>
+            <div class="content">
+
+                <h2>Introduction</h2><br>
+
+                <p>
+                    This mod is for mature players. There is very limited swearing/sexual innuendo contained herein.
+                </p>
+
+                <p>
+                    As said by Hlidskialfs "The Planar Sphere mini-mod is worth installing if you're playing a mage, and nicely answers the question of what you're going to do with that huge empty sphere now that you have it.
+                    However, if you didn't find the warped humor in the original Planar Sphere mod amusing, it's strongly advised against playing it now. That aspect of it has not been changed at all. If anything, it's worse. Much much worse.
+                </p><br>
+				<p>
+                    After the first apprentices quest has been done you will have one last encounter with Teos (all native in the game) in which the Sphere is attacked by anti-magic fanatics. After undertaking the quest to get rid of the offenders, and reporting back to Teos, the mod begins as Teos returns some days later (seven days later). 
+                    If you have already done the normal Planar Sphere quest (or even entered the Sphere) you will have to cheat. Simply type ClueConsole:CreateCreature("psTeos") within the cheatconsole, on the first level of the Planar Sphere and you can start the mod.
+                </p><br>
+                <p>
+                    For those who have played PS before, as of v2.5 a fair amount of new content was added and a number of the old quests have been modified.
+                    Some of the new content is *somewhat* hard to find. To find a complete list of noteworthy changes check the very bottom of this read me, under the section entitled SPOILERS.
+                </p><br>
+
+                <p>
+                    <strong>If you don't like spoilers but want to know what to expect:
+</strong>
+                </p>
+                <ul style="margin-left: 4%;">
+                    <li>There are two stores, one selling mostly spells, one selling all sorts of fun equipment.
+</li>
+                    <li>There are a number of optional encounters around the city at one point in the game, it *should* be obvious when you should go wandering around, looking for weird stuff.
+</li>
+                    <li>Talk to all of the people in the PS. Don't bother talking to the apprentices in the main areas though. They generally say the same stuff.
+</li>
+                    <li>There is a forge that will let you make a variety of items. The forge itself is downstairs in the fire room. (Next to the ice room, there are three dwarfs walking around)
+</li>
+                </ul><br>
+
+
+                <hr style="width: 90%;" /><br>
+
+
+                <h4>SPOILER</h4>
+
+                <p id="hintbox" class="boxed" style="display: none">
+                    <span style="margin-left: 8px"><strong>What else?&#160;&#160;</strong></span><input type="submit" value="Is that all?" onclick="showNextHint('en', 'hint')" style="color: #e3e3db; background:#781808;margin-left: 10px"></input>
+                    <br /><br><span style="margin-left: 15px">&#x25BA;
+                        <span id="hint">...</span></span><br><br>
+                </p>
+
+                <div class="spoiler" style="margin: 10px auto;width: 90%; border-style: solid; border-width: 1px; border-color: #781808; margin-top: 32px; padding: 6px;"><br>
+                    <div class="quotetitle">
+                        <b>GÉNÉRAL SPOILER :&#160;&#160;</b>
+                        <input value="Show" style="color: #e3e3db; margin: 0px; padding: 0px; width: 60px; background:#781808;" onclick="if (this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display != '') { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = ''; this.innerText = ''; this.value = 'Hide'; } else { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = 'none'; this.innerText = ''; this.value = 'Show'; }" type="button">
+                    </div>
+                    <div class="quotecontent">
+                        <div style="display: none;">
+                            <p style="width:96%; color:#5f5f5f;"><br>
+							<p>
+                    <strong>Waukeen's Promenade - Averners Odd Items</strong>
+A New shop. As some of you will notice, many of the items from the shop contained within the PS have been replaced. They have been moved to a NEW shop. This new shop also sells a number of other powerful items. For exorbitant prices.
+To find this new shop, go to the bottom left of Waukeens, on top of the Coliseum walls, AFTER killing the Demilich and BEFORE killing the final boss. Speak to the Moose. (yeah, you heard me right) Once you have entered Waukeen's Promenade, the shop will only exist for 7 days before disappearing. This is because the shop sells some very overpowered items. Thus it is only accessible IF you took the main quest and even then, not for very long.
+
+                </p>
+				<p>
+                    <strong>Temple District - 'ware the Demons!</strong>
+A new encounter has been added in the Temple District AFTER you kill the Demilich and BEFORE you kill the final boss. This encounter can be skipped completely if you wish. This encounter contains the longest cutscene ever. (Well, maybe not, but close) And contains a large number of actors are running around at the same time. Plus it has some of my worst/best attempts at humor. I still laugh when watching the scene. Which is probably bad for the rest of you since I have a weird sense of humor. (Lemurs!) Due to the large number of actors, if you have a very low end machine, I'd advise you to skip this encounter.
+
+                </p>
+				<p>
+                    <strong>Bridge District - Twins? No. Triplets? No. What's next?</strong>
+A new encounter has been added in the Bridge District, AFTER you kill the Demilich and BEFORE you kill the final boss. (heard that before?) This encounter can be skipped if you wish. I mainly made it to test some script options. But there is a nice reward if you finish it. Without getting swarmed and destroyed.
+
+                </p>
+				<p>
+                    <strong>Planar Sphere: Upper Level</strong>
+Most of the original quests have been modified. The demons quest has been rewritten slightly. The Examiner mini-quest is unchanged as are the three fed-ex quests, but the Cowled Enforcer quest has been changed slightly. (To find all of these people, talk to everyone in the room where Teos spawns. The demons are in the room where the Guardian Golem spawns)
+
+Also, once you have finished the main quest, your new contact, named Belle, will appear. Talk to her. There are two quests associated with her, one has yet to be completed. And wont be completed until the next version.
+
+                </p>
+				<p>
+                    <strong>Planar Sphere: Control Room</strong>
+A new Quest has been added here. It is started by talking to the Professor on the platform.
+Note: As of v2.5 this quest is not complete. Just the intro is available (talking to the Professor). The quest itself will be somewhat long and I decided if I waited to release PS until I had finished this quest, it would never be released.
+
+                </p>
+				<p>
+                    <strong>Planar Sphere: Weird mushroom room off of Control Room</strong>
+For lack of a better name. The area reference is AR0420. This is where Inchantra is hiding if you took the Cowled Enforcer's quest.
+
+                </p>
+				<p>
+                    <strong>Planar Sphere: Room with weird device off of Control Room</strong>
+Check back here after you have finished off the final boss, you might be surprised. :)
+
+                </p>
+				<p>
+                    <strong>Planar Sphere: Hot/Cold Room where Tolgerias spawns</strong>
+The forge now spawns in the fire room. Along with a few dwarfs to tell you what to do.
+                </p>
+                            </p><br><br>
+                        </div>
+						<br>
+                    </div>
+                </div><br>
+
+                <h4>FINAL BATTLE</h4>
+<p><strong>This is a rough synopsis of how Mel's script changes for the different difficulty levels. There are a few other minor changes between difficulties that aren't listed.
+Also note that the higher the difficulty, the better the reward.</strong></p>
+
+<p>Melanthium's Spells:</p>
+<p>Shield Of Oblivion - Grants immunity to ALL spells and ALL weapons for 40 seconds.</p>
+<p>Melanthiums Rage - Think GIANT METEORS smashing you to bits. Like dinosaur extinction size meteors.</p>
+<p>Rain of Terror - 50 damage to the target. No save, no nothing.</p>
+
+                <div style="margin: 10px auto;width: 90%; border-style: solid; border-width: 1px; border-color: #781808; margin-top: 32px; padding: 6px;">
+                    <div class="quotetitle">
+                        <b>Easy :&#160;&#160;</b>
+                        <input value="Show" style="color: #e3e3db; margin: 0px; padding: 0px; width: 60px; background:#781808;" onclick="if (this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display != '') { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = ''; this.innerText = ''; this.value = 'Hide'; } else { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = 'none'; this.innerText = ''; this.value = 'Show'; }" type="button">
+                    </div>
+                    <div class="quotecontent">
+                        <div style="display: none;">
+                            <p style="width:96%; color:#5f5f5f;"><br>
+							<p>
+							<p>Mel can only cast timestop 3 times </p>
+<p>He can never cast Shield of Oblivion after it is first cast </p>
+<p>Can cast Bigbys Crushing Hand 4 times </p>
+<p>Can cast Chain Lightning/Greater Malison/Chaos combo 4 times </p>
+<p>Can Dispel the entire party 2 times </p>
+<p>Can Spellstrike the entire party 2 times </p>
+<p>Can cast Rain of Terror once </p>
+<p>Can cast Horrid Wilting 3 times </p>
+<p>Can cast Melanthiums Rage once </p>
+<p>Can restore spell protections once </p>
+<p>Can summon one dark planatar </p>
+<p>Can cast absolute mantle/stoneskin 2 times</p>
+<br>
+<p>Unlimited cast spells are:</p>
+<p>Fireball, Flame Arrow, Magic Missile, Acid Arrow
+ </p><br>
+<p>
+<strong>Reward is</strong>: 20,000 gold.</p>
+                        </div></p>
+                        </div>
+                    </div>
+					<div style="margin: 10px auto;width: 90%; border-style: solid; border-width: 1px; border-color: #781808; margin-top: 32px; padding: 6px;">
+                    <div class="quotetitle">
+                        <b>Core :&#160;&#160;</b>
+                        <input value="Show" style="color: #e3e3db; margin: 0px; padding: 0px; width: 60px; background:#781808;" onclick="if (this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display != '') { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = ''; this.innerText = ''; this.value = 'Hide'; } else { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = 'none'; this.innerText = ''; this.value = 'Show'; }" type="button">
+                    </div>
+                    <div class="quotecontent">
+                        <div style="display: none;">
+                            <p style="width:96%; color:#5f5f5f;"><br>
+							<p>
+<p>Mel can cast timestop 4 times                               </p>
+<p>Can cast Horrid Wilting 4 times                             </p>
+<p>Can cast Rain of Terror once                                </p>
+<p>Can summon two dark planatars                               </p>
+<p>Can cast Shield of Oblivion once                            </p>
+<p>Can cast Bigbys Crushing Hand 6 times                       </p>
+<p>Can cast Chain Lightning/Greater Malison/Chaos combo 4 times</p>
+<p>Can Dispel the entire party 2 times                         </p>
+<p>Can Spellstrike the entire party 2 times                    </p>
+<p>Can cast Melanthiums Rage once                              </p>
+<p>Can restore spell protections once                          </p>
+<p>Can cast absolute mantle/stoneskin 6 times                  </p>
+<br>
+<p>Unlimited cast spells are:</p>
+<p>Sunfire, Fireball, Chain Lightning, Magic Missile
+ </p><br>
+ <p>Some spells occur more frequently</p>
+<br>
+<p><strong>Reward is</strong>: 25,000 gold and two Rogue Stones.</p>
+                        </div></p>
+                        </div>
+                    </div>
+					<div style="margin: 10px auto;width: 90%; border-style: solid; border-width: 1px; border-color: #781808; margin-top: 32px; padding: 6px;">
+                    <div class="quotetitle">
+                        <b>Normal :&#160;&#160;</b>
+                        <input value="Show" style="color: #e3e3db; margin: 0px; padding: 0px; width: 60px; background:#781808;" onclick="if (this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display != '') { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = ''; this.innerText = ''; this.value = 'Hide'; } else { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = 'none'; this.innerText = ''; this.value = 'Show'; }" type="button">
+                    </div>
+                    <div class="quotecontent">
+                        <div style="display: none;">
+                            <p style="width:96%; color:#5f5f5f;"><br>
+							<p>
+<p>Mel can cast timestop 5 times</p>
+<p>Can cast Horrid Wilting 6 times</p>
+<p>Can cast Rain of Terror twice</p>
+<p>Can summon two dark planatars</p>
+<p>Can cast Shield of Oblivion twice</p>
+<p>Can cast Bigbys Crushing Hand 8 times</p>
+<p>Can cast Chain Lightning/Greater Malison/Chaos combo 5 times</p>
+<p>Can Dispel the entire party 3 times</p>
+<p>Can Spellstrike the entire party 3 times</p>
+<p>Can cast Melanthiums Rage twice</p>
+<p>Can restore spell protections once</p>
+<p>Can cast absolute mantle/stoneskin/true sight 8 times</p>
+<br>
+<p>Unlimited cast spells are:</p>
+<p>Sunfire, Finger of Death, Mordenkainens Sword, Magic Missile
+ </p>
+<br>
+<p><strong>Reward is</strong>: 30,000 gold, two Rogue stones and the Amulet of cheetah speed.</p>
+                        </div></p>
+                        </div>
+                    </div>
+					<div style="margin: 10px auto;width: 90%; border-style: solid; border-width: 1px; border-color: #781808; margin-top: 32px; padding: 6px;">
+                    <div class="quotetitle">
+                        <b>Hard :&#160;&#160;</b>
+                        <input value="Show" style="color: #e3e3db; margin: 0px; padding: 0px; width: 60px; background:#781808;" onclick="if (this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display != '') { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = ''; this.innerText = ''; this.value = 'Hide'; } else { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = 'none'; this.innerText = ''; this.value = 'Show'; }" type="button">
+                    </div>
+                    <div class="quotecontent">
+                        <div style="display: none;">
+                            <p style="width:96%; color:#5f5f5f;"><br>
+							<p>
+<p>Mel can cast timestop 6 times</p>
+<p>Can cast Horrid Wilting 7 times</p>
+<p>Can cast Rain of Terror 3 times</p>
+<p>Can summon 3 dark planatars</p>
+<p>Can cast Shield of Oblivion 3 times</p>
+<p>Can cast Bigbys Crushing Hand 8 times</p>
+<p>Can cast Chain Lightning/Greater Malison/Chaos combo 5 times</p>
+<p>Can Dispel the entire party 4 times</p>
+<p>Can Spellstrike the entire party 4 times</p>
+<p>Can cast Melanthiums Rage 3 times</p>
+<p>Can restore spell protections twice, Shield of Oblivion is also included</p>
+<p>Can cast absolute mantle/stoneskin/true sight 8 times</p>
+<p>Can fully restore himself twice (once HP is less then 300)</p>
+<br>
+<p>Unlimited cast spells are: </p>
+<p>Prismatic Spray, Finger of Death, Delayed Blast Fireball, Magic Missile
+ </p><br>
+ <p>Mel also gets:</p>
+<p>+6 bonus to AC </p>
+<p>+10 bonus to MR</p>
+<p>+3 bonus to casting speed</p>
+<br>
+<p><strong>Reward is</strong>: 35,000 gold, two Rogue Stones, the Amulet of Cheetah Speed and the Gloves of Spellweaving.</p>
+                        </div></p>
+                        </div>
+                    </div>
+					<div style="margin: 10px auto;width: 90%; border-style: solid; border-width: 1px; border-color: #781808; margin-top: 32px; padding: 6px;">
+                    <div class="quotetitle">
+                        <b>Insane :&#160;&#160;</b>
+                        <input value="Show" style="color: #e3e3db; margin: 0px; padding: 0px; width: 60px; background:#781808;" onclick="if (this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display != '') { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = ''; this.innerText = ''; this.value = 'Hide'; } else { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = 'none'; this.innerText = ''; this.value = 'Show'; }" type="button">
+                    </div>
+                    <div class="quotecontent">
+                        <div style="display: none;">
+                            <p style="width:96%; color:#5f5f5f;"><br>
+							<p>
+							<p><strong>DO NOT SET IT TO INSANE UNLESS YOU WANT TO RELOAD... A LOT.</strong><p>
+<p>Melanthium's Rage alone will do 150 (roughly) to any party members caught in the blast. Get the point?<p>
+<br><br>
+<p>Mel can cast timestop 15 times</p>
+<p>Can cast Horrid Wilting 25 times</p>
+<p>Can cast Rain of Terror 5 times</p>
+<p>Can summon 8 dark planatars</p>
+<p>Can cast Shield of Oblivion 8 times</p>
+<p>Can cast Bigbys Crushing Hand 20 times</p>
+<p>Can cast Chain Lightning/Greater Malison/Chaos combo 10 ti</p>
+<p>Can Dispel the entire party an unlimited number of times</p>
+<p>Can Spellstrike the entire party an unlimited number of ti</p>
+<p>Can cast Melanthiums Rage 5 times</p>
+<p>Can restore spell protections 5 times, Shield of Oblivion </p>
+<p>Can cast absolute mantle/stoneskin/true sight 15 times</p>
+<p>Can fully restore himself twice (once HP is less then 200)</p>
+<br>
+<p>Unlimited cast spells are:</p>
+<p>Maze, Finger of Death, Delayed Blast Fireball, Meteor Swarm
+ </p><br>
+ <p>All powerful spells are cast more frequently. He tends to have a serious love of meteor swarm. As in, "oh look, I'm being pummeled by three meteor swarms at once, how nice."</p>
+ <br>
+ <p>Mel also gets:</p>
+<p>+12 bonus to AC </p>
+<p>+20 bonus to MR</p>
+<p>+6 bonus to casting speed</p>
+<br>
+</p>
+<br>
+<p><strong>Reward is</strong>: 50,000 gold, two Rogue Stones, the Amulet of Cheetah Speed, Gloves of Spellweaving and the Staff of Sorcery.
+</p>
+                        </div></p>
+                        </div>                 
+                </div>
+						<br>
+				
+				<h4>NEW SPELLS</h4>
+
+                <div style="margin: 10px auto;width: 90%; border-style: solid; border-width: 1px; border-color: #781808; margin-top: 32px; padding: 6px;">
+                    <div class="quotetitle">
+                        <b>39 new spells :&#160;&#160;</b>
+                        <input value="Show" style="color: #e3e3db; margin: 0px; padding: 0px; width: 60px; background:#781808;" onclick="if (this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display != '') { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = ''; this.innerText = ''; this.value = 'Hide'; } else { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = 'none'; this.innerText = ''; this.value = 'Show'; }" type="button">
+                    </div>
+                    <div class="quotecontent">
+                        <div style="display: none;">
+                            <p style="width:96%; color:#5f5f5f;"><br>
+							<p>
+							<p><strong>- 01/Spps20.spl</strong></p>
+<p>Spell Name: <strong>Vorpal Bolt</strong></p>
+<p>Spell Desc: Vorpal Bolt:</p>
+<p>Conjuration/Summoning</p>
+<p>Level: 5</p>
+<p>Casting Time: 6</p>
+<p>Range: Sight of Caster</p>
+<p>Saving Throw: Neg
+
+<p>With this powerful spell the mage calls forth material from the ethereal plane of existence and shapes it into a spear of magical energy. At the culmination of the spell this magical bolt ripples forth from the mages hands and strikes one opponent of his choosing. The bolt is near infinitely sharp and cuts easily through flesh and bone as such when the bolt strikes a target there is a good chance that it will instantly slay the target and if it does not it is still capable of passing right through the targets body doing massive damage. </p>
+<p><I>Effects:</I></p>
+<p>The vorpal bolt deals 6d8 points of piercing damage to the target. There is also a 25% chance that the bolt will instantly slay the target a save versus death is allowed.
+
+</p>
+<br><hr style="width: 90%;" /><br>
+<p><strong>- 02/Spps21.spl</strong></p>
+<p>Spell Name: <strong>Killimer's Power Nullification</strong></p>
+<p>Spell Desc: Killimer's Power Nullification:</p>
+<p>Alteration</p>
+<p>Level: 7</p>
+<p>Casting time: 11</p>
+<p>Duration: 3 turns</p>
+<p>Saving throw: Neg
+
+<p>Killimer was your average adventuring mage, he was not particularly powerful and spent his life in adventuring bands battling the undead and any manner of evil foe you care to name. After 4 years with the same band of adventurers he had become close to his companions in arms and they to him. One day the mage and his companions were beset  by a group of powerful spell casters who had gained control of a local town and were dominating all the trading routes. Killimers companions were helpless against the combined attack of so many magic users two were destroyed by magical fire and a third was turned into a small amphibian. Killimer out of spells called out a desperate pray to mystra goddess of magic for aid. The lady hearing his call granted him this spell and its words blazed across his mind like fire, as he incanted it the magic in the area began to wax and wane, the opposing magi found it nigh immpossible to weave their spells giving killimers companions the oppurtunity they needed to hack the spell casters to pieces.</p>
+<p><I>Effects:</I> </p>
+<p>For the duration of the spell all magic is slowed and distorted and all spell casting speeds are increased by 5 for enemy mages, any enemy mages can save versus spells to avoid this effect but they do so at </p>
+
+<br><hr style="width: 90%;" /><br>
+<p><strong>3Spps22.spl-</strong></p>
+<p>Spell Name: <strong>Berriliums Brilliant Bouquet</strong></p>
+<p>Spell Desc: Berriliums Brilliant Bouquet</p>
+<p>Alteration</p>
+<p>Level 5</p>
+<p>Casting time:4</p>
+<p>Berrilium was a street magician in the city of Water Deep. He possesed absolutely no magical ability and would preform slight of hand tricks to amuse the crowds. However he was a gambling man and also a very unlucky. One day his debtors, in the form of several very large muggers, came to collect. It is unknown exactly why Berrilium chose that moment to pull a bunch of paper flowers from his sleeve but it is belived that his fear in a last act of desperation enfused the paper flowers with magic turning them into blinding balls of magic light. The muggers were blinded by the brilliant light allowing berrilium the time he needed to escape.</p>
+<p>This spell creates a brilliant bouquet of shining magical flowers that sprouts from the casters body. </p>
+<p><I>Effects:</I></p>
+<p>All in area of effect must save versus spell at -2 or be blinded for 2 turns. Even if they resist this effect they are stuned for 2 rounds by the sheer beauty of the flowers.</p>
+
+<br><hr style="width: 90%;" /><br>
+<p><strong>4SPPSaop.spl-</strong></p>
+<p>Spell Name: <strong>Aura of Power</strong></p>
+<p>Spell Desc: Aura of Power</p>
+<p>Alteration</p>
+<p>Level: 2</p>
+<p>Range: Area</p>
+<p>Duration: 12 hours</p>
+<p>Casting Time: 20 </p>
+<p>Area of Effect: Current Area</p>
+<p>Saving Throw: None 
+
+<p>This spell is often employed by liches and powerful Evil Archmagi. It creates a sense of evil magic perforating the entire area making any creature within it feel they are being watched and making the hairs on the back of their necks stand up. While only really for dramatic effect it does have some small effect on beings.</p>
+<p><I>Effects:</I></p>
+<p>All in area recieve a -1 penalty to their saves versus spells. There is a small chance that some beings may be totally terified by this spell and must save versus spell or run in horror but they do so with a save of +6.</p>
+<p>The casting mage recieves +1 luck while the spell is in effect.</p>
+<p>This spell will only work once on a creature.</p>
+
+<br><hr style="width: 90%;" /><br>
+<p><strong>5SPPSIRS.SPL-</strong></p>
+<p>Spell Name: <strong>Iridium Sphere</strong></p>
+<p>Spell Desc: Iridium Sphere</p>
+<p>(Evocation) </p>
+<p>Level: 5</p>
+<p>Range: 30 yards </p>
+<p>Duration: special </p>
+<p>Casting Time: 5</p>
+<p>Area of Effect: One creature</p>
+<p>Saving Throw: Special 
+
+<p>As the mage completes the incantation of this spell a ball of what appears to be flowing quicksilver appears before them. </p>
+<p>With a wave the mage can send this sphere flying towards one target. When the sphere hits it appears to be totally absorbed into the target. The sphere also affects any metal on the target magnetising it and making very attractive to other metals.</p>
+<p><I>Effects:</I></p>
+<p>10-20 magical damage +3/3 levels.</p>
+<p>The target must save versus spell at -2 or become magnatised.</p>
+<p>If magnatised the target suffers -1 to dexterity a -2 to Ac and -8 to Ac versus missile weapons.
+
+</p>
+
+<br><hr style="width: 90%;" /><br>
+<p><strong>6SPPSKKK.spl-</strong></p>
+<p>Spell Name: <strong>Keltons Kinetic Knives</strong></p>
+<p>Spell Desc: Keltons Kinetic Knives</p>
+<p>Conjuration/Summoning</p>
+<p>Level: 4</p>
+<p>Range: visual range.</p>
+<p>Duration: 1 hour</p>
+<p>Casting Time: 9 round</p>
+<p>Area of Effect: Special </p>
+<p>Saving Throw: None 
+
+<p>With this spell the mage brings into being shimmering blades of magical force. The blades whirl around and when they strike a enemy explode in a small burst of magic. The knives can be controlled individually by the mage and will remain for 1 hour before evaporating. Once they strike a opponent they vanish forever.</p>
+<p><I>Effects:</I></p>
+<p>Each knife deals 5-10 magical damage. They act as +3 weapons and stun the target for a short period if a save is failed at +2.</p>
+<p>The mage recieves one knife every five levels up to a maximum of 8 at 37th level. The knives are not harmed by physical or magical attacks but may be destroyed by a dispel magic spell.
+
+</p>
+
+<br><hr style="width: 90%;" /><br>
+<p><strong>7Sppsnms.spl-</strong></p>
+<p>Spell Name: <strong>Nightmare Syndrome</strong></p>
+<p>Spell Desc: Nightmare Syndrome</p>
+<p>Conjuration/Summoning</p>
+<p>Level: 8</p>
+<p>Range: 15 feet</p>
+<p>Duration: 1/2 hour</p>
+<p>Casting Time: 15 round</p>
+<p>Area of Effect: Special </p>
+<p>Saving Throw: None 
+
+<p>Darkness seems to suround the mage as he casts this spell and a chill creeps into the air. As the final words of the ritual are said a planar nexus opens to the Demi-Plane of Fear and calls forth a terrible being. The nightmare a wraith like creature that assumes the form of its victim worst fear and attacks causing many to flee in fear.</p>
+<p><I>Effects:</I></p>
+<p>Calls forth a nightmare to serve the caster for half an hour.
+
+</p>
+
+<br><hr style="width: 90%;" /><br>
+<p><strong>8SPpsq10.spl-</strong></p>
+<p>Spell Name: <strong>Storm Force</strong></p>
+<p>Spell Desc: Storm Force</p>
+<p>Alteration</p>
+<p>Level: 7</p>
+<p>Range: Self</p>
+<p>Duration: 2 turns</p>
+<p>Casting Time: 10 round</p>
+<p>Area of Effect: Special </p>
+<p>Saving Throw: None 
+
+<p>With this spell the wizard calls forth the elements, a ball of twisting electrical clouds appears before him and at the culmination of the spell he unleases them into the heavens. Moments later a storm of incredible power begins, the sky turns dark and thunder rumbles everywhere , huge bolts of unnatural lightning stike down onto the casters enemies dealing massive damage.
+
+</p>
+
+<br><hr style="width: 90%;" /><br>
+<p><strong>9SPpsq11.spl-</strong></p>
+<p>Spell Name: <strong>Miasma</strong></p>
+<p>Spell Desc: Miasma</p>
+<p>(Conjuration) </p>
+<p>Level: 7</p>
+<p>Range: 10 yards </p>
+<p>Duration: 1 turn</p>
+<p>Casting Time: 7</p>
+<p>Area of Effect: 30' radius</p>
+<p>Saving Throw: None </p>
+<p>When the final word of this spell is uttered the ground beneath the target bubbles and cracks and foul noxious vapours billow forth into a huge seething cloud. The gas of the cloud reeks of death and decay all within it are sicked and feel very weak. The vapours are also highly toxic and slowly poison anyone breathing them in. The vapours sting and burn the eyes as well making visibilty in the fog incredibly diffcult.</p>
+<p><I>Effects:</I></p>
+<p>Each round everyone in the cloud will take 3d8 of poison damage with no save. While they remain in the cloud they are nauseated and slowed and each round they must save versus spell or be blinded for one round.</p>
+
+<br><hr style="width: 90%;" /><br>
+<p><strong>10SPpsq13.spl-</strong></p>
+<p>Spell Name: <strong>Wave of Obliteration</strong></p>
+<p>Spell Desc: Wave of Obliteration:</p>
+<p>Invocation</p>
+<p>Level: 9</p>
+<p>Range: 30ft </p>
+<p>Duration: Permanent </p>
+<p>Casting Time: 8 </p>
+<p>This is a amazing find and for the adventuring mage and one of extreme use. The wave of obliteration spell was last seen being used around 100 years ago. Two nobles of Tethry were fighting over their fathers castle as his will had left its ownership in debate. As so often is the case in contentious circumstances the two nobles were both powerful archmages both having been tutored by their father in the art. This spell was apparently a family heir lomb and a source of great jealousy from other magical households. Needless to say the two nobles desided that the only answer was for a duel. The results were unpleasant to say the least, afterwards it was deduced from the rubble that both magi had released this spell simultaneously, the effects indeed show the power of this spell. One half of the castle was discovered several years later in  pond several miles away although the servants were never found....the mages were both buried in very small coffins. </p>
+<p>When the mage completes his incantation of this spell he raises his hands and pushes his palms away from himself. From his hands  a wall of pure uncontrolled magical energy bursts, The magic explodes forth taking every thing in its path with it. Any creature caught within this energy wave will take massive damage from the energies involved and must save versus spell or be literally obliterated by the sheer power of this spell.</p>
+<p><I>Effects:</I></p>
+<p>All creatures in the path of the spell will take 10d5+20 points of magical damage with no save. They must then save versus spell at -2 or be vapourised by the spell 
+
+</p>
+
+<br><hr style="width: 90%;" /><br>
+<p><strong>11SPpsq14.spl-</strong></p>
+<p>Spell Name: <strong>Sphere of Dissipation</strong></p>
+<p>Spell Desc: Sphere of Dissipation</p>
+<p>Level 8</p>
+<p>Abjuration</p>
+<p>Casting Time: 9</p>
+<p>Duration: 15 rounds </p>
+<p>This immensly powerful spell is shrouded in mystery (proably because only 4 copies of it have ever been discovered). Its abilities are truely immpressive making it possibly the most powerful protective spell availble to the mage however no one knows where the spell originated from, although some sages believe it was created in the days of Myth Drannor. When the final word of the spell is spoken a globe of twisting magical energies springs up around the caster. The magical globe absorbs all energy that strikes it dissipating it into nothingness. The energy that can be absorbed can be either physical or magical in origin and is completly nullified by the sphere. The intensity of energy that the sphere can absorb relies soley on the ability of the mage who cast the spell and as the mage increases in power so does the spell. </p>
+<p>At 16th level the spell protects from 1st to 3rd level spells and protects from non magical weapons.    </p>
+<p>At 18th level the sphere protects from 1st to 4th level spells and still protects from normal weapons but grants 25% resistance to all physical attacks.</p>
+<p>At 20th level the sphere protects from 1st to 5th level spells and grants immunity to normal and +1 weapons</p>
+<p>At 25th level the sphere protects from 1st to 6th level spells, gives immunity to normal and +1 weapons and gives 25% resistance to all physical attacks.</p>
+<p>At 30th level the sphere protects from 1st to 7th level spells and gives immunity to normal, +1 and +2 weapons.</p>
+<p>The sphere cannot be used in conjuction with other weapon immunity spells.
+
+</p>
+
+<br><hr style="width: 90%;" /><br>
+<p><strong>12SPpsq15.spl-</strong></p>
+<p>Spell Name: <strong>Shadricks Shattering Arrow</strong></p>
+<p>Spell Desc: Shadricks Shattering Arrow</p>
+<p>Level 2</p>
+<p>Casting Time:5/4</p>
+<p>Range: 100ft</p>
+<p>Evocation</p>
+<p>Many a powerful mage has looked down their nose at this spell when they were but magelings only to stare in terror as it flew towards them later in life. At very low levels this spell is quite frankly pathetic however as the mage advances so the power of the spell increases. The spell creates a magical arrow of solidified power that flies from the casters hand to strike his selected target.</p>
+<p>Abilities:</p>
+<p>At levels 1-10 the arrow does 1d 8 piercing damage with no save and 2  magic damage save versus spell.</p>
+<p>At levels 10-20 the arrow does 2d6 of piercing damage and 2 damage from each element no saving throw. </p>
+<p>At levels 20-35 the arrow does 2d8 of piercing damage no save  it also does 10d4 +5 magic damage save versus spell for half. The target must also save versus death at -2 or be stunned for 2 rounds. The spells casting time is decreased by 1.</p>
+<p>At levels 35 and above the arrow becomes a shining flash of magic. It inflicts 75 points of magical damage save versus spell for half. The target must also save versus death at +1 or be killed if they survive this they are automatically stunned for 3 rounds. 
+
+</p>
+
+<br><hr style="width: 90%;" /><br>
+<p><strong>13SPpsq16.spl-</strong></p>
+<p>Spell Name: <strong>Black-Barbed Curse</strong></p>
+<p>Spell Desc: Black-Barbed Curse:</p>
+<p>Level 4</p>
+<p>Conjuration/Summoning</p>
+<p>The night hags were powerful nere godlike witches who roamed the planes many years ago. Although most of their exploits are unknown one night hag is documented particulary well. Ravel Puzzelwell possibly the the most powerful of the nighthags and famous enemy of the Lady of pain. It is believed that ravel some how tried to break the ladys link with the city of sigil her motives for this  are unknown but none the less the ladys rage was great and ravel was flung into a demi-plane of existence, one of the ladies mazes.  Ravel rotted in her planer cage for many years all the while her hatred and saddness formed around her in the shape of huge black barbed vines. When Ravel was somehow killed this spell found its way out into the planes. It calls forth the huge black barbed vines of ravels maze causing them to rip out of the ground raking and cutting at the casters enemies.</p>
+<p><I>Effects:</I></p>
+<p>Range: 30</p>
+<p>Casting Time:4</p>
+<p>Damage: 4d 6 of piercing damage Save. versus spell</p>
+<p>3d 6 of piercing damage with no save. 
+
+</p>
+
+<br><hr style="width: 90%;" /><br>
+<p><strong>14SPpsq17.spl-</strong></p>
+<p>Spell Name: <strong>Unthinkable Logic</strong></p>
+<p>Spell Desc: Unthinkable Logic:</p>
+<p>Level 6</p>
+<p>Range: 50</p>
+<p>Alteration</p>
+<p>Casting time: 6</p>
+<p>This mathematical spell calls forth material from the plane of  Mechanus a demi-plane of Primus. This spell enfuses space around the caster with the utter logic of the plane of Mechanus. The spell reveals to all non primus beings for a brief instant the Intrinsically logical nature of reality most beings are totally unable to cope with this revelation and they are thrown into confusion and chaos as their brains try to comprehend what they have seen Creatures with particularly unevolved brains may even be instantly slain by this spell as their brains are destroyed in the attempt to understand.  </p>
+<p><I>Effects:</I></p>
+<p>Save versus spell at -3 or be confused and blinded for 1 turn.</p>
+<p>Target will loose 2 points of intelligence and wisdom for 6 hours with no save.</p>
+<p>Save versus spell at -2 50% chance that the </p>
+<p>target will miscast magic for 1 turn.
+
+</p>
+
+<br><hr style="width: 90%;" /><br>
+<p><strong>15SPpsq19.spl-</strong></p>
+<p>Spell Name: <strong>Triple Fireball Blast</strong></p>
+<p>Spell Desc: Triple Fireball Blast(Evocation) </p>
+<p>Level: 7</p>
+<p>Range: Visual range of caster </p>
+<p>Duration: Instantaneous </p>
+<p>Casting Time: 7 </p>
+<p>Area of Effect: 30-foot radius x3  </p>
+<p>Saving Throw: 1/2 
+
+<p>A fireball is an explosive burst of flame, which detonates with a low roar and delivers damage proportional to the level of the wizard who cast it - 1d6 points of damage for each level of experience of the spellcaster (up to a maximum of 10d6). The wizard points his finger and speaks the range (distance and height) at which the fireball is to burst. A streak flashes from the pointing digit and, unless it impacts upon a material body or solid barrier prior to attaining the prescribed range, blossoms into the fireball (an early impact results in an early detonation). Creatures failing their saving throws each suffer full damage from the blast. Those who roll successful saving throws manage to dodge, fall flat, or roll aside, each receiving half. This is a more powerful version of the fireball spell, when the final word of the invocation is uttered three roaring balls of flame fly forth to strike 3 respective targets.
+
+</p>
+
+<br><hr style="width: 90%;" /><br>
+<p><strong>16SPpsq1.spl-</strong></p>
+<p>Spell Name: <strong>Infernal Combustion Enigma</strong></p>
+<p>Spell Desc: Infernal Combustion Enigma</p>
+<p>Level: 7</p>
+<p>Range: Visual range of caster </p>
+<p>Duration: Instantaneous </p>
+<p>Casting Time: 6</p>
+<p>Area of Effect: 30-foot radius 
+
+<p>The Infernal Combustion Enigma is a truely devastating spell although where it gets is power  remains a enigma. When cast a sphere of magical fire explodes forth from the mages hand and rushes towards his desired target. When the ball of magic strikes the target it explodes. When it  explodes a huge wall of magical flame erupts around the target, the very air is turned into searing flames and almost nothing is capable of withstanding the intensity of the resulting heat. Mages should be careful when using this spell as it can desimate both party and oppostion.</p>
+<p><I>Effects:</I></p>
+<p>The wall of flame does 10d5 of fire damage to all within the area of effect. It then deals a further 10d2 of magic damage although this can be negated if the target saves versus spell at -1.
+
+</p>
+
+<br><hr style="width: 90%;" /><br>
+<p><strong>17SPpsq20.spl-</strong></p>
+<p>Spell Name: <strong>Soul Cage</strong></p>
+<p>Spell Desc: Soul Cage</p>
+<p>(Necromancy)</p>
+<p>Level: 8</p>
+<p>Casting Time: 1 turn</p>
+<p>Target:One
+
+<p>A terrible spell to call upon indeed, this spell is considered so horrible that many magical societies have out lawed it ( the research into this spell is believed to be one reason the red wizards of thay split from the haluraans). When completed the soul of the target is surrounded by a cage of crackling energy that slowly shrinks pulling the soul of the victim into another plane where it is destroyed ( prehaps an anti-matter plane, or the negative energy plane). The death is exceeding horrible as the soul is literally torn free from the body, destroying both body and soul in the process. The victim is allowed a save a -4 to avoid having their soul destroyed even if they save versus the spell they still take </p>
+<p>10-20 damage and will be nauseated for a short time.
+
+</p>
+
+<br><hr style="width: 90%;" /><br>
+<p><strong>18SPpsq21.spl-</strong></p>
+<p>Spell Name: <strong>Karsus's Crimson Falmes</strong></p>
+<p>Spell Desc: Karsus's Crimson Falmes </p>
+<p>Range: Visual Range </p>
+<p>Duration: 4 rounds</p>
+<p>Casting Time: 8 </p>
+<p>Area of Effect: One Creature </p>
+<p>Saving Throw: None 
+
+<p>Karsus prehaps the most powerful of archmages to come to power in ancient nethril, and one of the most foolish for he attempted to sieze godhood through his magic and failed being punished with an eternity of torment. Karsus's spells are renowned for their power and this is no exception, being one of his most potent death magics.</p>
+<p>When cast the target is surrounded by a aura of magical crimson falmes that literally burn the life of the target away. The falmes last for 4 rounds and each round the target must save at -1 or be instantly killed ( each round a diiferent save is used death,spell,breath etc).  Even if the target resists the death magic they are overcome with fear at being surrounded with the flames and will run in fear till the falmes extinguish. While a target is surrounded by the flames their regeneration (if any) will cease and they will be immune to all healing magics.
+
+</p>
+
+<br><hr style="width: 90%;" /><br>
+<p><strong>19SPpsq22.spl-</strong></p>
+<p>Spell Name: <strong>Create Minion </strong></p>
+<p>Spell Desc: Create Minion:</p>
+<p>(Conjuration/summoning)</p>
+<p>Level 9</p>
+<p>Casting time: 3 rounds</p>
+<p>Range: Visual sight of caster
+
+<p>Normally to conjure monsters or undead on a permanent basis requires much preparation and many rituals, this spell however being as powerful as it is allows the mage to summon forth a minion permanently in one easy spell. The spell allows the caster to choose which type of monster to summon even undead can be summoned, there is no limit to the number of creatures that can be summond so a patient mage can easily go about creating a army.</p>
+
+<br><hr style="width: 90%;" /><br>
+<p><strong>20SPpsq27.spl-</strong></p>
+<p>Spell Name: <strong> Nagaths Polarised Pyrotechnics</strong></p>
+<p>Spell Desc: Nagaths Planar Pyrotechnics</p>
+<p>Level: 9</p>
+<p>Range: Visual range of caster </p>
+<p>Duration: Instantaneous </p>
+<p>Casting Time: 3 rounds</p>
+<p>Area of Effect: Huge!</p>
+<p>Saving Throw: 1/2 
+
+<p>This is the final spell of the arch lich Nagath. He spent many hundreds of years journeying the multiverse, on his final trip it is believed that he crossed paths with an over god (much like lord Ao) on the astral plane, needless to say the proud archlich challenged the over god. The  arch lich could not have won but as the god banished him to a plane of eternal fire the archlich screamed forth this terrible spell. The god was unharmed but a shock wave of tectonic violence ran through the astral plane killing many of its inhabitants. When invoked this spell conjuers material from upward of 10 different planes spewing forth a maelstrom of incredible volence.  The main power  of this spell lies in that it draws its energy from its targets and the more beings the greater the power of the spell and the greater its area of effect. For each being the area of effect 2d10 of damage is done with no save and 1d10 damage is done although this can be avoided with a save vs spells at -2. So fantastic is the is the sheer power of the spell that all in side the area of effect (if they survive) will be confused for the next 5 rounds. 
+
+</p>
+
+<br><hr style="width: 90%;" /><br>
+<p><strong>21SPpsq3.spl-</strong></p>
+<p>Spell Name: <strong>Thunder Bolt </strong></p>
+<p>Spell Desc: Thunder Bolt (Evocation) </p>
+<p>Level: 8</p>
+<p>Range: 150 yards</p>
+<p>Duration: Instantaneous </p>
+<p>Casting Time: 8</p>
+<p>Area of Effect: Special </p>
+<p>Saving Throw: none
+
+<p>In some circles of Archmages it is considered rather pathetic to cast a lightning bolt like a weak little mage. So the thunder bolt was developed. while looking to all intensive purposes like a lightning bolt it is however charged a great deal more and capable of doing vast amounts of damage to anything it stikes. Like the lightning bolt the thunder bolt can rebound hence its mass destructive capabilites may also affect the party but there is no doubt an archmage with this spell can level nearly anything that opposes him.</p>
+<p><I>Effects:</I> </p>
+<p>The thunder bolt shoots forth and deals 10d8 electrical damage to the target although a save can be made versus spell at -2 to only receive 3/4 of the damage. So power is the Thunder bolt that it is also capable of blowing a enemy off their feet and knocking them unconcious.
+
+</p>
+
+<br><hr style="width: 90%;" /><br>
+<p><strong>22SPpsq4.spl-</strong></p>
+<p>Spell Name: <strong>Power Word, Burn</strong></p>
+<p>Spell Desc: Power Word,Burn</p>
+<p>(conjuration,summoning) </p>
+<p>Level: 9</p>
+<p>Range: Visual sight of caster </p>
+<p>Duration: Instant</p>
+<p>Casting Time: 1 </p>
+<p>Area of Effect: 1 creature </p>
+<p>Saving Throw: None
+
+<p>Prehaps the most unpleasant or prehaps the most satisfying word of power is the power word of burning. Apparently created by a pyromanical mage in the planar city of sigil called ignus.  When uttered the mage points his finger at the target, it is that targets unlucky day for this spell is immensly powerful. As the spell takes hold reality around the target ripples and changes opening a direct portal to the elemental plane of fire. So powerful is this spell that for a instant the target really is on the elemental plane of fire and unless they are resistant to fire or from the elemental of fire there is a good chance they will be vapourised into a cloud of ash by the heat this spell creates.</p>
+<p><I>Effects:</I></p>
+<p>Target will instantly take 40 points of fire damage with no save. They must then make a save versus death at </p>
+<p>-2 or be vapourised instantly by the heat from the elemental plane of fire.  
+
+</p>
+
+<br><hr style="width: 90%;" /><br>
+<p><strong>23SPpsq5.spl-</strong></p>
+<p>Spell Name: <strong>Abyssal Fury</strong></p>
+<p>Spell Desc: Abyssal Fury</p>
+<p>Range: 50 feet</p>
+<p>Duration: Instant</p>
+<p>Speed: 9</p>
+<p>Area of Effect: 1 creature</p>
+<p>Saving Throw: see below
+
+<p>When compared to the Tanar'ri, at least the Baatezu are more civilized. There is, perhaps, nothing more horrific than the unbounded fury of Abyss. By use of this spell, the ground shall split open and the victim dragged into the Tanar'rian Madness. Welcome to Hell.
+
+<p>This spell opens a planar portal beneath a specified victim and drags them down into the Abyss. The portal remains open even after the victim is swallowed in. The only sound bystanders hear is the incessant screaming of the victim as he/she is torn apart by the ruthless Tanar'ri. After what seems like only a few seconds (which is more than an eternity for the victim in the Abyss), the victim (or what's left of him) gets spat back out of the portal. </p>
+<p>(1) If the victim makes a successful saving throw, he will get spat out of the portal in 'one piece,' but while the victim sensed nothing at first, after a split-second, all the Wrath of the Tanar'ri will surface. The victim will suffer 10d8 pts. of damage as he suffers multiple 'delayed' attacks and slashes from all angles. </p>
+<p>(2) If the victim fails the saving throw, it is instant death. All that is left are body parts. 
+
+</p>
+
+<br><hr style="width: 90%;" /><br>
+<p><strong>24SPpsq6.spl-</strong></p>
+<p>Spell Name: <strong>Ajundurar's Ice Shard</strong></p>
+<p>Spell Desc: Ajundurar's Ice Shard</p>
+<p>Invocation</p>
+<p>Level: 4</p>
+<p>Range: Visual range of caster</p>
+<p>Duration: Instant</p>
+<p>Casting Time: 2</p>
+<p>Area of Effect: Special </p>
+<p>Saving Throw: None 
+
+<p>Ajundurar's Ice Shard, a extremely useful spell often employed by powerful mages due to its comparitively short casting time. When the mage completes the incantation his hand bursts briefly into cold blue light and then a magical shard of freezing ice flies toward the target, inflicting cold damage upon them.
+
+<p><I>Effects:</I>
+
+<p>The shard of ice inflicts 4d6 of cold damage on the target with no save plus 1d6 of cold damage where a save versus spells is allowed. 
+
+</p>
+
+<br><hr style="width: 90%;" /><br>
+<p><strong>25SPpsq7.spl-</strong></p>
+<p>Spell Name: <strong>Melt</strong></p>
+<p>Spell Desc: Melt</p>
+<p>Level: 7</p>
+<p>Range: Visual sight of caster</p>
+<p>Duration: Instantaneous</p>
+<p>Casting Time: 8</p>
+<p>Area of Effect: Target Creature</p>
+<p>Saving Throw: Save versus polymorph at -1.
+
+<p>This spell alters the make up of the target creatures body. The molecules the creaturte is composed of begin to deform and slide over each other. The target begins to deform and distort, in other words they melt into a sticky puddle of slime on the floor.</p>
+<p>However the target is not killed even in this gelatinous state they still have some control although due to the fact that they are a puddle of slime their ability to attack is greatly decreased. 
+
+</p>
+
+<br><hr style="width: 90%;" /><br>
+<p><strong>26SPpsq8.spl-</strong></p>
+<p>Spell Name: <strong>Recemons Wonderful Rejuvination</strong></p>
+<p>Spell Desc: Recemons Wonderful Rejuvination</p>
+<p>(Necromancy)</p>
+<p>Level: 8</p>
+<p>Range: 20 feet</p>
+<p>Duration: Permanent</p>
+<p>Casting Time: 5</p>
+<p>One Creature </p>
+<p>Saving Throw: None
+
+<p>As much as mages hate to admit it priests have their uses and their is no denying their power especially in the art of healing. This spell however allows wizards to hold their own. It creates powerful magic that will completely heal a target and remove all ill effects. As such it is a incredibly useful spell to a adventuring wizard.
+
+</p>
+
+<br><hr style="width: 90%;" /><br>
+<p><strong>27SPpsq9.spl-</strong></p>
+<p>Spell Name: <strong>Azuths Rune of Utter Negativity</strong></p>
+<p>Spell Desc: Azuths Rune of Utter Negativity</p>
+<p>Metamagic</p>
+<p>Level: 9</p>
+<p>Range: Visual sight of caster </p>
+<p>Duration: 30 rounds</p>
+<p>Casting Time: 15</p>
+<p>Area of Effect: Target creature</p>
+<p>Saving Throw: None
+
+<p>Azuth the lord of spells, was once a powerful mortal archmage until he assended unto godhood. Shortly before he became a god it is believed he forged this spell, prehaps his crowning acheivement, even more so then imortality. However soon after his acension this spell was apparently destroyed by Mystra, for its power was to be feared even by the gods. This spell takes a mage a great deal of time to cast, however when it is finally unleased nothing may withstand it. For a single instant it surrounds the target with total nothingness, this nothingness drains magic from the target, severely weakening them. It is prehaps the only way a mage can battle a god for only a spell such as this can make a god vunerable to a mages magic.
+
+<p><I>Effects:</I>
+
+<p>This spell wipes away magical resistances when cast all of the targets resistances will be lowered by 100% all physical and magical protections surronding the caster will also be removed as well as the targets immunity to magic. Any creature may be killed after being affected by this spell. </p>
+
+<br><hr style="width: 90%;" /><br>
+<p><strong>28Sppsrey.spl-</strong></p>
+<p>Spell Name: <strong>Requiem of Elysium</strong></p>
+<p>Spell Desc: Requiem of Elysium</p>
+<p>(Invocation) </p>
+<p>Level: 9</p>
+<p>Range: 100</p>
+<p>Casting Time: 10</p>
+<p>Area of Effect: Visual Range of Caster</p>
+<p>Saving Throw: Neg
+
+<p>The mage raises their hands to the heavens and creates a portal of the upper planes of elysium. The righteous enery of the archons, greater deva and solars, the inhabitants of this plane, rush forth in a tidal wave of magical energy. The fires of elysium clense evil and destroy darkness, this is a powerful spell.
+
+<p><I>Effects:</I>
+
+<p>50-90 Fire and magic damage.</p>
+<p>All in area of affect must save versus spell at -4 or be blinded and deafened for 1 turn.</p>
+<p>Creatures of Darkness such as undead and shadows must save versus death at -2 or be instantly destroyed.
+
+</p>
+
+<br><hr style="width: 90%;" /><br>
+<p><strong>29SPPSTYS.SPL-</strong></p>
+<p>Spell Name: <strong>Tyndals Spacial Compressor</strong></p>
+<p>Spell Desc: Tyndals Spacial Compressor:</p>
+<p>Level 2:</p>
+<p>Alteration</p>
+<p>Casting Time: 1
+
+<p>To cast this spell the mage simply snaps their fingers. A audible in rush of air occurs and the mage vanishes. In actuality the mage has teleported away. However the mage has no control over where they teleport and may well be teleported in front of a yet more powerful enemy. A useful Cantrip none the less.
+
+<p><I>Effects:</I></p>
+<p>Random Teleport 
+
+</p>
+
+<br><hr style="width: 90%;" /><br>
+<p><strong>30SPPSTYT.SPL-</strong></p>
+<p>Spell Name: <strong>Tyndals Temporal Compressor</strong></p>
+<p>Spell Desc: Tyndals Temporal Compressor:</p>
+<p>Level 7</p>
+<p>Alteration</p>
+<p>Duration: 1 Turn</p>
+<p>Target:Self</p>
+<p>Casting time: 8
+
+<p>A effective intra-combat spell for the adventuring mage. When cast reality is seen to warp and twist around the caster and he visibly fades out of existence. In actuality the caster is displaced slightly from the normal stream of time. The effect of this temporal displacement is to make the mage harder to affect from normal reality. Weapons seem not to be able to connect with the mage and any none magical weapon is incapale of affecting the mage. Because the mage no longer exists in the normal flow of events while under the effects of this spell no aging can take place, also speed altering spells and spells that imprision or maze  are useless against the mage. From the mages view the world appears to be moving exceedingly slowly but to others the mage moves extremely quickly becoming a deadly foe.
+
+<p><I>Effects:</I></p>
+<p>Immunity to non-magical weapons.</p>
+<p>40% resistance to all forms of physical attack.</p>
+<p>+2 to all saving throws</p>
+<p>+2 Armour class</p>
+<p>Immunity to speed altering, imprisonment and maze spells.  
+
+</p>
+
+<br><hr style="width: 90%;" /><br>
+<p><strong>31Spsq126.spl-</strong></p>
+<p>Spell Name: <strong>Eviseration</strong></p>
+<p>Spell Desc: Eviseration</p>
+<p>(Alteration) </p>
+<p>Level: 8</p>
+<p>Range: 50 yards</p>
+<p>Duration: Instantaneous</p>
+<p>Casting Time: 5</p>
+<p>Area of Effect: One target</p>
+<p>Saving Throw: Special
+
+<p>When cast this powerful spell allows the wizard to reach out and remove part of or all of an internal organ from a living being. One of the following organs will be affected although the wizard cannot control which one. The target will always save versus spell at -2. Even if one these does not occur the target will take between 20-50 damage from the effect of the spell.
+
+<p>The organs that are affect are as follows.</p>
+<p>The heart: the target will be instantly slain </p>
+<p>The liver: The target will reiceive 50 points of poison damage.</p>
+<p>The brain: The target will be permanently feebleminded and unable to cast spells.  </p>
+<p>The stomach: The target will reiceive 45 points of acid damage. </p>
+<p>The eye: The target will be permanently blinded.</p>
+<p>The lungs: The target will collapse into unconsiousness for a time and then be slowed.
+
+</p>
+
+<br><hr style="width: 90%;" /><br>
+<p><strong>32</strong></p>
+<p>Spell Name: <strong>Melectar's Spell Regeneration</strong></p>
+<p>Spell Desc: Melectar's Spell Regeneration</p>
+<p>(Invocation)</p>
+<p>Level: 8</p>
+<p>Casting Time: 15</p>
+<p>Range: Caster</p>
+<p>Duration: 5 turns</p>
+<p>Saving Throw: NA</p>
+<p> </p>
+<p>A particular mage who long frequented the waterdeep region of the realms was a keen fan of magical dueling. In this dangerous sport magical items were bet and two mages would duel till one submitted, the winner taking the items. The mages name was Belfarst, he created a winning stratagee where by he would estimate his opponents ability and then count the number of spells they had cast so that he always had spells when his opponent was out. This method of dueling however failed him when he encountered Melectar. Melectar had long researched what powers allowed a mage to memorise spells. This enchantment was his result, it allowed him to rememorise spells after he had cast them. Although the casting was very difficult Melectar managed to cast it before the duel. Belfarst was horrified to discover that when he still had only a few magic missile spells left, Melectar was till tossing chain lightning. Melectar won, acidentally killing Belfarst with a disintergrate spell. This spell is his legacy to magic though its uses strech far beyond dueling. This spell rememorises one wizard spell of 6th level or lower every turn for the duration of spell. Due to the energies involved there is a small chance that the spell will cause 5d10 damage upon casting, the spell regeneration will still occur though.
+
+</p>
+
+<br><hr style="width: 90%;" /><br>
+<p><strong>33sppsshh.spl-</strong></p>
+<p>Spell Name: <strong>Summon Helmed Horror</strong></p>
+<p>Spell Desc: Summon Helmed Horror:</p>
+<p>(Conjuration/Summoning)</p>
+<p>Casting Time: 4</p>
+<p>Range: Caster</p>
+<p>Duration: 2 hours
+
+<p>The mage Degrodel was one of the more unpleasant charcters you met on your journies in Baldurs gate. He apparently was obsessed with the items of Balduran the great explorer. He believed that Dradeel Baldurans personal mage had hidden parts of the secret of a great spell in each of Balduran's items. Unfortunatley you killed him before he could complete his research. This spell was one his favourites allowing him to summon 1-3  helmed horrors to his service. The horrors will serve the caster without question for 2 hours and then vanish. 
+
+</p>
+
+<br><hr style="width: 90%;" /><br>
+<p><strong>34SPPSBTA.spl-</strong></p>
+<p>Spell Name: <strong>Blood to Acid</strong></p>
+<p>Spell Desc: Blood to Acid</p>
+<p>(Alteration) </p>
+<p>Level: 6</p>
+<p>Range: 0</p>
+<p>Duration: 20 rounds</p>
+<p>Casting Time: 8</p>
+<p>Area of Effect: The Caster </p>
+<p>Saving Throw: None 
+
+<p>When cast the mages blood bubbles and warps turning into a highly concentrated acid. Strangely enough this has no adverse effect on the caster. It does however prove a powerful deterant to attack. When a successful attack is made the casters blood sprays onto the attacker. The blood now being highly acidic burns and scars the attacker eating into their flesh. While also hurting the attackers the acid in the blood burns away all poisons that might effect the caster. </p>
+<p><I>Effects:</I></p>
+<p>Every attack made against the caster does 2d8+3 acid damage to the attacker.</p>
+<p>Immunity to Poison</p>
+<p>100% resistance to acid. 
+
+</p>
+
+<br><hr style="width: 90%;" /><br>
+<p><strong>35SPPSDMA.spl-</strong></p>
+<p>Spell Name: <strong>Dance Macabre</strong></p>
+<p>Spell Desc: Dance Macabre</p>
+<p>(Alteration)</p>
+<p>Level: 9</p>
+<p>Casting Time: 8</p>
+<p>Range: Visual Range</p>
+<p>Saving Throw: Neg
+
+<p>This spell is generally accompanied by a wave of evil laughter. Apparently this spell was created by a fairy godmother  (who as everyone knows are generally pretty strange people) gone mad. The kitchen maid  had of course just married the prince.  The fairy godmother was casting a spell to allow them to dance in mid air surrounded by music and magical lights. However during the casting, for absolutely no apparent reason the fairy godmother went completely and utterly insane. The spell reflected this sudden change of mental state and the bodies of the maid and prince withered into decayed corpses dancing for all eternity (funelly enough no one really seemed to mind since the marriage was only so the king could fufil a clause in a will allowing him to collect a vast inheritance). Never the less despite the stressful circumstances the court mage managed to copy down the spell as the fairy godmother screamed it. Luckily he had the forsight to copy it onto a fire proof scroll. This was luckily because several seconds later the fairy godmother turned herself into a small purple atomic pumpkin. Several years later when the castle ruins had ceased to glow mauve, an adventuring mage found the scroll and the spell has propigated from that time forth.  This spell causes the targets body to decay into rotting corpse that spasams and jerks as it dances to some obscene infernal music. The target can save versus death at -3 otherwise it will dance forever or until slain. Even if they resist the effect of spell they are still cursed with bad luck for 6 hours.</p>
+
+<br><hr style="width: 90%;" /><br>
+<p><strong>36SPPSMFH.spl-</strong></p>
+<p>Spell Name: <strong>Mordenkainen's Forceful Hammer</strong></p>
+<p>Spell Desc: Mordenkainen's Forceful Hammer (Evocation) </p>
+<p>Level: 8</p>
+<p>Range: 0</p>
+<p>Duration: 30 rounds</p>
+<p>Casting Time: 9</p>
+<p>Area of Effect: Special</p>
+<p>Saving Throw: None 
+
+<p>This powerful spell causes space to fold and distort forming into the shape of a large magical hammer. The hammer glistens with power and is magically animated. The hammer is totally under control of the caster and will obey every command given to it. The hammer acts as a +5 weapon and does 2d4 +5  of crushing damage with each hit +3 magic damage. With each hit there is also a small chance that the target will be stunned and knocked unconscious.  
+
+</p>
+
+<br><hr style="width: 90%;" /><br>
+<p><strong>37SPPSOBB.spl-</strong></p>
+<p>Spell Name: <strong>Otiluke's Bouncy Bubbles</strong></p>
+<p>Spell Desc: Otiluke's Bouncy Bubbles</p>
+<p>(Abjuration) </p>
+<p>Level: 7</p>
+<p>Range: Visual Range</p>
+<p>Duration: 2 Rounds</p>
+<p>Casting Time: 6</p>
+<p>Area of Effect:  3 target creatures</p>
+<p>Saving Throw: Neg.
+
+<p>This spell allows the caster to create 3 bubbles of magical force around any 3 creatures they  wish to protect. The bubbles are rubbery and semi-solid. Weapons striking the bubbles are slowed and hence can only do minimal damage. Non- Magical weapons are totally unable to penatrate the bubble. Only one bubble may be cast on a creature any more then this and the spell becomes ineffective. </p>
+<p><I>Effects:</I></p>
+<p>+3 to Armour Class</p>
+<p>+40% resistance to all physical damage.</p>
+<p>+90% to all missile damage.</p>
+<p>Immunity to non-magical weapons  
+
+</p>
+
+<br><hr style="width: 90%;" /><br>
+<p><strong>38SPPSOIF.spl-</strong></p>
+<p>Spell Name: <strong>Otiluke's Intangible Filter</strong></p>
+<p>Spell Desc: Otiluke's Intangible Filter</p>
+<p>(Abjuration) </p>
+<p>Level: 3</p>
+<p>Range: 0</p>
+<p>Duration: 3 Rounds</p>
+<p>Casting Time: 1</p>
+<p>Area of Effect: Caster</p>
+<p>Saving Throw: Neg.
+
+<p>One of Otiluke's most specialised protection spells. This spell surrounds the caster with a magical aura that filters out all gaseous toxins that the spell deems  harmful to the caster. While within the aura all spells that create poisonous clouds will have no effect on the caster. This spell protects from  but is not limited to. Stinking cloud, Cloudkill, Death fog, Incendary Cloud and Miasma. This spell will not work on the plane of limbo and unfortunately does not protect from breath weapons such as dragons breath, or polyhydra breath. 
+
+</p>
+
+<br><hr style="width: 90%;" /><br>
+<p><strong>39SPPSTPA.spl-</strong></p>
+<p>Spell Name: <strong>Tereledra's Pocket Army</strong></p>
+<p>Spell Desc: Tereledra's Pocket Army</p>
+<p>(Summoning)</p>
+<p>Level: 8</p>
+<p>Casting Time : 12</p>
+<p>Range: Caster</p>
+<p>Saving Throw: Neg.
+
+<p>Tereledra was a powerful archmage who resided on the plane of dust, a plane that sucks the life out of its inhabitants. Tereledra had long travelled the planes and had built up many enemies especially in the anarchist faction of sigil. After being attacked by a group of anarchist wild mages he decided to give it all up, change his name and vanish. For many years he journeyed the inner planes free of his old foes. He joined with a well respected group of mercenaries and travelled with them long, eventually he confieded in them his old and secret identity, feeling he could trust them. Little had he bargined on the size of the anarcists reward for his head. The mercenary group turned on him. They underestimated his power and Tereledra in a fit of rage slew them all consigning their souls to a pocket plane to serve him for all eternity. This spell their only gateway to the rest of the planes. It is believed that Tereledra was later slain when one of the wraith company was resurected by a simpathetic priest, the freed wraith killed Tereledra in a single stroke.  This spell will call forth 5 to 10 wraiths of Tereledra's old mercenary group. The wraiths will serve the caster for 2 hours before returning to their pocket plane. The wraiths are fighters of between 7th and 10th level carrying +1 equipment. The wraiths will serve the caster without question but cannot communicate with anything else. The wraiths will also serve Tereledra before any other so they are incapable of fighting him or in any way inconviniencing him. </p>
+                        </div></p>
+                        </div>
+				
+
+                <address>
+                    <span class="footer">Mymod &gt; Overview</span> &#8226;<a href="#top">BACK TO TOP</a>
+                </address>
+            </div>
+
+            <!-- ================= C o m p a t i b i l i t y ================= -->
+            <a name="compat" id="compat"></a>
+            <div class="content">
+
+                <h2>Compatibility</h2><br>
+
+                <h3><p>Baldur's Gate II :<acronym title="Throne of Bhaal"> ToB</acronym></p><p>Baldur's Gate Trilogy</p><p>Baldur's Gate II : Enhanced Edition</p><p>Enhanced Edition Trilogy</p></h3>
+
+                <p style="margin-top:2%;">
+                    The Planar Sphere Mod is designed to work on Infinity Engine games. This includes:
+                </p>
+                <ul>
+                    <li>Baldur's Gate II: Enhanced Edition (BG2EE) published by Beamdog</li>
+                    <li>The original Baldur's Gate II (BG2, or just SoA), with or without the Throne of Bhaal (ToB) expansion. <strong>Make sure you have Throne of Bhaal updated to version 26498.</strong> Use patch file for your game language, check the ReadMe files related to your patch in your game folder if necessary.</li>
+                    <li>The conversion projects based on <acronym title="Throne of Bhaal">ToB</acronym>, <a href="http://www.shsforums.net/forum/261-bgt-weidu/"><strong>Baldur's Gate Trilogy (BGT)</strong></a>  and <a href="https://github.com/K4thos/EET/releases"><strong>Enhanced Edition Trilogy (EET)</strong></a>.</li>
+                </ul></br>
+
+
+                <hr style="width: 90%; " /><br>
+
+
+                <h3>Other Mods Compatibility</h3>
+
+                <p style="margin-top:2%;">
+                    This mod is a <acronym title="Weimer Dialogue Utility">WeiDU</acronym> mod, and therefore should be compatible with all WeiDU mods.
+                </p>
+                <p>
+                    Though we are striving to make Mymod compatible with as many other mods as possible, there is always a chance that incompatibilities will arise.
+                </p>             
+                <p>
+                    If you encounter any bugs, please report them on the forum!
+                </p><br>
+
+
+                <hr style="width: 90%; " /><br>
+
+
+                <h3>Installation Order</h3>
+
+                <p style="margin-top:2%;">
+                    &#10173; Although it is not required for Mymod to function properly, you are strongly recommended to also download and install the <a href="https://www.gibberlings3.net/files/file/696-bg2-fixpack/">BG2 Fixpack</a> before proceeding with the installation of this mod.
+                </p>
+                <ul>
+                    <li>Please install Mymod after Divine Remix mod, as it alters spells in Lizard Man Shamans spellbook</li>
+                    <li>Please install Mymod after Imoen Romance.</li>
+                    <li>...</li>
+                </ul><br>
+
+                <p>&#10173; &#9888;&#65039; Don't forget that there are mods managers that strive to make the players life easier. So don't forget to create and fill the <em>mymod.ini</em></a> file in &#x1F4C1; <strong>mymod</strong> folder.
+                </p>
+
+                <p>
+                    <a href="https://github.com/ALIENQuake/ProjectInfinity/wiki/Adding-metadata-for-mod">Example of the mymod.ini metadata file</a>
+                </p>
+
+                <p>
+                    It is very easy. If your mod must be installed <strong>after</strong> for eg: BG2Fxpack, EET and Divine Remix mods, all you need to do is to fill the following line in mymod.ini, using tp2 name without .tp2 extention:
+                </p>
+
+                <div class="important_tuto">
+                    <p>
+                    <pre># This mod must be installed *after* those ModID listed below, comma-separated list:
+After = bg2fixpack, EET, divine_remix</pre>
+                    </p>
+                </div><br>
+
+                <p>And that's it! Players will NEVER install those mods using bad install order. &#128521;
+                </p><br>
+
+                <p>
+                    &#10173; &#9888;&#65039; <strong>You are strongly recommended checking the last version of .ini files <a href="https://github.com/ALIENQuake/ProjectInfinity/wiki">here</a></strong>.
+                </p><br>
+
+                <address>
+                    <span class="footer">Mymod &gt; Compatibility</span> &#8226;<a href="#top">BACK TO TOP</a>
+                </address>
+            </div>
+
+            <!-- ================== I n s t a l l a t i o n ================== -->
+            <a name="installation" id="installation"></a>
+            <div class="content">
+
+                <h2>Installation</h2><br>
+
+                <h3>Notes</h3>
+
+                <p style="margin-top:2%;">
+                    <em>If you've previously installed the mod, remove it before extracting the new version. To do this, run <strong><span class="weidu">&nbsp;setup-mymod.exe&nbsp;</span></strong>, un-install all previously installed components and delete the &#x1F4C1; mymod folder.</em>
+                </p>
+                <p>
+                    <em>When installing or un-installing, <strong>do not close the <acronym title="Console application like Command Prompt, Windows Terminal, macos Terminal, Linux Shell etc">Console</acronym> window</strong> by clicking on the <strong>X</strong> button! Instead, press the <strong>Enter</strong> key whenever instructed to do so.</em>
+                </p>
+                <p>
+                    <strong>Disable any antivirus</strong> or other memory-resident software before installing this or any other mod. Some (particularly Avast and Norton!) have a tendency to report false positives with mod activity, resulting in failed installs.
+                </p>
+                <p>
+                    Extract files from the archive using build-in "Right-click>Extract all..." Explorer fearure, <a href="http://www.7-zip.org/download.html">7zip</a>, <a href="http://www.rarlab.com/download.htm">WinRAR</a>, <a href="https://zipgenius.com/">ZipGenius</a>, or another file compression utility that handles .zip files.
+                </p>
+                <br>
+
+
+                <hr style="width: 90%;" /><br>
+
+
+                <h3>Special Note for Siege of Dragonspear from Steam/GOG</h3>
+
+                <p style="margin-top:2%;">
+                    Good Old Games (GOG) and Steam both package the additional content for Siege of Dragonspear in a method that <acronym title="Weimer Dialogue Utility">WeiDU</acronym>, the tool used to install this mod, cannot access. You must run a program called <a href="https://github.com/Argent77/A7-DlcMerger/releases/latest">DLC Merger</a> on your SoD installation before you can install this or any other WeiDU-based mod.
+                </p><br>
+
+
+                <hr style="width: 90%;" /><br>
+
+
+                <h3>Enhanced Editions Note</h3>
+
+                <p style="margin-top:2%;">
+                    The Enhanced Editions are actively supported games. Please note that every patch update will wipe your current mod setup! If in the middle of a modded game you might want to delay the patch update (if possible) as even after reinstalling the mods, you might not be able to continue with your old savegames. Alternatively, copy the whole game's folder into a new one that can be modded and will stay untouched by game patches. It is important that you install the mod to the language version you are playing the game in. Otherwise, the dialogues of the mod will not show but give error messages.
+                </p><br>
+
+
+                <hr style="width: 90%;" /><br>
+
+
+                <h3>Windows</h3>
+
+                <p style="margin-top:2%;">
+                    Mymod for Windows is distributed as an extractable compressed archive and includes a <acronym title="Weimer Dialogue Utility">WeiDU</acronym> installer.
+                </p>
+                <p>
+                    Extract the contents of the mod to the folder of the game you wish to modify (<em>the folder which contains the "CHITIN.KEY" file</em>). On successful extraction, there should be a &#x1F4C1; mymod folder and a setup-mymod.exe file in your game folder. To install, simply double-click <strong><span class="weidu">&nbsp;setup-mymod.exe&nbsp;</span></strong> and follow the instructions on screen.
+                </p>
+                <p>
+                    Run <strong><span class="weidu">&nbsp;setup-mymod.exe&nbsp;</span></strong> in your game folder to reinstall, un-install or otherwise change components.
+                </p></br>
+
+
+                <hr style="width: 90%;" /><br>
+
+
+                <h3>Mac OS X</h3>
+
+                <p style="margin-top:2%;">
+                    Mymod for Mac OS X is distributed in the same compressed archive and includes a <acronym title="Weimer Dialogue Utility">WeiDU</acronym> installer.
+                </p>
+                <p>
+                    First, extract the files of the archive into your game directory. On successful extraction, there should be a &#x1F4C1; mymod folder, setup-mymod and setup-mymod.command files in your game folder. To install, double-click <strong><span class="weidu">&nbsp;setup-mymod.command&nbsp;</span></strong> and follow the instructions on screen.
+                </p>
+                <p>
+                    You can run <strong><span class="weidu">&nbsp;setup-mymod.command&nbsp;</span></strong> in your game folder to reinstall, un-install or otherwise the components settings.
+                </p><br>
+
+
+                <hr style="width: 90%;" /><br>
+
+
+                <h3>Linux</h3>
+
+                <p style="margin-top:2%;">
+                    Mymod for Linux is distributed in the same compressed archive and does not includesa <acronym title="Weimer Dialogue Utility">WeiDU</acronym> installer.
+                </p>
+                <p>
+                    Extract the contents of the mod to the folder of the game you wish to modify.
+                </p>
+                <p>
+                    Download the latest Linux version of <a href="https://github.com/WeiDUorg/weidu/releases"><acronym title="Weimer Dialogue Utility">WeiDU</acronym></a> and copy weidu, weinstall and tolower to /usr/bin. Then open a terminal and <strong><span class="weidu">&nbsp;cd&nbsp;</span></strong> to your game installation directory.
+                </p>
+                <p>
+                    <em>Optional: run 'tolower' and answer 'Y' to both queries. You can avoid running the second option (linux.ini) if you've already ran it once in the same directory. To save time, the archive is already tolowered, so there's no need to run the first option (lowercasing file names) either, if you've extracted only this mod since the last time you lowercased file names. If unsure, running tolower and choosing both options is the safe bet.</em>
+                </p>
+                <p>
+                    Run <strong><span class="weidu">&nbsp;weinstall setup-mymod&nbsp;</span></strong> in your game folder to install the mod. Then run <strong><span class="weidu">&nbsp;wine bgmain.exe&nbsp;</span></strong> (or <strong><span class="weidu">&nbsp;wine baldur.exe&nbsp;</span></strong> for EE games), and start playing.
+                </p><br>
+
+
+                <hr style="width: 90%;" /><br>
+
+
+                <h3>Note for Complete Un-installation</h3>
+
+                <p style="margin-top:2%;">
+                    In addition to the methods above for removing individual components, you can completely un-install the mod using <strong><span class="weidu">&nbsp;setup-mymod --uninstall&nbsp;</span></strong> at the command line to remove all components without wading through prompts.
+                </p><br>
+
+
+                <hr style="width: 90%;" /><br>
+
+                <address>
+                    <span class="footer">Mymod &gt; Installation</span> &#8226;<a href="#top">BACK TO TOP</a>
+                </address>
+            </div>
+
+            <!-- =================== C o m p o n e n t s ==================== -->
+            <a name="compon" id="compon"></a>
+            <div class="content">
+
+                <h2>Components</h2><br>
+
+                <p>
+                    The installer includes the following components. The number of each is the component <span class="tp2">DESIGNATED</span> number which gives it a fixed install position, lets other components and mods detect it and allows automated installers to specify component choices.
+                </p>
+                <p>
+                    [Optional: All subcomponents require the main component (they need to since it's the one that installs new content). All components are otherwise optional.]
+                </p><br>
+
+                <hr style="width: 90%"><br>
+
+                <p><strong>[10] Component blabla (main component)</strong><br>
+                </p>
+                <p>
+                    Main component description.
+                </p>
+                <p>
+                    Or alternatively
+                </p>
+                <p>
+                    &#10173; Main component description.
+                </p><br>
+
+                <hr style="width: 90%"><br>
+
+                <p><strong>[20] Component blublu</strong><br>
+                </p>
+                <p>
+                    Component blublu description.
+                </p><br>
+
+                <hr style="width: 90%"><br>
+
+                <p><strong>[30] Component bloblo</strong><br>
+                </p>
+                <p>
+                    Component bloblo description.
+                </p><br>
+
+                <address>
+                    <span class="footer">Mymod &gt; Components</span> &#8226;<a href="#top">BACK TO TOP</a>
+                </address>
+            </div>
+
+            <!-- =================== S c r e e n s h o t s ==================== -->
+            <a name="images" id="images"></a>
+            <div class="content">
+
+                <h2>Screenshots</h2><br>
+
+                <p style="font-size: 120%;">
+                    <strong>1PP basic example (1ppv4: Spell tweaks)</strong>
+                </p>
+                <p>
+                    <center><img src="images/202.jpg" title="Spell tweaks" /></center>
+                </p><br><br>
+
+                <p style="font-size: 120%;">
+                    <strong>1PP complex example</strong>
+                </p>
+                <p>
+                    These animations do not exist in a typical Baldur's Gate II game, though the slots exist and can display the relevant Icewind Dale content if ported. Hover your cursor over each animation to see its name.
+                </p><br>
+                <p>
+                    <span style="font-size:90%"><em>hover to show original content</em></span>
+                </p>
+                <p class="screen" title="hover to show original content" style="background-image:url(images/105a.jpg)"><img src="images/105.jpg"></p></br>
+
+                <address>
+                    <span class="footer">Mymod &gt; Screenshots</span> &#8226;<a href="#top">BACK TO TOP</a>
+                </address>
+            </div>
+
+            <!-- ============== T r o u b l e s h o o t i n g =============== -->
+            <a name="trouble" id="trouble"></a>
+            <div class="content">
+
+                <h2>Troubleshooting</h2><br>
+
+                <p>
+                    These are some general tips if you have problems getting the game working, with or without this or other mods. Many times, errors have to do with the game engine itself or the manner of installation or gameplay. The game recommends deleting all files out of the /cache, /temp and /tempsave &#x1F4C1; sub-folders in your game folder to see if that resolves the problem before any further troubleshooting.
+                </p><br>
+
+                <hr style="width: 90%;" /><br>
+
+                <p>
+                    <strong>Symptom: Game freezes or crashes to desktop (CTDs)</strong>
+                </p><br>
+                <p>
+                    Sometimes the game displays an "assertion error" in a pop-up window when this happens, but often times it doesn't. To enable the full error message, open the file <strong>baldur.ini</strong> in your game folder with a text editor (such as Notepad). If you find you can't edit it or save changes in Windows Vista or 7, see <a href="http://forums.bioware.com/viewtopic.html?topic=662080&forum=10">this topic</a> for assistance.
+                </p>
+                <p>
+                    Under the [Program Options] section in the file, type <strong>Logging On=1</strong> (unless it's already there). While you're there, you may also want to make sure <strong>Debug Mode=1</strong> is there to enable the <a href="https://gibberlings3.github.io/iesdp/appendices/clua/bg2.htm">CLUA Console</a> for debugging and testing. Save the file and exit. Now go back into the game and try to reproduce the crash. Then look in your game folder again for the <strong>Baldur.err</strong> file and open it with a text editor to analyse its contents.
+                </p><br>
+
+                <hr style="width: 90%;" /><br>
+
+                <p>
+                    <strong>Symptom: Game crashes with no Baldur.err log and shows either a black screen or a pop-up window indicating an error at offset 005ca8a8</strong>
+                </p><br>
+                <p>
+                    This usually indicates an animation-related issue. Make sure you have the latest version of the mod. If you've installed other mods after it and have this issue, install the fix available <a href="http://www.shsforums.net/files/file/884-ia-aurora-low-fix/">here</a>.
+                </p><br>
+
+                <hr style="width: 90%;" /><br>
+
+                <p>
+                    <strong>Symptom:</strong>
+                </p>
+                <div class="important" style="background-color: black;color: #deded9;">
+                    <p style="font-family: Courier New;font-size: 100%;">
+                        <strong>ERROR: error copying [infinityanimations/content/somefile.bam]<br>
+                            ERROR: [SOMEFILE.CRE] -> [override/SOMEFILE.CRE] Patching failed (COPY)<br>
+                            Stopping installation because of error.</strong> (with no other error message)<br>
+                    </p>
+                </div>
+
+                <p>
+                    Less-than-informative messages like these may indicate you're installing to a hard drive with a low data transfer rate or an antivirus program is active during installation (which can also affect data transfer). Try installing to an internal drive with antivirus protection disabled during the install. If unsure, disconnect from the Internet (either unplug your network cable or disable your wireless adaptor) and turn off <strong>all</strong> memory-resident programs during the install. To get a list of these, go to Start > Run and type <strong><span class="weidu">&nbsp;msconfig&nbsp;</span></strong> where it says "<em>Open:</em>" then click OK. When the System Configuration Utility appears, click on the Startup tab. The only really necessary programs that need to be loaded in memory at startup are those related to your graphics chip (typically ATI or NVIDIA). Uncheck everything else, reboot and try installing the mod again. There are well-documented issues with installing mods while Avast antivirus is running, so make absolutely sure all components of Avast are completely disabled.
+                </p><br>
+
+                <hr style="width: 90%;" /><br>
+
+                <p>
+                    <strong>Other issues</strong>
+                </p><br>
+                <p>
+                    If you have more than one large mod installed, please refer to the <a href="http://www.shsforums.net/topic/41036-faq-for-the-megamods/">Megamod FAQ</a> for more troubleshooting tips.
+                </p><br>
+                <p>
+                    If none of this resolves your issue, or you have mod-specific issues, please report the problem in the mod's <a href="http://www.shsforums.net/forum/">forum</a>. Include the contents of your <acronym title="Weimer Dialogue Utility">WeiDU</acronym>.log file in the post, or attach it if it's large.
+                </p><br>
+
+                <address>
+                    <span class="footer">Mymod &gt; Troubleshooting</span> &#8226;<a href="#top">BACK TO TOP</a>
+                </address>
+            </div>
+
+            <!-- ======================= C r e d i t s ====================== -->
+            <a name="credits" id="credits"></a>
+            <div class="content">
+
+                <h2>Credits</h2><br>
+
+                <span class="t1">Author:</span> <span class="t2"><a href="http://www.shsforums.net/user/Author/">Author</a></span><br>
+                <span class="t1"><acronym title="Weimer Dialogue Utility">WeiDU</acronym> coding:</span> <span class="t2"><a href="">coder1</a>, revised by <a href="">coder2</a></span><br>
+                <span class="t1">Support:</span> <span class="t2"><a href="">maintainer</a></span><br>
+
+                <hr style="clear: both; width: 90%; color: transparent; background-color: transparent; " /><br>
+
+                <p>
+                    <span style="color: #781808;">&#9755;</span> For support or questions, please visit the <a href="http://www.shsforums.net/">mod forum</a>.
+                </p><br>
+
+
+                <hr style="width: 90%;" /><br>
+
+
+                <h5>Special Acknowledgements to:</h5>
+
+                <ul class="version-list c1">
+                    <li><a href="http://www.spellholdstudios.net/">Spellhold Studios</a> team for hosting the mod (<a href="http://www.shsforums.net">Forums</a>).</li>
+                    <li>machin for permission to use blabla.</li>
+                    <li> dugland for coding help.</li>
+                    <li>trucmuche for coding help and suggestions.</li>
+                    <li>bidule for dialogue help.</li>
+                    <li>xxx for the yyy translation.</li>
+                    <li>zzz for proofreading.</li>
+                    <li>...</li>
+                    <li>Everyone else from the <a href="https://www.baldursgateworld.fr">La Couronne de Cuivre</a>, <a href="https://www.gibberlings3.net/forums/">The Gibberlings Three</a>, <a href="http://www.shsforums.net/">Spellhold Studios</a> forums, and the other Infinity Engine gaming and modding communities who offered their help and support.</li>
+                </ul><br>
+
+
+                <hr style="width: 90%;" /><br>
+
+
+                <h5>Programs/tools used in creation:</h5>
+
+                <ul class="version-list c1">
+                    <li>
+                        <a href="https://github.com/WeiDUorg/weidu/releases"><acronym title="Weimer Dialogue Utility">WeiDU</acronym></a>, by Wes Weimer, the bigg and Wisp.
+                    </li>
+                    <li>
+                        <a href="https://github.com/Argent77/NearInfinity/releases">Near Infinity</a>, by Jon Olav Hauglid, FredSRichardson, and Argent77.
+                    </li>
+                    <li>
+                        <a href="http://www.shsforums.net/topic/31285-infinity-explorer-v085/">Infinity Explorer</a>, by Dmitry Jemerov / bigmoshi.
+                    </li>
+                    <li>
+                        <a href="https://www.gibberlings3.net/mods/tools/dltcep/"><acronym title="Dragonlance Total Conversion Editor Pro">DLTCEP</acronym></a>, by Avenger.
+                    </li>
+                    <li>
+                        <a href="http://www.baldursgatemods.com/forums/index.php?action=downloads;sa=view;down=85">CreMaker_v3.1.9</a>.
+                    </li>
+                    <li>
+                        <a href="https://gibberlings3.github.io/iesdp/"><acronym title="Infinity Engine Structures Description Project">IESDP</acronym></a>, maintained by igi and lynx.
+                    </li>
+                    <li>
+                        <a href="https://www.gibberlings3.net/mods/tools/debug/">G3 Debugging Suite</a>, by CamDawg.
+                    </li>
+                    <li>
+                        <a href="http://www.teambg.eu/?page=tools&amp;cat=32">BAM Workshop</a>, by Glenn Flansburg.
+                    </li>
+                    <li>
+                        <a href="http://www.shsforums.net/topic/57564-bamworkshop/">BAMWorkshop 2</a>, by Andrew Bridges.
+                    </li>
+                    <li>
+                        <a href="http://www.shsforums.net/topic/42359-release-bam-batcher/">BAM Batcher</a>, by Miloch.
+                    </li>
+                    <li>
+                        <a href="https://www.adobe.com/products/photoshop.html">Adobe Photoshop</a>
+                    </li>
+                    <li>
+                        <a href="http://www.gimp.org/"><acronym title="GNU Image Manipulation Program">GIMP</acronym></a>, by the GIMP team.
+                    </li>
+                    <li>
+                        <a href="http://www.gamani.com/">GIF Movie Gear</a>
+                    </li>
+                    <li>
+                        <a href="https://www.blender.org/">Blender</a>, by the Blender Foundation.
+                    </li>
+                    <li>
+                        <a href="https://www.autodesk.com/products/3ds-max/overview">3ds Max</a>
+                    </li>
+                    <li>
+                        <a href="http://notepad-plus-plus.org/">Notepad++</a>, by the Notepad++ team, Don Ho, and the spellcheck plug-in.
+                    </li>
+                    <li>
+                        <a href="http://www.shsforums.net/files/file/1048-weidu-highlighter-for-notepad/">WeiDU Notepad++ Highlighters </a>, by Argent77.
+                    </li>
+                    <li>
+                        <a href="http://www.context.cx/">ConTEXT Text Editor</a>, by Eden Kirin.
+                    </li>
+                    <li>
+                        <a href="https://www.gibberlings3.net/mods/tools/weidu/">WeiDU ConTEXT Highlighters </a>, by Idobek, updated by cmorgan.
+                    </li>
+                    <li>
+                        <a href="https://www.editpadlite.com/editpadclassic.html">EditPad Classic</a>, by Jan Goyvaerts.
+                    </li>
+                    <li>
+                        <a href="http://www.pspad.com/en/">PSPad</a>, by Jan Fiala.
+                    </li>
+                    <li>
+                        <a href="http://www.bulkrenameutility.co.uk/">Bulk Rename Utility</a>, by TGRMN Software.
+                    </li>
+                    <li>
+                        <a href="https://code.visualstudio.com/">Visual Studio Code</a>, modern, cross-platform editor.
+                    </li>
+                    <li>
+                        <a href="https://marketplace.visualstudio.com/items?itemName=BGforge.bgforge-mls/">Visual Studio Code - BGforge MLS</a> - Syntax highlighting and more.
+                    </li>
+                    <li>
+                        <a href="https://github.com/InfinityTools/InfinityAutoPackager/">Infinity Auto Packager</a>, automatically generates Infinity Engine mod packages.
+                    </li>
+                </ul><br>
+
+
+                <hr style="width: 90%;" /><br>
+
+
+                <h5>Copyrights</h5>
+
+                <div class="important">
+                    <p>MYMOD is not developed, supported, or endorsed by BioWare&trade; or Interplay/BlackIsle, Overhaul, Beamdog or the Wizards of the Coast. It was developed by AUTHOR, based on material from the game Baldur's Gate II and its expansion.</p>
+                    <p>All mod content is &copy;AUTHOR.</p>
+                    <p>Baldur's Gate II: Shadows of Amn and Baldur's Gate II: Throne of Bhaal &copy; TSR, Inc. The BioWare Infinity Engine is &copy; BioWare Corp. All other trademarks and copyrights are property of their respective owners.</p>
+                    <br>
+                    <p>This mod was created to be freely enjoyed by all Baldur's Gate II players, and its content is free of rights. However, it should not be sold, published, compiled or redistributed in any form without the consent of the author.</p>
+                    <p>Please note that any and all redistribution and/or hosting of this mod is prohibited without permission from the author.</p>
+                    <br>
+                    <p>If there are any copyright issues or this statement needs revision, then please contact me and advise me what to do about it. Most notably, if you see any artwork in this mod that might conflict with Copyright rules, please let me know as soon as possible, and I will remove the conflicting content immediately.</p>
+                </div><br>
+
+                <p>
+                    The modding community for the Infinity Engine has been going strong for more than 10 years now, and is the culmination of thousands of unpaid modding hours by fellow fans of the game. Modders produce their best work and players get the best, well-supported mods when we all work together.
+                </p>
+                <p>
+                    There are two big ways to upset this harmony. One is to claim someone else's work as your own. The second is to host and redistribute a mod without permission from the author(s).
+                </p>
+                <p>
+                    Be kind to your fellow players and modders. Don't do either.
+                </p><br>
+
+                <div class="important">
+                    <p><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="images/cc-by-sa-3.0.png" title="Creative Commons License" /></a> This work (including all code and documentation) is licensed under a <a href="http://creativecommons.org/licenses/by-nc/3.0/">Creative Commons Attribution-Noncommercial 3.0 Unported License</a>. You are free to share (copy, distribute and transmit) and to remix (adapt) this work, except for commercial purposes. See the <a href="http://creativecommons.org/licenses/by-nc/3.0/legalcode">Creative Commons Public License</a> for more details. Please post any changes or updates at the mod's <a href="">forum</a>.</p>
+                    <p style="width: 100%;">All copyrights and trademarks are the property of their respective owners.</p>
+                </div><br>
+
+                <address>
+                    <span class="footer">Mymod &gt; Credits</span> &#8226;<a href="#top">BACK TO TOP</a>
+                </address>
+            </div>
+
+            <!-- ============== V e r s i o n   H i s t o r y =============== -->
+            <a name="version" id="version"></a>
+            <div class="content" id="versionHistory">
+
+                <h2>Version History</h2><br>
+
+                <div class="important">
+                    <p><span style="color: #781808;">&#9755;</span> If your mod is hosted at GitHub, you can save yourself trouble of creating mod packages manually by using this <a href="https://github.com/InfinityTools/InfinityAutoPackager">tool</a>. It produces zip and <a href="https://github.com/ALIENQuake/ProjectInfinity/wiki/Specification-of-the-IEMOD-file-format">IEMod</a> packages for you when you create mod release. It is very easy to use and most SHS mods are released with it. For further documentation, please read <a href="https://forums.beamdog.com/discussion/78364/infinity-auto-packager-automatically-generate-and-adds-mod-packages-to-release-when-you-publish-it">this</a>.</p>
+                </div><br>
+
+                <h6>Version 2.9 &nbsp;(Month day, 2023)</h6>
+
+                <ul>
+                    <li>Corrections :</li>
+                    <ul>
+                        <li style="margin-left:-4%; margin-right:-8%;">Typos in psmel.d</li>
+                        <li style="margin-left:-4%; margin-right:-8%;">Typos in psq70.d</li>
+                        <li style="margin-left:-4%; margin-right:-8%;">Typos in psdwarf.baf</li>
+                        <li style="margin-left:-4%; margin-right:-8%;">Typos in pscut32.baf</li>
+                        <li style="margin-left:-4%; margin-right:-8%;">Typos in pscut16.baf</li>
+                        <li style="margin-left:-4%; margin-right:-8%;">Typos in psadv04.baf</li>
+                        <li style="margin-left:-4%; margin-right:-8%;">Invalid ressource for psredwiz.baf</li>
+                    </ul>
+                    <li>Additions :</li>
+                    <ul>
+                        <li style="margin-left:-4%; margin-right:-8%;">InfinityAutoPackager thanks to AL|EN </li>
+                        <li style="margin-left:-4%; margin-right:-8%;">Add metadata and label for Project Infinity </li>
+                        <li style="margin-left:-4%; margin-right:-8%;">pswi423.spl (Monster summoning IV from spell revision)</li>
+                        <li style="margin-left:-4%; margin-right:-8%;">...........</li>
+                        <li style="margin-left:-4%; margin-right:-8%;">...........</li>
+                    </ul>
+                    <li>Readme :</li>
+                    <ul>
+                        <li style="margin-left:-4%; margin-right:-8%;">SHS readme template  </li>
+                        <li style="margin-left:-4%; margin-right:-8%;">style_shs.css </li>
+                        <li style="margin-left:-4%; margin-right:-8%;">Add spells.doc to readme </li>
+                    </ul>
+                </ul><br><br>
+
+                <h6>Version 2.8 &nbsp;(February 14, 2023)</h6>
+
+                <ul>
+                    <li>BWP and Corrections :</li>
+                    <ul>
+                        <li style="margin-left:-4%; margin-right:-8%;">arpsq2.are Bwp fix  </li>
+                        <li style="margin-left:-4%; margin-right:-8%;">psbaatl.baf, pstanal.baf Bwp fix  </li>
+                        <li style="margin-left:-4%; margin-right:-8%;">psglobe1.baf, psglobe2.baf, psglobe3.baf, psglobe4.baf, psglobe6.baf Bwp fix</li>
+                        <li style="margin-left:-4%; margin-right:-8%;">psadapp1.cre Bwp fix  </li>
+                        <li style="margin-left:-4%; margin-right:-8%;">pstest01.cre, pstest02.cre, pstest03.cre, pstest04.cre Bwp fix  </li>
+                        <li style="margin-left:-4%; margin-right:-8%;">pstutor6.d Bwp fix  </li>
+                        <li style="margin-left:-4%; margin-right:-8%;">pshelm02.itm, psmade12.itm Bwp fix  </li>
+                        <li style="margin-left:-4%; margin-right:-8%;">psstaf01.itm, psstaf02.itm Bwp fix  </li>
+                        <li style="margin-left:-4%; margin-right:-8%;">pssw1h02.itm Bwp fix  </li>
+                        <li style="margin-left:-4%; margin-right:-8%;">Missing Bwp fix for psglobe5.baf  </li>
+                        <li style="margin-left:-4%; margin-right:-8%;">Meaningful corrections from the mod Magestronghold  </li>
+                    </ul>
+                    <li>Additions :</li>
+                    <ul>
+                        <li style="margin-left:-4%; margin-right:-8%;">APPEND ~Animate.ids~ ~0xE050 IC_LICHBLACK~ UNLESS ~0xE050 IC_LICHBLACK~</li>
+                        <li style="margin-left:-4%; margin-right:-8%;">APPEND ~Animate.ids~ ~0x7f3a HULA_WIZARD~ UNLESS ~0x7f3a HULA_WIZARD~ </li>
+                        <li style="margin-left:-4%; margin-right:-8%;">PVRZ for AR0452  </li>
+                        <li style="margin-left:-4%; margin-right:-8%;">Add IconV / Handle Charset and  language / autotra folders  </li>
+                        <li style="margin-left:-4%; margin-right:-8%;">Modified tp2 (slightly)  </li>
+                        <li style="margin-left:-4%; margin-right:-8%;">Add readme md  </li>
+                        <li style="margin-left:-4%; margin-right:-8%;">Russian translation  </li>
+                        <li style="margin-left:-4%; margin-right:-8%;">Missing traification from ArcaneCoast	  </li>
+                        <li style="margin-left:-4%; margin-right:-8%;">Delete duplicate psmari1.baf  </li>
+                        <li style="margin-left:-4%; margin-right:-8%;">Delete backup  </li>
+                    </ul>
+                    <li>Corrections :</li>
+                    <ul>
+                        <li style="margin-left:-4%; margin-right:-8%;">Correct Sorcery ability (pssorc.baf)</li>
+                        <li style="margin-left:-4%; margin-right:-8%;">Correct bad ending for final battle (if you don't have the key), (psmelwin.d) and (pscut17.baf) modified</li>
+                        <li style="margin-left:-4%; margin-right:-8%;">Correction for spcl668.spl</li>
+                        <li style="margin-left:-4%; margin-right:-8%;">Removed class change to sorcerer</li>
+                        <li style="margin-left:-4%; margin-right:-8%;">Removed effect applied to other npc (only the main one will be affected)</li>
+                        <li style="margin-left:-4%; margin-right:-8%;">Correction for tp2 (Autotra for translation files)	</li>
+                        <li style="margin-left:-4%; margin-right:-8%;">Update Russian encoding in setup.tra (Thanks to Paladin84)</li>
+                        <li style="margin-left:-4%; margin-right:-8%;">Using right files for translation (hopefully...)</li>
+                        <li style="margin-left:-4%; margin-right:-8%;">Attempt to adapt item description for EE</li>
+                        <li style="margin-left:-4%; margin-right:-8%;">Using GW_WRITE_EE_ITM_DESCRIPTIONS fonction from Freddy_Gwendo</li>
+                        <li style="margin-left:-4%; margin-right:-8%;">Add gw_functions.tpa</li>
+                    </ul><br><br>
+
+                <h6>Version 2.6c</h6>
+
+                <ul>
+                    <li>Bug with Key fixed YET AGAIN</li>
+                    <li>Streamlined tp2 file courtesy of erebusant (it got messy with various people's fixes and erebusant also cleaned up some of my messes)
+</li>
+                </ul><br><br>
+
+                <h6>Version 2.6b</h6>
+
+                <ul>
+                    <li>Bug fixes implemented by Ieldra, Ikki, and ScuD (mostly to fix stuff that I couldn't manage to do before I went missing :p) -Duality
+</li>
+                </ul><br><br>
+
+                <h6>Version 2.6 - Malbolgia</h6>
+
+                <ul>
+                    <li>Spanish translation not included due to dialog changes in 2.5 and 2.6 (I do not know any Spanish)</li>
+                    <li>Changed and fixed the rakshasa dialog</li>
+                    <li>Made the shop in Waukeen's Promenade optional at install</li>
+                    <li>Removed Dualitys Folder Information files from all folders ^_^</li>
+                    <li>Edited this readme file and merged the changelog with it</li>
+                    <li>Removed Teos' portrait (ugly thing that it was)</li>
+                    <li>Fixed the Apprenti/Adventurers battle cutscene.</li>
+                    <li>Added Planar Sphere Return Mod as optional install (not bugfixed, if any)</li>
+                    <li>Changed and fixed Baatezu dialog</li>
+                    <li>Changed Teos dialog</li>
+                    <li>Changed Sorcerer dialog</li>
+                    <li>Changed dream dialog </li>
+                </ul><br><br>
+
+                <h6>Version 2.5 - Duality (dualities.shadow@gmail.com))</h6>
+
+                <ul>
+                    <li>Re-named almost all the files. </li>
+                    <li>Numerous mid-quest fixes. Some quests were tweaked.</li>
+                    <li>Spelling errors fixed and dialog re-written. New dialogs were also added.</li>
+                    <li>Dialog files combined. Creatures no longer have multiple dialog files (there is one exception to this.)</li>
+                    <li>The forge now works. Also fixed a number of problems with the forge itself.</li>
+                    <li>Most spells nerfed, some tweaked, some made to do what their description says they do.</li>
+                    <li>Drops nerfed. The various encounters, especially the optional ones, no longer grant great hauls of high level loot.</li>
+                    <li>There is a new encounter in the docks, in the bridge district and in the temple district.</li>
+                    <li>A few items were added, some items were fixed.</li>
+                    <li>A number of scenes re-worked. Party should not get stuck during cut scene anymore.</li>
+                    <li>A new store added.</li>
+                    <li>Two quests in the making. </li>
+                    <li>Changed the way the forced encounter in the slums works.</li>
+                    <li>The final area was fixed. The file used to be corrupt and when it DID work, there were large portions of the map that should have been moveable but weren't. This has all been fixed.</li>
+                    <li>Lots of creatures scripts were changed.</li>
+                    <li>Final battle now scales to the difficulty setting, as do the rewards.</li>
+                    <li>Stupid globes in the government district have been re-worked slightly and are now killable.</li>
+                    <li>Removed a large number of duplicate entries from setup.tra.</li>
+                </ul><br><br>
+
+                <h6>Version 2.2 - Hlidskialf</h6>
+
+                <ul>
+                    <li>Small bugfixes and script changes.</li>
+                    <li>Spanish translation added. (Thanks much for the folks at ClanREO!)
+</li>
+                </ul><br><br>
+
+                <h6>Version 2.1</h6>
+
+                <ul>
+                    <li>Died stillborn, and to prevent confusion is omitted.
+</li>
+                </ul><br><br>
+
+                <h6>Version 2.0 - Jack Archer (thedonkeyman@gmail.com)</h6>
+
+                <ul>
+                    <li>Includes the massive text update</li>
+                </ul><br><br>
+
+                <h6>Version 1.9 - Hlidskialf</h6>
+
+                <ul>
+                    <li>Includes some minor bugfixes discovered after fixing the quest-breakers in the last version.
+</li>
+                </ul><br><br>
+
+                <h6>Version 1.8 - Hlidskialf</h6>
+
+                <ul>
+                    <li>Included a bugfix forgotten to include with v1.7. You should be able to complete the mod unhindered now.
+</li>
+                </ul><br><br>
+
+                <h6>Version 1.7 - Hlidskialf</h6>
+
+                <ul>
+                    <li>Updated code and a fixed encounter with the "mage".
+</li>
+                </ul><br><br>
+
+                <address>
+                    <span class="footer">Mymod &gt; Version History</span> &#8226;<a href="#top">BACK TO TOP</a>
+                </address>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

@@ -9,10 +9,10 @@ AUTHOR ~See_The_Readme (Org: Inferno & M, Updates: Hlid, Duality, Malbolgia)~
 //MODDER
 
 /* WeiDU v204 allows tp2 level version listing in the .log, so no more tra changes  */
-VERSION ~v2.8.5~
+VERSION ~v2.9~
 
 /* launch the readme file immediately. If you want to disable the ReadMe, place two slashes before it, like //README  */
-README ~PlanarSphereMod/readme-planarsphere.html~
+README ~PlanarSphereMod/readme/readme-planarsphere.html~
 
 /* Make sure strings are correctly encoded for both EE and non-EE games */
 ALWAYS
@@ -54,12 +54,15 @@ LANGUAGE ~Russian~
 ~PlanarSphereMod/language/russian/setup.tra~
 
 BEGIN @0
+DESIGNATED 0
+LABEL ~Inferno-PlanarSpheremod~
 
 // TOB Check prior to compiling.
 REQUIRE_FILE ~Data/25Dialog.bif~ @1 // ToB  check// Base Copy Overs
 
 APPEND ~Animate.ids~ ~0xE050 IC_LICHBLACK~ UNLESS ~0xE050 IC_LICHBLACK~
 APPEND ~Animate.ids~ ~0x7f3a HULA_WIZARD~ UNLESS ~0x7f3a HULA_WIZARD~
+//APPEND ~Spell.ids~ ~WIZARD_MONSTER_SUMMONING_4~ UNLESS ~WIZARD_MONSTER_SUMMONING_4~
 
 //COPY + ~Setup-PlanarSphereMod.exe~ ~WeiDU.exe~
 //
@@ -1860,6 +1863,11 @@ COPY ~PlanarSphereMod/itm/psBook04.itm~ ~override/psBook04.itm~
 // Spell Files
 
 
+COPY ~PlanarSphereMod/spl/pswi423.spl~ ~override/pswi423.spl~
+  SAY NAME1 @628
+  SAY UNIDENTIFIED_DESC @629
+  SAY DESC @629
+
 COPY ~PlanarSphereMod/spl/SPCL650.spl~ ~override/SPCL650.spl~
   SAY NAME1 @88
 
@@ -2571,11 +2579,15 @@ END
 
 
 BEGIN @623
+DESIGNATED 623
+LABEL ~Inferno-PlanarSpheremod-PlanarSphere-Store~
 COPY~PlanarSphereMod/sto/psSphere.sto~ ~override/psSphere.sto~
 SAY NAME2 @2
 
 
 BEGIN @624
+DESIGNATED 624
+LABEL ~Inferno-PlanarSpheremod-Waukeen's-Promenade-Store~
 COPY~PlanarSphereMod/sto/psWauk.sto~ ~override/psWauk.sto~
 SAY NAME2 @570
 
@@ -2583,6 +2595,8 @@ SAY NAME2 @570
 
 
 BEGIN @625
+DESIGNATED 625
+LABEL ~Inferno-PlanarSpheremod-PlanarSphere-Return~
 FORBID_COMPONENT "Setup-PSTele.tp2" "0" @666
 
 COPY ~PlanarSphereMod/misc/RETURN.SPL~       ~override/RETURN.SPL~

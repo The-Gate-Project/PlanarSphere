@@ -13,7 +13,7 @@ Then
 	Response #100
 		CreateVisualEffectObject("SPHANDAT", Myself)
 		Wait(1)
-		CreateVisualEffectObject("SPFINDOI", Myself)
+		CreateVisualEffectObject("SPFINODI", Myself)
 		Wait(1)
 		CreateVisualEffectObject("SPCRTWPN", Myself)
 		Wait(2)
@@ -24,7 +24,7 @@ If
 	RandomNum(3, 1)
 Then
 	Response #100
-		CreateVisualEffectObject("SPCALLI", Myself)
+		CreateVisualEffectObject("SPCALLLI", Myself)
 		CreateVisualEffectObject("SPBOOM", Myself)
 		Wait(1)
 		CreateVisualEffectObject("SPBGBFST", Myself)
