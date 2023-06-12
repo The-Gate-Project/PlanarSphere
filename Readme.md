@@ -11,11 +11,13 @@
 [Link to original Mod Download](http://www.shsforums.net/files/file/131-planarsphere/)
 
 
+## Description:
+---------------
+
+
 [See readme-planarsphere.html](https://the-gate-project.github.io/PlanarSphere/planarspheremod/readme/readme-planarsphere.html)
 
 
-## Description:
----------------
 
 This mod is for mature players. There is very limited swearing/sexual innuendo contained herein.
 

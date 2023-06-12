@@ -1,7 +1,7 @@
 @9001 = ~\([Oo]nly[ %tab%]+\)?[Uu]sable[ %tab%]+[Bb]y[ %tab%]*:~
 @9002 = ~\(Not[ %tab%]+\|Un\)[Uu]sable[ %tab%]+[Bb]y[ %tab%]*:~
 
-@0    = ~PlanarSphereMod v2.8.5~
+@0    = ~PlanarSphereMod, main component~
 @1    = ~TOB Required~
 @2    = ~Planar Sphere~
 @3    = ~Test Dummy~
@@ -2236,8 +2236,8 @@ Unusable by:
 
 // Borrowed from Spell Revision Mod
 
-@628=~Monster Summoning IV~
-@629=~Monster Summoning IV
+@628 = ~Monster Summoning IV~
+@629 = ~Monster Summoning IV
 Level: 4
 School: Conjuration
 Range: Medium
@@ -2270,4 +2270,7 @@ Special Qualities (all spiders):
 Immune to poison & web effects~
 
 
-@666  = ~You must uninstall the old Planar Sphere Return mod before installing it with PSM v2.6!~
+@628 = ~PlanarSphereMod, main component is required~
+
+
+@666  = ~You must uninstall the old Planar Sphere Return mod before installing it with PSM new version !~

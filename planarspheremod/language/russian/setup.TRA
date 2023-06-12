@@ -1,7 +1,7 @@
 @9001 = ~Используется[ %tab%]*:~
 @9002 = ~Не[ %tab%]+используется[ %tab%]*:~
 
-@0    = ~PlanarSphereMod v2.8.5~
+@0    = ~PlanarSphereMod, main component~
 @1    = ~TOB Required~
 @2    = ~Планарная Сфера~
 @3    = ~Манекен для Тренировок~
@@ -2552,8 +2552,8 @@ THAC0: -5
 
 // Borrowed from Spell Revision Mod
 
-@628=~Порождение Пауков~
-@629=~Порождение Пауков
+@628 = ~Порождение Пауков~
+@629 = ~Порождение Пауков
 Уровень:  4
 Школа:  Вызывание
 Дистанция:  Средняя
@@ -2600,5 +2600,9 @@ THAC0: -5
 Особые качества (все пауки):
 Иммунитет к яду и паутине~
 
-@666  = ~You must uninstall the old Planar Sphere Return mod before installing it with PSM v2.6!~
+
+@628 = ~PlanarSphereMod, main component is required~
+
+
+@666  = ~You must uninstall the old Planar Sphere Return mod before installing it with PSM new version !~
 

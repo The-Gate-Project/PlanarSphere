@@ -2579,6 +2579,7 @@ END
 
 
 BEGIN @623
+REQUIRE_PREDICATE (MOD_IS_INSTALLED ~PLANARSPHEREMOD/SETUP-PLANARSPHEREMOD.TP2~ ~0~) @628 /* PlanarSphereMod, main component is required */
 DESIGNATED 623
 LABEL ~Inferno-PlanarSpheremod-PlanarSphere-Store~
 COPY~PlanarSphereMod/sto/psSphere.sto~ ~override/psSphere.sto~
@@ -2586,6 +2587,7 @@ SAY NAME2 @2
 
 
 BEGIN @624
+REQUIRE_PREDICATE (MOD_IS_INSTALLED ~PLANARSPHEREMOD/SETUP-PLANARSPHEREMOD.TP2~ ~0~) @628 /* PlanarSphereMod, main component is required */
 DESIGNATED 624
 LABEL ~Inferno-PlanarSpheremod-Waukeen's-Promenade-Store~
 COPY~PlanarSphereMod/sto/psWauk.sto~ ~override/psWauk.sto~
@@ -2595,9 +2597,9 @@ SAY NAME2 @570
 
 
 BEGIN @625
+FORBID_COMPONENT "Setup-PSTele.tp2" "0" @666 /* You must uninstall the old Planar Sphere Return mod before installing it with PSM new version ! */
 DESIGNATED 625
 LABEL ~Inferno-PlanarSpheremod-PlanarSphere-Return~
-FORBID_COMPONENT "Setup-PSTele.tp2" "0" @666
 
 COPY ~PlanarSphereMod/misc/RETURN.SPL~       ~override/RETURN.SPL~
   SAY NAME1 @626

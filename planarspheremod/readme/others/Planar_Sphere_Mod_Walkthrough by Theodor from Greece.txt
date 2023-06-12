@@ -1,0 +1,236 @@
+		
+			The Planar Sphere Mod
+			=====================
+
+Author: Theodor from Greece
+E-mail: ttsovilis@yahoo.com
+
+First of all I suggest you read the 'ReadME' file that goes with the mod and follow the
+instructions given there.
+
+After Teos appears,he has proposal for you.He asks you to make a magic school in your
+Planar Sphere.If you accept that,you must sign a contract and become an unofficial membeer
+of the Cowled Wizards.After that the Planar Sphere will be filled with apprentices and tutors.
+You can talk to them,most of them will respond to you and a few have small quest for you.
+Also check on every container in the Sphere for new spells scrolls.Some of them are... toasty!
+
+1. MAP ROOM
+   In the room with the map of the town there are 3 apprentices that did something wrong and
+   your map is on fire.They are sorry and promice to fix it.
+
+2. CONTAINER ROOM
+   In the room at the left from the Map Room there is tutor with 2 apprentices.Talk to the tutor
+   and he tells you he makes enchanted ewapons.He also gives you instructions on how to do that
+   and a book with specific details.
+
+3. SOLAR KNIGHT ROOM
+   In the room where the Solar Knights were there are many people,Teos,tutors,an examiner,a
+   Cowled Enforcerer and a Rakasha. Talk to them to get informations or quests.
+
+4. TUTOR-MAGIC MISILES
+   One of the Tutors aks you for a scroll of Magic Misiles for his class.Get him one for 
+   10.000xp.
+
+5. RAKASHA
+   Talk to the Rakasha.He has a shop and an Inn for you.He has great items in low prices and buy
+   your items in very good prices. He has also some great scrolls. 
+   Also if you try to steal from him he does nothing,no matter if you succeed or not. Probably
+   that is a small bug of the mode,but it is a very helping one!!!
+
+6. COWLED ENFORSERER
+   Talk to the Cowled Enforserrer.He says he is there to ensure the safety of the tutors and 
+   students. He asks you to seek and destroy a spy od the Red Wizards named Inchantra. She is in
+   the Sphere.Strang he does not want her alive,only dead will be sufficient!
+   Look for her in the Sphere and you will find her in the room where the Beholdrer was.She attacks
+   you on sight.Kill for some good xp (8000) and go back to the Enforserer. He is happy and...
+   he reveals his identity.He is the true spy,thanks you for killing Inchantra before she reveals
+   him and attacks you.Kill him for 8000xp and some items.
+
+7. EXAMINER
+   Talk to the examiner at the top of the Solar Knights room. He asks you to attend to the exams
+   that are going to take place in a moment. Agree to go and you teleported to the first room of
+   the Sphere.There are 4 apprentices. Talk to each one of them to begins his test. Each one of
+   thems prologues what spell he will do and proceeds. All 4 of them will make mistake and die.
+   The last one summons a Demon that attacks you. Kill it for 12000xp. Talk again to the Examiner
+   and tell him the results.
+
+8. DEMON ROOM
+   Go to the room above the main room with all the tutors. There are 2 demons,2 apprentices and
+   a teacher wielter.He summons these demonds,binds them and uses them for study and for pets.
+   Nothing more to do there,only some funny words you exchange with Wielter.
+
+9. BAATEZU
+   Go to the Golem Building room.There you will find a great demon,a Baatezu.He is there with the
+   COwled Wizards permission.You can attack him or talk to him.Talk to him and agree to his aspect
+   of hell and evil.If you do that he will ask you a favor.He says his powers are binded by
+   professor Wielter ask you for a release.To do that you must cast a spell that will steal the
+   release spell from Wielter's mind.He gives you a scroll to do that,a scroll that must be used
+   near Wielter.If you refuse, he will attack you.Kill him for 16.000xp. Agree to to so,take the
+   scroll and go back to the Demon Room to find Wielter. Use the scroll to steal the spell and go
+   back to Baatezu. (Don't worry about releasing this demons powers). He takes the spell and asks
+   you to kill Wielter to set free his powers.Saying no gets you to fight him. Agree to this evil
+   task (He is a demon after all...) Go back to Wielter,and he attacks you on sight.Kill him for
+   8000xp,spells and items.Now go back to Baatezu to get your reward: 60.000xp,2 scrolls and a 
+   good amullet for evil characters. 
+   There is bug there that allows you to talk again and again
+   to Baatezu for more XP and items (60000xp each time!!!) Use it!!!!
+   Then you can attack the Baatezu to kill him! (I did!)
+
+10.APPRENTICE BECOME SLIME
+   After the room with the symbols on the ground you will find a tutor next to an apprentice
+   that has become a green slime.Talk to the tutor,who asks for your help to restore the student
+   and save him from ... being dismissed. Agree to help and he asks you 2 things, a remove curse
+   scroll and a Neclace of Form Stability. Bring him these items to get 20.000xp and 3 scrolls.
+
+11.MELICAMP THE... CHICKEN
+   In the room you found and killed Inchantra you will find Melicamp,the wizard apprentice from
+   BG 1 that had become a chicken,remember??? Talk to her and she says she is no more student to
+   her former master and she is now a Cowled Wizard Apprentice of high grade. She is arrogant and
+   want to try a difficult trick.She does so but fails and becomes a chicken once again. She is
+   desperate and asks for help.Agree to help her.Go back to the Tutor room and find her tutor.
+   Explain him what happend and he suggests he will call her former master,Thalantyr, to get her
+   back once again.Go back to Melicamp and then Thalantyr appears,turns back Melicamp and you
+   get rewarded with 50.000xp and 2 more scrolls.
+
+12.TEOS LONG QUEST (GREAT!!!)
+   In the Tutor Room (the Room od Solar Knights) you will find Teos. Talk to him and he thanks you
+   for the school of magic.Also he says about an accident happend not long ago and artifact that
+   is missing.He asks you to get back this artifact,that it is a planar key forged by Mystra,the
+   goddes of Magic.He tels you to seek a Red Wizard spy at Waukeen's Promenade. Go there and head
+   for the Den of the Seven Dales Inn.There you will find a Cowled Wizard. Talk to him and he 
+   reveals his identity and goal and summons 6 more Red Wizards to attack you.This is tough fight
+   with 7 good mages.But it has great prizes and good XP. You also get the lost artifact and a note
+   of orders from Red Wizards. Now head back to Teos. 
+
+13.THE ENTRAPPED SORCERER
+   Teos is really mad. He want's to use the artifact and it's power to destroy the Red Wizards and
+   their whole island! He teleports you to the Navigation Room in the Sphere and the ritual begins.
+   The Cowled wizards cpmplete the ritual and a Sorcerer is freed from inside the artifact and comes
+   before you. He asks for the man how freed him and kills Teos and the wizards for no reason. Then
+   he talks to you, says he is invisible, sees that you are a child of Bhaal and sends you your soul
+   plane as a punishment.
+
+14.THE SOUL PLANE
+   In your Soul Plane,you find you and your party trapped in a dream in Candlekeep. The ground shakes
+   and very powerful Shadows called Nighmares(9000xp) and Greater NIghmares(18000xp) appear and 
+   attack you. Kill as many as you can,but they still keep coming. Go to the entrance of Kandlekeep
+   and talk to the exit portal.It says you must face your fear first to leave the plane, asks if you
+   are ready.Say yes and Fear appears. He says he hill destroy you and attacks. He is a powerfull
+   mage and has some good items. After killing him (30.000xp )talk to portal to go back to the Planar
+   Sphere. Then Elminster comes and asks you what happend. He then tells you part of the story and
+   teleports you to the Harper Hold to find the Sorcerer and his mistress Mystra, the goddess of Magic.
+
+15.THE HUNT FOR THE SORCERER
+   When you reach Harper Hold you find the Sorcerer in frond of the staue of Mystra casting spells.
+   Elminster talks and then attacks him, but he falls dead.Then just before the Sorcerer slay you
+   Khleben and some mages come and attack him. He kills them all, cast some great spells and then a
+   big explosion comes, everything gets dark and you are throuwn away, if you save vs death. If you
+   don't you play again the Soul Plane to get teleported with Elminster (so save a lot!) After you
+   get up you see Mystra the goddess of Magic laying down wounded and powerless. Go talk to her and
+   she mourns about Elminster. Then she gives you the whole story about the Sorcerer and asks for 
+   your help. Agree to do so. She points the Goverment Distinct,there you will find the key to turn
+   the power against the Sorcerer. Head to the Govement Distinct.
+
+16.THE GOVERMENT DISTINCT
+   The area is at war and chaos.There are Pain Elementals everywhere attacking you with powerfull 
+   spells and attacks. They cast Symbol Pain, which reduces everybodys dexterity 2 points and causes
+   big damage, 50hp, and greater malison and attack you with good damage.Kill them (16.500xp each).
+   They also cast protective spells like Stoneskin and improved mantle.   
+   I will recommend you to send a summoned creature first,so the Pain Elementals will cast the 
+   dexterity reducing speels at them and then attack with your party. Spells will do no damage,
+   because they have 100% resist. Only the Lower Resistances spell helps you.
+   Also there will be lightinig bolts coming to you from the sky,one for every turn causing damage 
+   2-15 hp to the one the hit. In the main square there are 4 Pain elementals, very tough fight.
+   In frond of the Counsil building there are 2 Pain Knights and a Night Hag (remember it from 
+   Planescape Torment?) Kill them. The Njight Hag is a very powerful mage casting Maze and Entrapment
+   at will and as many time as it wish,Wail of the Bunshee and other powerfull spells.Kill it for
+   68.000xp, great items and scrolls.
+
+17.THE COUNSIL OF THE SIX BUILDING
+   Then enter the Counsil of the Six building.In there you will find 8 spell globes that they cast
+   attack spells to your party at will and with no ending. You can not damage or kill these globes!
+   The only thing you can do is to go to the end of the room,as close as you can to the wall, near 
+   the incarnation of Magic. When you reach the incarnation of Magic it will talk to you. Ask it why
+   it helps the Sorcerer and it will attack you. Now you must face 7 mages,7 incarnations one for
+   every school of Magic (Alteration,Abjuration,Divination,Necromancy,...etc). Each one will appear
+   after the death of the one before.First comes Divination. Every incarnation gives you 5000xp and
+   some scrolls. When you kill them all,if you survive you get 40.000xp,scrolls,good items and the 
+   key you need. You can go to the exit to talk to the portal. Get inside to teleport back to the
+   Harper Hold and find Mystra.
+   
+18.DEMILICH AND SOLAR ENCOUNTERS
+   Talk again to Mystra and she tells you what has to be done. She also tells you that reality has
+   changed and there are things only you can see.Then she dies in a big shock.Get out from Harper
+   Hold to watch a video where a Demilich is killing innocent people just outside Harper Hold. Attack
+   and kill the Demilich (very nasty opponent with great spells) to get good XP,items and the legentary
+   Scroll of Kazaa witch transoforms the caster into a Lich gifing him the minus and plus of this
+   transformation. Now head back to the Slums. When you enter the area the Sorcerer comes to meet you
+   He talks to you and set to destroy you,but just before he attacks,he is being ambushed by the
+   Palladins of the Order.He slays them all and leaves you to fight 3 summoned monsters, an Enslaved
+   Solar and 2 Grear Demons.This is a fight like no other,but not that tough. Kill them and go to
+   the Planar Sphere.
+
+19.THE PLANAR SPHERE REVISITED
+   When you enter the Sphere you will see that its map is blank and you must revisit all the rooms
+   once again.Also all the items in the containers and all the persons inside the Sphere are gone.
+   In every room there are new foes and monsters,so proceed with care.
+   When you enter the Sphere Lord AO,an Overgod (a supreme being) comes to you and speaks. He gives
+   you some information and 30.000 quest xp for every party member. Now eplore the Sphere. everybody
+   is gone,doors are locked and Magic Elementals are everywhere attacking you with great Lightning
+   bolts. I suggest you have one of your first line fighters drink a portion or use a scroll of 
+   lightning resistance and send him first.
+
+20.SERVANT OF CHAOS
+   In the room where the man eating halflings where you will meet a great opponent, the Servant Of 
+   Chaos, brough there from his plain. He is angry and unfriendly. He is very tough.Kill him to get
+   good XP and his great items. Be aware because his robe, Robes of Chaos is a cursed item.
+
+21.VENCA THE ARCHILICH
+   In the room with the symbols on the ground you will find the worst of all opponents, the great
+   archilich Venca, the one with no match. He has 2 Modrons with him (Shadow Adamantine Golems). He
+   is also angry about being there. He talks to you and you are given an opportunity to explain the
+   situation and ask him to join you,but with no luck. Venca sees that you are true but attacks you
+   anyway. This foe needs no comments,nor words about its greatness. I suggest you cast everything
+   you have to protect,summon everything and.. do some prairs!! Keep the rod of ressurection and some
+   Freedom scrolls to your main character because you will need them to bring back the party members.
+   The spells he cast are numerous and do great damage,also the Modrons are hell of fighters.Kill 
+   Venca to get 500.000xp and some Great Items and Spells. Now go down the stairs and prepare for
+   the final act.
+
+22.THE SORCERER
+   When you go down the stairs you meet the Sorcerer gathering his powers in the spell globes and
+   getting ready for his revenge.He talks to you and gets ready to attack you.Talk him back and ask
+   his name before he kills you. He gives you the name 'Melanthium' and some lesson about the Art
+   of Magic,its form and nature. Then the Lady of Pain herself appears and tries to attack Melanthium
+   but with no luck. She then speaks to you,asks you to help nad gives you instructions on how you
+   can trick and beat Melanthium.Do so and the miracle is done.Melanthium is once again tricked and
+   his power is again turned against him. You brake the portal key and his powers defeat him but he
+   remains alive in a prison portal.The Lady of Pain congratulates you sais you must go in the Prison
+   Plain and finish him. Agree to do so. I suggest you pick all the spells needed for fighting great 
+   mages and take a rest before you enter.
+
+23.DEFEAT MELANTHIUM
+   Go into the Prison Portal to get yourself and party teleported in the Prison Plane of Melanthium.
+   He is defeated,very angry but alive.He is getting himself togather to get out of the Prison and
+   kill everything and everybody.Talk a little with him and then the fight begin. This is a hell of
+   a fight with Melanthium teleporting around casting hell-spells with great speed.After you defeat
+   him (If you manage to),you get 1.500.000xp and his items, which are wonderous! Also when he dies
+   he passes some of his essence and power to you,just with the hope that one day he will return or
+   that you may one day take his place!What does this means?
+   Then take the portal once again to get back to the Planar Sphere.Now you get to see a video with
+   Lord AO and Melanthium talking and Lord AO vanishing Melanthium once and for all.Now it is time
+   for rewards!First you get rewarded my Mystra witch is back now thanks to you and Lord AO.
+   Then you get rewarded by the Lady of Pain.Then she sees that you have some of Melanthium power and
+   essence and gets angry.She demands explanations and gets ready to fight you.Talk to her to avoid 
+   her rage and she warns you that she will be watching you!You also get one of her knives (a two
+   handed sword for you a knife to her...) whitch is great sword but might cause the game crush when
+   it is used.
+   Also you get a new skill,the Sorcery.This is Melanthium's gift to you for beating him.When you use
+   it you do some casting for some time (prety long) and then you cause a massive spell with great
+   damage (100hp) to every enemy around you.Use it with care.
+
+That is all.This is a great mode,very well made and with a lote of gameplay and tactics.
+I must give my congratulations to the creator of this mod and thank him for his contribution to the
+world community of Baldur's Gate.
+
+Theodor from Greece
