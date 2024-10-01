@@ -25,7 +25,7 @@ ALWAYS
     LAF autotra_workaround END
 
 
-//  ACTION_DEFINE_ARRAY fl#noconvert BEGIN END
+  ACTION_DEFINE_ARRAY fl#noconvert BEGIN insatll END
 
  ACTION_DEFINE_ARRAY fl#reload BEGIN setup END
 
@@ -34,7 +34,7 @@ ALWAYS
         infer_charsets = 1
       STR_VAR
         tra_path = EVAL ~planarspheremod/language/autotra~
-//        noconvert_array = fl#noconvert
+        noconvert_array = fl#noconvert
         reload_array = fl#reload
  END
 
@@ -52,6 +52,11 @@ LANGUAGE ~English~
 LANGUAGE ~Russian~
 ~russian~
 ~PlanarSphereMod/language/russian/setup.tra~
+
+LANGUAGE ~Simplified Chinese(Translation by anca_qin; Proofread by lzw1045227733)~
+~schinese~
+~PlanarSphereMod/language/schinese/setup.tra~
+~PlanarSphereMod/language/schinese/install.tra~
 
 BEGIN @0
 DESIGNATED 0
