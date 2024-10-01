@@ -1,5 +1,5 @@
-@9001   = ~\([Oo]nly[ %tab%]+\)?[Uu]sable[ %tab%]+[Bb]y[ %tab%]*:~
-@9002   = ~\(Not[ %tab%]+\|Un\)[Uu]sable[ %tab%]+[Bb]y[ %tab%]*:~
+@9001   = ~可以由以下职业使用[ %tab%]*：~ // ~\([Oo]nly[ %tab%]+\)?[Uu]sable[ %tab%]+[Bb]y[ %tab%]*:~
+@9002   = ~无法使用的职业[ %tab%]*：~ // ~\(Not[ %tab%]+\|Un\)[Uu]sable[ %tab%]+[Bb]y[ %tab%]*:~
 
 @0  = ~次元球mod - 主组件~
 @1  = ~需要巴尔王座~
